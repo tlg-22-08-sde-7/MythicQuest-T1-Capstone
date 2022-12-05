@@ -1,0 +1,13 @@
+Playing the game is easy
+
+    -  General instructions goes here
+
+    - Some more instructions
+
+    - And some more
+
+    - Go left
+
+    - Go right
+
+    - Go straight
