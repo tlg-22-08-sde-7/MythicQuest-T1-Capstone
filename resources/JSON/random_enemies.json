@@ -1,0 +1,28 @@
+{
+  "characters": [
+    {
+      "type": "rand-enemies",
+      "name": "COVID-2019"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "COVID-B"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Delta"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Omicron"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Monkey pox"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "X or Y"
+    }
+  ]
+}
