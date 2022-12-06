@@ -1,0 +1,39 @@
+{
+  "characters": [
+    {
+     "type": "rand-characters",
+      "name": "Village-A-villager",
+      "location": "Humpty-Dumpty-Village"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Village-B-villager",
+      "location": "Town-BB"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Townsperson-A",
+      "location": "Humpty-Dumpty-Village"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Townsperson-B",
+      "location": "Humpty-Dumpty-Village"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Traveler-A",
+      "location": "Town-BB"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Traveler-B",
+      "location": "Town-BB"
+    },
+    {
+      "type": "rand-characters",
+      "name": "Traveler-C",
+      "location": "Humpty-Dumpty-Village"
+    }
+  ]
+}
