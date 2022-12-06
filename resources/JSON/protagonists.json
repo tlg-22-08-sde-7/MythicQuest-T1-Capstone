@@ -1,0 +1,16 @@
+{
+  "characters": [
+    {
+      "type": "protagonists",
+      "name": "Hero-Warrior_player"
+    },
+    {
+      "type": "protagonists",
+      "name": "Town-Mayor"
+    },
+    {
+      "type": "protagonists",
+      "name": "Store-keeper"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+
+Objective:
+---------
+The objective of Mythic Quest is to defeat the enemies of humanity, namely the COVID boss and the viral monster minions.
+
+Your ultimate goal, dear Hero, is to find the COVID boss, do battle, and rid the land of the deadly scourge by defeating the COVID boss.
+
+
+Game play:
+---------
+You, as the player Hero-Warrior, will move around the map, battle enemies as you must, and collect items to build your health, attack, and defense.
+
+Along the way, you may meet other people, have a chance to help them in their battles with COVID (or not - as you choose), and explore.
+
+
+Commands:
+--------
+This is a turn-based game.  So you will type your commands to interact with the Mythic Quest game world and direct your character's action.
+
+This is typically done with 2 words, such as a verb (an action word) AND a noun (a person/place/thing).
+
+- To move west, you might type "go" and "west" so:  Go west.
+- To pick up a helmet and add it to your inventory, you might type "get" and "helmet", so:  Get helmet.
+- To use an item in your inventory, you might try:  Eat carrot, wear leggings, etc.
+
+For example:
+  > Eat carrot
+  > Wear helmet
+  > Run away
+  > Attack monster
+  Etc
+
+- To get help at any time, type:  Help
+- To exit the game at any time, type:  Quit
+
+
+How to win or lose:
+------------------
+Win:  Keep your character alive until the bitter end AND find the COVID boss, reigning defeat on this master-mind force of darkness.
+
+Lose:  Die.  The Game ends when your character dies (so sad, but play again!).
+
+
+>> Final thoughts:
+-----------------
+- Observe your surroundings (look around) in each scene / location.
+- Be sure to collect helpful items, such as foods, armor, parchments, and other items.
+- Items will help you overcome challenges along the way and may be useful to defeat the COVID boss.
+- Your game will autosave with each turn, BUT it is recommended for you to save at key points to return to.
+
