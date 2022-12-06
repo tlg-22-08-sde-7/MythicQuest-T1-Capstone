@@ -1,0 +1,34 @@
+{
+  "characters": [
+    {
+      "type": "rand-enemies",
+      "name": "COVID-2019",
+      "location": "Humpty-Dumpty-Village"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "COVID-B",
+      "location": "Town-ABC "
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Delta",
+      "location": "Humpty-Dumpty-Village"
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Omicron",
+      "location": "Town-ABC "
+    },
+    {
+      "type": "rand-enemies",
+      "name": "Monkey pox",
+      "location": "Town-ABC "
+    },
+    {
+      "type": "rand-enemies",
+      "name": "X or Y",
+      "location": "Humpty-Dumpty-Village"
+    }
+  ]
+}
