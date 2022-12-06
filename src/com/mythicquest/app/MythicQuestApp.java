@@ -9,12 +9,10 @@ public class MythicQuestApp {
 
     }
 
-    public void execute() throws Exception {
+    public void start() throws Exception {
         welcome();
-        //
-        //
-        //
-
+        // play();
+        // etc
     }
 
     private void welcome() throws IOException {

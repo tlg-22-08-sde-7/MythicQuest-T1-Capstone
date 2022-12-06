@@ -6,6 +6,6 @@ public class MythicQuestMain {
 
     public static void main(String[] args) throws Exception {
         MythicQuestApp app = new MythicQuestApp();
-        app.execute();
+        app.start();
     }
 }
