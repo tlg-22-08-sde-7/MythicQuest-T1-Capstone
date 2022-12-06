@@ -28,8 +28,8 @@ public class Screens {
 
     static {
         try {
-            winBanner = Files.readString(Path.of("resources/Banners/winBanner.txt")) ;
-            lostBanner = Files.readString(Path.of("resources/Banners/lostBanner.txt"));
+            winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
+            lostBanner = Files.readString(Path.of("resources/Banners/endLost.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,14 +42,14 @@ public class Screens {
     }
 
     public static void getUserInput() {
-        System.out.println(WHITE + "                                          Choose an option:" + RESET);
-        Console.blankLines(2);
-        System.out.println(CYAN + "                      [P]lay Mythic Quest now" + PURPLE + "  |  Read the [I]nstructions" + RESET);
-        Console.blankLines(2);
+        System.out.println("                                       Choose an option:" + RESET);
+        Console.blankLines(1);
+        System.out.println(CYAN + "                      Play Mythic Quest now" + PURPLE + "   |   Read the Game Instructions" + RESET);
+        Console.blankLines(1);
     }
 
     public static void welcomeBanner() throws IOException {
-        String welcome = Files.readString(Path.of("resources/Banners/welcome.txt"));
+        String welcome = Files.readString(Path.of("resources/Banners/welcomeTo.txt"));
         String banner = Files.readString(Path.of("resources/Banners/welcomeBanner.txt"));
 
         System.out.print(GREEN + welcome + RESET);
@@ -60,15 +60,15 @@ public class Screens {
 
     public static void chooseScreen() {
         Scanner scan = new Scanner(System.in);
-        System.out.println(CYAN + "Hit enter or type [p] to play, " + PURPLE + "or hit [i] to see the instructions..." + RESET);
+        System.out.println(CYAN + "                (type 'Play game' to begin)" + PURPLE + "       (type 'Read' to see instructions)" + RESET);
 
         String menu = scan.nextLine();
 
-        if (menu.equals("P") || menu.equals("p")){
+        if (menu.toLowerCase().contains("play")){
             System.out.println("\nLet's get started!\n" + RESET);
         }
 
-        if (menu.equals("I") || menu.equals("i")){
+        if (menu.toLowerCase().contains("read")){
             try {
                 instructions();
             } catch (IOException e) {
@@ -94,23 +94,4 @@ public class Screens {
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
     }
-
-//    public static void startScreen() throws IOException {
-//        // surrounded with try / catch in case file cannot be found or read.
-//        try {
-//            String welcomeTo = Files.readString(Path.of("resources/Banners/welcomeTo.txt"));
-//            String welcomeBanner = Files.readString(Path.of("resources/Banners/welcomeBanner.txt"));
-//            String instructions = Files.readString(Path.of("resources/Banners/instructions.txt"));
-//            //System.out.flush();
-//
-//            System.out.println(welcomeTo);
-//            Thread.sleep(1500);
-//            System.out.println(welcomeBanner);
-//
-//            System.out.println(instructions);
-//        } catch (IOException | InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }
