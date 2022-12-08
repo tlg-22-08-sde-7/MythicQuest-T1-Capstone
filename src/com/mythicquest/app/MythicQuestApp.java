@@ -32,7 +32,7 @@ public class MythicQuestApp {
     }
 
     private void play() {
-        int exitStatus = 0;
+        int quit = 0;
 
         while (game.getRunning() == true) {
             clearScreen();
@@ -41,7 +41,7 @@ public class MythicQuestApp {
 //            String input = TextParser(resp);
 
             if (input.toLowerCase().contains("quit")) {
-                exitGame(exitStatus);
+                exitGame(quit);
             }
 
             if (input.toLowerCase().contains("help")) {
@@ -65,7 +65,6 @@ public class MythicQuestApp {
             System.out.println("You got it - ending the game now...  See you again soon? :)");
             System.exit(exitStatus);
         }
-        return;
     }
 
     private void helpScreen() {
