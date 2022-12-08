@@ -1,0 +1,10 @@
+{
+  "intro1": "Hello Dr. _______ ! \nWelcome to our town.\n",
+  "intro2": "It is brave of you to come to our town in this difficult time.\nWe appreciate your support.\n",
+  "intro3": "I can give you the key to the location where you can meet and destroy the COVID Boss, once you are ready:",
+
+  "return1": "Hello, hopeful hero",
+  "return2": "I see you are here, perhaps thinking you are ready to defeat the greatest enemy you have ever faced...",
+  "isNotReady": "Alas, you are not.  Keep training and return when you are ready!",
+  "isReady": "Your time has come, young warrior, you are now ready.\nTake this key to enter the beast's lair.\nAnd do be careful not to... lose, let us say."
+}
