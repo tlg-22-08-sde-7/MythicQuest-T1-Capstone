@@ -6,8 +6,8 @@
       "y": "0",
       "directions": {
         "north":"",
-        "east": "forest",
-        "south": "plains",
+        "east": "forest", x+=1
+        "south": "plains", y+=1
         "west": ""
       }
     },
