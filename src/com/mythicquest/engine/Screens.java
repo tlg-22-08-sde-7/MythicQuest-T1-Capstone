@@ -58,7 +58,7 @@ public class Screens {
         Console.blankLines(2);
     }
 
-    public static void chooseScreen() {
+    public static void chooseScreen() throws IOException {
         Scanner scan = new Scanner(System.in);
         System.out.println(CYAN + "                (type 'Play game' to begin)" + PURPLE + "       (type 'Read' to see instructions)" + RESET);
 
@@ -66,6 +66,9 @@ public class Screens {
 
         if (menu.toLowerCase().contains("play")){
             System.out.println("\nLet's get started!\n" + RESET);
+
+            // go to screen with the first position of the HERO
+            TextParser.textParser2();
         }
 
         if (menu.toLowerCase().contains("read")){
