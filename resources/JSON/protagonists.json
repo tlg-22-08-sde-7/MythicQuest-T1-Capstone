@@ -2,15 +2,18 @@
   "characters": [
     {
       "type": "protagonists",
-      "name": "Hero-Warrior_player"
+      "name": "Hero-Warrior_player",
+      "location": "Town-ABC "
     },
     {
       "type": "protagonists",
-      "name": "Town-Mayor"
+      "name": "Town-Mayor",
+      "location": "Town-ABC "
     },
     {
       "type": "protagonists",
-      "name": "Store-keeper"
+      "name": "Store-keeper",
+      "location": "Humpty-Dumpty-Village"
     }
   ]
 }
