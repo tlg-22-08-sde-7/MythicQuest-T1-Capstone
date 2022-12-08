@@ -64,14 +64,14 @@ public class Screens {
 
         String menu = scan.nextLine();
 
-        if (menu.toLowerCase().contains("play")){
+        if (menu.toLowerCase().contains("play")) {
             System.out.println("\nLet's get started!\n" + RESET);
 
             // go to screen with the first position of the HERO
             TextParser.textParser2();
         }
 
-        if (menu.toLowerCase().contains("read")){
+        if (menu.toLowerCase().contains("read")) {
             try {
                 instructions();
             } catch (IOException e) {
@@ -80,7 +80,7 @@ public class Screens {
         }
     }
 
-    public static void instructions() throws IOException{
+    public static void instructions() throws IOException {
         instructTitle = Files.readString(Path.of("resources/Banners/instructionsTitle.txt"));
         instructHeader = Files.readString(Path.of("resources/Banners/instructionsHeading.txt"));
         instructBody = Files.readString(Path.of("resources/Banners/instructionsBody.txt"));
