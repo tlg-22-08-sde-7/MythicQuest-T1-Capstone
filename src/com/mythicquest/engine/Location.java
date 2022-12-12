@@ -1,16 +1,37 @@
 package com.mythicquest.engine;
 
+import java.util.ArrayList;
+
 class Location {
 
     private String name;
+    private ArrayList<String> items;
+    private int x;
+    private int y;
     private Directions directions;
+
+    // ctor.  Will be called to initialize instance variables with data.
+    public Location(String name, ArrayList<String> items, int x, int y) {
+        this.name = name;
+        this.items = items;
+        this.x = x;
+        this.y = y;
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public ArrayList<String> getItems() {
+        return items;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     public Directions getDirections() {
@@ -26,5 +47,8 @@ class Location {
         String east;
         String south;
         String west;
+    }
+    public String toString() {
+        return name;
     }
 }

@@ -1,8 +1,13 @@
 package com.mythicquest.app;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.mythicquest.engine.*;
 
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class MythicQuestApp {
@@ -15,7 +20,10 @@ public class MythicQuestApp {
 
     // initialize world and scanner for user input
     private final Game game = new Game();
-    private Scanner scan = new Scanner(System.in);
+    private Scanner scan =   new Scanner(System.in);
+    //             creates a BufferedReader    Fetches the URL location of the file
+    Reader reader = Files.newBufferedReader(Paths.get("resources/JSON/exitGame.json"));
+    JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
 
     public MythicQuestApp() throws IOException {
 
@@ -56,13 +64,17 @@ public class MythicQuestApp {
 
     private void exitGame(int exitStatus) {
 
-        System.out.println("Oh hey!  Are you wanting exit the game?");
+        // System.out.println("Oh hey!  Are you wanting to exit the game?");
+        // C (12-11-2022 @ 8:14 AM) ->> took out the below "sout" to test, and it works.
+        // System.out.println(parser.get("confirmExit").getAsString());
+
         String exitChoice = scan.nextLine();
 
         if (exitChoice.toLowerCase().contains("yes")) {
             // Terminate JVM
             // By convention, nonzero status code indicates abnormal termination
-            System.out.println("You got it - ending the game now...  See you again soon? :)");
+            // C (12-11-2022 @ 8:11 AM) ->> took out the below "sout" to test, and it works.
+            // System.out.println("You got it - ending the game now...  See you again soon? :)");
             System.exit(exitStatus);
         }
     }

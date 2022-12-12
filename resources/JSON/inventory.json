@@ -1,0 +1,13 @@
+{
+  "categories": {
+    "rand-items": [
+      "broccoli", "avocado", "carrots", "steak", "2-hr-energy", "5-hr-energy", "athletic-green-juice"
+  ],
+    "armor-items": [
+      "helmet", "chest-plate", "belt", "Leggings", "adventure-boots"
+    ],
+    "pharmacy-items": [
+      "zinc", "remdesivir", "vitamin", "pill-packs"
+    ]
+  }
+}

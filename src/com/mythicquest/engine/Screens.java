@@ -5,6 +5,7 @@ import com.apps.util.Console;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Screens {
@@ -77,6 +78,9 @@ public class Screens {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        if (menu.toLowerCase().contains("quit")) {
+            Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
         }
     }
 
