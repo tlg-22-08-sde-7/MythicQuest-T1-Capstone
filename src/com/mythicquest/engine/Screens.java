@@ -5,6 +5,7 @@ import com.apps.util.Console;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Screens {
@@ -58,26 +59,32 @@ public class Screens {
         Console.blankLines(2);
     }
 
-    public static void chooseScreen() {
+    public static void chooseScreen() throws IOException {
         Scanner scan = new Scanner(System.in);
         System.out.println(CYAN + "                (type 'Play game' to begin)" + PURPLE + "       (type 'Read' to see instructions)" + RESET);
 
         String menu = scan.nextLine();
 
-        if (menu.toLowerCase().contains("play")){
+        if (menu.toLowerCase().contains("play")) {
             System.out.println("\nLet's get started!\n" + RESET);
+
+            // go to screen with the first position of the HERO
+            TextParser.textParser2();
         }
 
-        if (menu.toLowerCase().contains("read")){
+        if (menu.toLowerCase().contains("read")) {
             try {
                 instructions();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        if (menu.toLowerCase().contains("quit")) {
+            Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
+        }
     }
 
-    public static void instructions() throws IOException{
+    public static void instructions() throws IOException {
         instructTitle = Files.readString(Path.of("resources/Banners/instructionsTitle.txt"));
         instructHeader = Files.readString(Path.of("resources/Banners/instructionsHeading.txt"));
         instructBody = Files.readString(Path.of("resources/Banners/instructionsBody.txt"));

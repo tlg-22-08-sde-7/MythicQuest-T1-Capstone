@@ -1,0 +1,523 @@
+{
+  "y0": [
+    {
+      "name": "fields",
+      "x": "0",
+      "y": "0",
+      "directions": {
+        "north":"",
+        "east": "forest",
+        "south": "plains",
+        "west": ""
+      },
+      "items": ["boots", "helmet"]
+    },
+    {
+      "name": "forest",
+      "x": "1",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "hills",
+        "south": "mountains",
+        "west": "fields"
+      },
+      "items": []
+    },
+    {
+      "name": "hills",
+      "x": "2",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "road",
+        "south": "road",
+        "west": "forest"
+      },
+      "items": ["gloves", "foodItem"]
+    },
+    {
+      "name": "road",
+      "x": "3",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "hills",
+        "south": "road",
+        "west": "hills"
+      },
+      "items": []
+    },
+    {
+      "name": "hills",
+      "x": "4",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "forest",
+        "south": "road",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "forest",
+      "x": "5",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "mountains",
+        "south": "village1",
+        "west": "hills"
+      },
+      "items": []
+    },
+    {
+      "name": "mountains",
+      "x": "6",
+      "y": "0",
+      "directions": {
+        "north": "",
+        "east": "",
+        "south": "fields",
+        "west": "forest"
+      },
+      "items": ["someItem"]
+    }
+  ],
+
+  "y1": [
+    {
+      "name": "plains",
+      "x": "0",
+      "y": "1",
+      "directions": {
+        "north":"fields",
+        "east": "mountains",
+        "south": "forest",
+        "west": ""
+      },
+      "items": ["broccoli", "belt"]
+    },
+    {
+      "name": "mountains",
+      "x": "1",
+      "y": "1",
+      "directions": {
+        "north": "forest",
+        "east": "plains",
+        "south": "river",
+        "west": "plains"
+      },
+      "items": []
+    },
+    {
+      "name": "plains",
+      "x": "2",
+      "y": "1",
+      "directions": {
+        "north": "hills",
+        "east": "road",
+        "south": "river",
+        "west": "mountains"
+      },
+      "items": []
+    },
+    {
+      "name": "road",
+      "x": "3",
+      "y": "1",
+      "directions": {
+        "north": "road",
+        "east": "road",
+        "south": "bridge",
+        "west": "plains"
+      },
+      "items": []
+    },
+    {
+      "name": "road",
+      "x": "4",
+      "y": "1",
+      "directions": {
+        "north": "hills",
+        "east": "village1",
+        "south": "river",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "village1",
+      "x": "5",
+      "y": "1",
+      "directions": {
+        "north": "forest",
+        "east": "fields",
+        "south": "bridge",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "fields",
+      "x": "6",
+      "y": "1",
+      "directions": {
+        "north": "mountains",
+        "east": "",
+        "south": "river",
+        "west": "village1"
+      },
+      "items": []
+    }
+  ],
+
+  "y2": [
+    {
+      "name": "forest",
+      "x": "0",
+      "y": "2",
+      "directions": {
+        "north":"plains",
+        "east": "river",
+        "south": "river",
+        "west": ""
+      },
+      "items": ["boots"]
+    },
+    {
+      "name": "river",
+      "x": "1",
+      "y": "2",
+      "directions": {
+        "north": "mountains",
+        "east": "river",
+        "south": "hills",
+        "west": "forest"
+      },
+      "items": []
+    },
+    {
+      "name": "river",
+      "x": "2",
+      "y": "2",
+      "directions": {
+        "north": "plains",
+        "east": "bridge",
+        "south": "town",
+        "west": "river"
+      },
+      "items": []
+    },
+    {
+      "name": "bridge",
+      "x": "3",
+      "y": "2",
+      "directions": {
+        "north": "road",
+        "east": "river",
+        "south": "road",
+        "west": "river"
+      },
+      "items": []
+    },
+    {
+      "name": "river",
+      "x": "4",
+      "y": "2",
+      "directions": {
+        "north": "road",
+        "east": "bridge",
+        "south": "plains",
+        "west": "bridge"
+      },
+      "items": []
+    },
+    {
+      "name": "bridge",
+      "x": "5",
+      "y": "2",
+      "directions": {
+        "north": "village1",
+        "east": "river",
+        "south": "forest",
+        "west": "river"
+      },
+      "items": []
+    },
+    {
+      "name": "river",
+      "x": "6",
+      "y": "2",
+      "directions": {
+        "north": "fields",
+        "east": "",
+        "south": "hills",
+        "west": "bridge"
+      },
+      "items": []
+    }
+  ],
+
+  "y3": [
+    {
+      "name": "river",
+      "x": "0",
+      "y": "3",
+      "directions": {
+        "north":"forest",
+        "east": "hills",
+        "south": "plains",
+        "west": ""
+      },
+      "items": ["boots"]
+    },
+    {
+      "name": "hills",
+      "x": "1",
+      "y": "3",
+      "directions": {
+        "north": "river",
+        "east": "town",
+        "south": "forest",
+        "west": "river"
+      },
+      "items": []
+    },
+    {
+      "name": "town",
+      "x": "2",
+      "y": "3",
+      "directions": {
+        "north": "river",
+        "east": "road",
+        "south": "fields",
+        "west": "hills"
+      },
+      "items": ["boots", "helmet", "belt", "leggings"]
+    },
+    {
+      "name": "road",
+      "x": "3",
+      "y": "3",
+      "directions": {
+        "north": "bridge",
+        "east": "plains",
+        "south": "road",
+        "west": "town"
+      },
+      "items": []
+    },
+    {
+      "name": "plains",
+      "x": "4",
+      "y": "3",
+      "directions": {
+        "north": "river",
+        "east": "forest",
+        "south": "forest",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "forest",
+      "x": "5",
+      "y": "3",
+      "directions": {
+        "north": "bridge",
+        "east": "hills",
+        "south": "hills",
+        "west": "plains"
+      },
+      "items": []
+    },
+    {
+      "name": "hills",
+      "x": "6",
+      "y": "3",
+      "directions": {
+        "north": "river",
+        "east": "",
+        "south": "mountains",
+        "west": "forest"
+      },
+      "items": []
+    }
+  ],
+
+  "y4": [
+    {
+      "name": "plains",
+      "x": "0",
+      "y": "4",
+      "directions": {
+        "north":"river",
+        "east": "forest",
+        "south": "village2",
+        "west": ""
+      },
+      "items": []
+    },
+    {
+      "name": "forest",
+      "x": "1",
+      "y": "4",
+      "directions": {
+        "north": "hills",
+        "east": "fields",
+        "south": "road",
+        "west": "plains"
+      },
+      "items": []
+    },
+    {
+      "name": "fields",
+      "x": "2",
+      "y": "4",
+      "directions": {
+        "north": "town",
+        "east": "road",
+        "south": "road",
+        "west": "forest"
+      },
+      "items": ["belt"]
+    },
+    {
+      "name": "road",
+      "x": "3",
+      "y": "4",
+      "directions": {
+        "north": "road",
+        "east": "forest",
+        "south": "road",
+        "west": "fields"
+      },
+      "items": []
+    },
+    {
+      "name": "forest",
+      "x": "4",
+      "y": "4",
+      "directions": {
+        "north": "plains",
+        "east": "hills",
+        "south": "hills",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "hills",
+      "x": "5",
+      "y": "4",
+      "directions": {
+        "north": "forest",
+        "east": "mountains",
+        "south": "mountains",
+        "west": "forest"
+      },
+      "items": ["someFood"]
+    },
+    {
+      "name": "mountains",
+      "x": "6",
+      "y": "4",
+      "directions": {
+        "north": "hills",
+        "east": "",
+        "south": "cave",
+        "west": "hills"
+      },
+      "items": []
+    }
+  ],
+
+  "y5": [
+    {
+      "name": "village2",
+      "x": "0",
+      "y": "5",
+      "directions": {
+        "north":"plains",
+        "east": "road",
+        "south": "",
+        "west": ""
+      },
+      "items": []
+    },
+    {
+      "name": "road",
+      "x": "1",
+      "y": "5",
+      "directions": {
+        "north": "forest",
+        "east": "road",
+        "south": "",
+        "west": "village2"
+      },
+      "items": ["belt"]
+    },
+    {
+      "name": "road",
+      "x": "2",
+      "y": "5",
+      "directions": {
+        "north": "fields",
+        "east": "road",
+        "south": "",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "road",
+      "x": "3",
+      "y": "5",
+      "directions": {
+        "north": "road",
+        "east": "hills",
+        "south": "",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "hills",
+      "x": "4",
+      "y": "5",
+      "directions": {
+        "north": "forest",
+        "east": "mountains",
+        "south": "",
+        "west": "road"
+      },
+      "items": []
+    },
+    {
+      "name": "mountains",
+      "x": "5",
+      "y": "5",
+      "directions": {
+        "north": "hills",
+        "east": "cave",
+        "south": "",
+        "west": ""
+      },
+      "items": []
+    },
+    {
+      "name": "cave",
+      "x": "6",
+      "y": "5",
+      "directions": {
+        "north": "mountains",
+        "east": "",
+        "south": "",
+        "west": "mountains"
+      },
+      "items": ["someHealth"]
+    }
+  ]
+}

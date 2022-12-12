@@ -1,0 +1,12 @@
+{
+  "bossStatus": [
+    {
+    "statusUpdate": "hitpoints",
+    "location": "Cave"
+    },
+    {
+      "statusUpdate": "attack",
+      "location": "Cave"
+    }
+  ]
+}
