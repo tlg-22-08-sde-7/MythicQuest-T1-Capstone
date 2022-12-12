@@ -53,7 +53,9 @@ public class MythicQuestApp {
             }
 
             if (input.toLowerCase().contains("help")) {
-                helpScreen();
+                // C ->> took out on 12-12-2022 @ 12:18 PM.
+                // helpScreen();
+                TextParser.commandsAvailable();
             }
         }
     }

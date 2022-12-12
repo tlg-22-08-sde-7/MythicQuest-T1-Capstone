@@ -66,7 +66,8 @@ public class Screens {
         String menu = scan.nextLine();
 
         if (menu.toLowerCase().contains("play")) {
-            System.out.println("\nLet's get started!\n" + RESET);
+            System.out.println("\nLet's get started!" + RESET);
+            System.out.println("If you need help, type 'help commands'\n");
 
             // go to screen with the first position of the HERO
             TextParser.textParser2();
@@ -81,6 +82,10 @@ public class Screens {
         }
         if (menu.toLowerCase().contains("quit")) {
             Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
+        }
+
+        if(menu.toLowerCase().contains("help")) {
+        TextParser.commandsAvailable();
         }
     }
 
