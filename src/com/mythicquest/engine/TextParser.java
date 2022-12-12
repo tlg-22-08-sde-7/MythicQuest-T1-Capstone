@@ -91,8 +91,9 @@ public class TextParser {
     }
 
     public static void parseCommand(List<String> moveInput) {
-        String verb;
-        String noun;
+        // Initialized to an empty String.
+        String verb = "";
+        String noun = "";
         // List<String> command = new ArrayList<>(Arrays.asList("take", "drop", "go", "look", "get"));
         // List<String> objects = new ArrayList<>(Arrays.asList("gloves", "googles", "weapon", "table"));
 
@@ -103,10 +104,25 @@ public class TextParser {
             noun = moveInput.get(1);
             if (!command.contains(verb)) {
                 System.out.println(verb + " is not a valid verb");
+                commandsAvailable();
+                System.out.println("");
             }
             if (!objects.contains(noun)) {
                 System.out.println(noun + " is not a valid noun");
+                commandsAvailable();
+                System.out.println("");
             }
+        }
+
+        if (verb.equals("help") && noun.equals("commands")) {
+           commandsAvailable();
+        }
+    }
+
+    public static void commandsAvailable() {
+        System.out.println("Valid commands are:");
+        for (int i = 0; i < command.size(); i++) {
+            System.out.print(command.get(i) + ", ");
         }
     }
 
