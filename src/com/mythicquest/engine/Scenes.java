@@ -94,9 +94,28 @@ class Scenes {
         return null;
     }
 
+    public void printMap() {
+        for (int i = 0; i < 99; i++) {
+            System.out.print("_");
+        }
+        System.out.println();
+        for (int row = 0; row < 6; row++) {
+            System.out.print("|");
+            for (int column = 0; column < locations[row].length; column++) {
+                System.out.printf("   %-10s|", locations[row][column]);
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < 99; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         Scenes scenes = new Scenes();
-        //scenes.printLocations();
+        scenes.printMap();
+        // scenes.printLocations();
         Location startingPoint = scenes.getLocations()[2][0];
         Location nextPoint = scenes.goToLocation(startingPoint, Direction.EAST);
         System.out.println(nextPoint);

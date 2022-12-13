@@ -49,22 +49,25 @@ public class TextParser {
         }
     }
 
-    public static void textParser2() throws IOException {
+    public static void textParser2(Player player) throws IOException {
         BufferedReader in;
         String input;
         String output;
 
         in = new BufferedReader(new InputStreamReader(System.in));
-        do {
-            System.out.println("What is your move ? ");
-            input = in.readLine();     // Command to be provided by the user
-            output = runCommand(input);
-            System.out.println(output);
-        } while (!"quit".equals(input));
-        Dialogue.exitGame(1, in);
+        while (true) {
+            do {
+                player.statusInfo();
+                System.out.println("What is your move ? ");
+                input = in.readLine();     // Command to be provided by the user
+                output = runCommand(input, player);
+                System.out.println(output);
+            } while (!"quit".equals(input));
+            Dialogue.exitGame(1, in);
+        }
     }
 
-    public static String runCommand(String Move) {
+    public static String runCommand(String Move, Player player) {
         List<String> wordList;
         String out = "";
         String lowerMove = Move.trim().toLowerCase();
@@ -74,7 +77,7 @@ public class TextParser {
             out = "You must enter a valid command";
         } else {
             wordList = wordList(lowerMove);
-            parseCommand(wordList);
+            parseCommand(wordList, player);
         }
         return out;
     }
@@ -90,7 +93,7 @@ public class TextParser {
         return moveList;
     }
 
-    public static void parseCommand(List<String> moveInput) {
+    public static void parseCommand(List<String> moveInput, Player player) {
         // Initialized to an empty String.
         String verb = "";
         String noun = "";
@@ -116,6 +119,9 @@ public class TextParser {
 
         if (verb.equals("help") && noun.equals("commands")) {
            commandsAvailable();
+        }
+        if(verb.equals("check") && noun.equals("map")) {
+            Screens.scenes.printMap();
         }
     }
 
