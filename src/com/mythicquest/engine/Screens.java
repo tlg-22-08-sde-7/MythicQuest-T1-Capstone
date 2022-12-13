@@ -27,10 +27,13 @@ public class Screens {
     public static String winBanner;
     public static String lostBanner;
 
+    public static Scenes scenes;    // Bringing in Scenes as static
+
     static {
         try {
             winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
             lostBanner = Files.readString(Path.of("resources/Banners/endLost.txt"));
+            scenes = new Scenes();  // Create an Instance of Scenes (aka the map)
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,8 +72,12 @@ public class Screens {
             System.out.println("\nLet's get started!" + RESET);
             System.out.println("If you need help, type 'help commands'\n");
 
+            // Get start location and create a Player
+            Location startingPoint = scenes.getLocations()[0][0];
+            Player player = new Player(startingPoint);
+
             // go to screen with the first position of the HERO
-            TextParser.textParser2();
+            TextParser.textParser2(player);
         }
 
         if (menu.toLowerCase().contains("read")) {

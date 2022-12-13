@@ -51,4 +51,8 @@ class Location {
     public String toString() {
         return name;
     }
+
+    public String moreInfo() {
+        return name + ", x:" + x + ", y:" + y;
+    }
 }
