@@ -4,6 +4,7 @@
       "name": "fields",
       "x": "0",
       "y": "0",
+      "description": "The fields around you are golden and shimmering in the dazzling sparkles of light, as the growing crops wave gently back and forth in the gentle breeze",
       "directions": {
         "north":"",
         "east": "forest",
@@ -16,6 +17,7 @@
       "name": "forest",
       "x": "1",
       "y": "0",
+      "description": "Forest, forest, forest everywhere.  Green, brown, dense, and a light fog hanging in the canopy above...  Feels ominous, but maybe not, you could just be hungry?",
       "directions": {
         "north": "",
         "east": "hills",
@@ -28,6 +30,7 @@
       "name": "hills",
       "x": "2",
       "y": "0",
+      "description": "The hills have come alive with the sound of -- wait, are those footsteps?  Best look around to be safe.",
       "directions": {
         "north": "",
         "east": "road",
@@ -40,6 +43,7 @@
       "name": "road",
       "x": "3",
       "y": "0",
+      "description": "How is this possible?  You've stumbled upon a road in this vast empty, barren land.",
       "directions": {
         "north": "",
         "east": "hills",
@@ -52,6 +56,7 @@
       "name": "hills",
       "x": "4",
       "y": "0",
+      "description": "Oh the hills, mighty and rolling like waves of grandeur before you",
       "directions": {
         "north": "",
         "east": "forest",
@@ -64,6 +69,7 @@
       "name": "forest",
       "x": "5",
       "y": "0",
+      "description": "More like an entangled mess of bramble, vines, and thicket, this appears to be a forest.",
       "directions": {
         "north": "",
         "east": "mountains",
@@ -76,13 +82,14 @@
       "name": "mountains",
       "x": "6",
       "y": "0",
+      "description": "If only these mountains were like the Alps, but alas they are the Ozarks.",
       "directions": {
         "north": "",
         "east": "",
         "south": "fields",
         "west": "forest"
       },
-      "items": ["someItem"]
+      "items": ["carrots"]
     }
   ],
 
@@ -121,7 +128,7 @@
         "south": "river",
         "west": "mountains"
       },
-      "items": []
+      "items": ["helmet", "wheatgrass"]
     },
     {
       "name": "road",
