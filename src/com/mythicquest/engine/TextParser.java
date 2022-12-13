@@ -117,7 +117,7 @@ public class TextParser {
             }
         }
 
-        if (verb.equals("help") && noun.equals("commands")) {
+        if (command.contains("help")) {
            commandsAvailable();
         }
         if(verb.equals("check") && noun.equals("map")) {
@@ -126,9 +126,11 @@ public class TextParser {
     }
 
     public static void commandsAvailable() {
+        System.out.println();
         System.out.println("Valid commands are:");
         for (int i = 0; i < command.size(); i++) {
             System.out.print(command.get(i) + ", ");
+            System.out.println();
         }
     }
 

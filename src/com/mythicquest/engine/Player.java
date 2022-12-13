@@ -33,9 +33,13 @@ class Player {
         }
 
         public void statusInfo() {
+            System.out.println();
             System.out.println("Current health: " + healthLevel);
             System.out.println("Location: " + location.moreInfo());
             checkItem();
+
+            System.out.println();
+
         }
 
 }

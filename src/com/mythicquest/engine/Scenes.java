@@ -95,18 +95,26 @@ class Scenes {
     }
 
     public void printMap() {
-        for (int i = 0; i < 99; i++) {
+        int rowCount = 0;
+
+        System.out.printf("%13s", "X-0");
+        for (int i = 1; i < 7; i++) {
+            System.out.printf("%14s", "X-" + i);
+        }
+        System.out.println();
+        for (int i = 0; i < 104; i++) {
             System.out.print("_");
         }
         System.out.println();
         for (int row = 0; row < 6; row++) {
-            System.out.print("|");
+            rowCount++;
+            System.out.print("Y-" + rowCount + "  |");
             for (int column = 0; column < locations[row].length; column++) {
                 System.out.printf("   %-10s|", locations[row][column]);
             }
             System.out.println();
         }
-        for (int i = 0; i < 99; i++) {
+        for (int i = 0; i < 104; i++) {
             System.out.print("-");
         }
         System.out.println();
