@@ -24,7 +24,7 @@
         "south": "mountains",
         "west": "fields"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "hills",
@@ -50,7 +50,7 @@
         "south": "road",
         "west": "hills"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "hills",
@@ -63,7 +63,7 @@
         "south": "road",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "forest",
@@ -76,7 +76,7 @@
         "south": "village1",
         "west": "hills"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "mountains",
@@ -98,6 +98,7 @@
       "name": "plains",
       "x": "0",
       "y": "1",
+      "description": "The plains stretch before you, lush and teeming with vibrancy.",
       "directions": {
         "north":"fields",
         "east": "mountains",
@@ -110,18 +111,20 @@
       "name": "mountains",
       "x": "1",
       "y": "1",
+      "description": "Soaring high into the sky, the peaks before you are awe-inspiring and a shiver goes up your back as you contemplate the nature of metaphysical physics.",
       "directions": {
         "north": "forest",
         "east": "plains",
         "south": "river",
         "west": "plains"
       },
-      "items": []
+      "items": ["sandwich", "sour cream"]
     },
     {
       "name": "plains",
       "x": "2",
       "y": "1",
+      "description": "Gently undulating on all sides, the plains are abundant under the clouds.",
       "directions": {
         "north": "hills",
         "east": "road",
@@ -134,49 +137,53 @@
       "name": "road",
       "x": "3",
       "y": "1",
+      "description": "Stretching before you and behind, is a road that seems to have seen better days.",
       "directions": {
         "north": "road",
         "east": "road",
         "south": "bridge",
         "west": "plains"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "road",
       "x": "4",
       "y": "1",
+      "description": "Gently undulating on all sides, the plains are abundant under the clouds.",
       "directions": {
         "north": "hills",
         "east": "village1",
         "south": "river",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "village1",
       "x": "5",
       "y": "1",
+      "description": "As the car approaches the village, the driver notices the increased police presence and roadblocks. Upon reaching the entrance of the village, a police officer informs them that the village is under lockdown due to a Covid outbreak. The driver must show proof of their reasons for entering the village and follow strict guidelines while inside the village.",
       "directions": {
         "north": "forest",
         "east": "fields",
         "south": "bridge",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "fields",
       "x": "6",
       "y": "1",
+      "description": "The peacefulness of the scene across the fields was interrupted by the chirping of birds and the occasional lowing of a cow.",
       "directions": {
         "north": "mountains",
         "east": "",
         "south": "river",
         "west": "village1"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     }
   ],
 
@@ -185,6 +192,7 @@
       "name": "forest",
       "x": "0",
       "y": "2",
+      "description": "The dense canopy of trees blocks out most of the sunlight, creating a cool, shady atmosphere.",
       "directions": {
         "north":"plains",
         "east": "river",
@@ -197,73 +205,79 @@
       "name": "river",
       "x": "1",
       "y": "2",
+      "description": "The river flows gently through a lush forest, the sound of the water softly rushing over rocks and pebbles creating a peaceful atmosphere. The trees on either side provide shade and shelter, birds chirping in the branches. The water is crystal clear, small fish darting beneath the surface. A gentle breeze blows, carrying the fresh scent of nature. The river is a tranquil oasis, inviting relaxation and tranquility.",
       "directions": {
         "north": "mountains",
         "east": "river",
         "south": "hills",
         "west": "forest"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "river",
       "x": "2",
       "y": "2",
+      "description": "The river wound its way through the dense forest, its waters dark and mysterious. The eerie stillness of the surrounding trees only heightened the sense of unease as it crept silently onwards.",
       "directions": {
         "north": "plains",
         "east": "bridge",
         "south": "town",
         "west": "river"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "bridge",
       "x": "3",
       "y": "2",
+      "description": "The supports are uneven and appear to be rotting, causing the bridge to lean to one side.",
       "directions": {
         "north": "road",
         "east": "river",
         "south": "road",
         "west": "river"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "river",
       "x": "4",
       "y": "2",
+      "description": "The river churned and boiled, white foam frothing at its banks as it rushed towards the distant sea.",
       "directions": {
         "north": "road",
         "east": "bridge",
         "south": "plains",
         "west": "bridge"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "bridge",
       "x": "5",
       "y": "2",
+      "description": "The handrails are missing in some places, leaving gaps where someone could easily fall through.",
       "directions": {
         "north": "village1",
         "east": "river",
         "south": "forest",
         "west": "river"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "river",
       "x": "6",
       "y": "2",
+      "description": "The river flowed gently, its surface mirror-smooth and glinting in the sunlight. But below the surface, hidden currents tugged and pulled at anything caught in their grasp.",
       "directions": {
         "north": "fields",
         "east": "",
         "south": "hills",
         "west": "bridge"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     }
   ],
 
@@ -272,6 +286,7 @@
       "name": "river",
       "x": "0",
       "y": "3",
+      "description": "The river raged, its tumultuous waters rushing and churning as it tore through the landscape, carving deep trenches in its wake.",
       "directions": {
         "north":"forest",
         "east": "hills",
@@ -284,18 +299,20 @@
       "name": "hills",
       "x": "1",
       "y": "3",
+      "description": "Hills with a peaceful, serene atmosphere, perfect for relaxation and contemplation.",
       "directions": {
         "north": "river",
         "east": "town",
         "south": "forest",
         "west": "river"
       },
-      "items": []
+      "items": ["bag of brownies", "vanilla latte in a can"]
     },
     {
       "name": "town",
       "x": "2",
       "y": "3",
+      "description": "As I walked through the narrow streets of the Italian town, I was overwhelmed by the sights, sounds, and smells of the bustling marketplace. Vendors hawked their wares, shouting out to passersby in loud voices, while the smell of fresh bread, cheese, and produce filled the air. I dodged the throngs of people, taking in the colorful buildings and vibrant energy of the town. It was a true feast for the senses.",
       "directions": {
         "north": "river",
         "east": "road",
@@ -308,49 +325,53 @@
       "name": "road",
       "x": "3",
       "y": "3",
+      "description": "The old, empty road stretched out before me, its cracked and potholed surface a testament to years of neglect and disuse.",
       "directions": {
         "north": "bridge",
         "east": "plains",
         "south": "road",
         "west": "town"
       },
-      "items": []
+      "items": ["bag of brownies", "vanilla latte in a can"]
     },
     {
       "name": "plains",
       "x": "4",
       "y": "3",
+      "description": "A grassy oasis that's just begging to be explored, but only if you're feeling particularly adventurous.",
       "directions": {
         "north": "river",
         "east": "forest",
         "south": "forest",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "mocha latte in a can"]
     },
     {
       "name": "forest",
       "x": "5",
       "y": "3",
+      "description": "The presence of wildlife and the cycle of life and death in the forest serves as a reminder of the interconnectedness of all living things.",
       "directions": {
         "north": "bridge",
         "east": "hills",
         "south": "hills",
         "west": "plains"
       },
-      "items": []
+      "items": ["bag of brownies", "strawberry latte in a can"]
     },
     {
       "name": "hills",
       "x": "6",
       "y": "3",
+      "description": "Hills with a rustic charm, featuring old stone walls and quaint cottages.",
       "directions": {
         "north": "river",
         "east": "",
         "south": "mountains",
         "west": "forest"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     }
   ],
 
@@ -359,30 +380,33 @@
       "name": "plains",
       "x": "0",
       "y": "4",
+      "description": "The plains were so featureless, they made you feel like you were in a never-ending game of Red Light, Green Light.",
       "directions": {
         "north":"river",
         "east": "forest",
         "south": "village2",
         "west": ""
       },
-      "items": []
+      "items": ["bag of brownies", "raspberry latte in a can"]
     },
     {
       "name": "forest",
       "x": "1",
       "y": "4",
+      "description": "The tall trees tower overhead, creating a feeling of smallness and insignificance in the face of nature's power.",
       "directions": {
         "north": "hills",
         "east": "fields",
         "south": "road",
         "west": "plains"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "fields",
       "x": "2",
       "y": "4",
+      "description": "The setting was serene and calming, inviting one to take a deep breath and appreciate the beauty of nature.",
       "directions": {
         "north": "town",
         "east": "road",
@@ -395,49 +419,53 @@
       "name": "road",
       "x": "3",
       "y": "4",
+      "description": "The once-bustling road was now eerily quiet, its deserted storefronts and abandoned cars a reminder of better days gone by.",
       "directions": {
         "north": "road",
         "east": "forest",
         "south": "road",
         "west": "fields"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "forest",
       "x": "4",
       "y": "4",
+      "description": "The dense foliage provides a sense of being cocooned and protected from the outside world.",
       "directions": {
         "north": "plains",
         "east": "hills",
         "south": "hills",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "hills",
       "x": "5",
       "y": "4",
+      "description": "Steep and rocky hills abound, with sparse vegetation and jagged crags.",
       "directions": {
         "north": "forest",
         "east": "mountains",
         "south": "mountains",
         "west": "forest"
       },
-      "items": ["someFood"]
+      "items": ["Irish coffee"]
     },
     {
       "name": "mountains",
       "x": "6",
       "y": "4",
+      "description": "A popular destination for outdoor enthusiasts and adventure seekers, offering a range of activities from climbing and hiking to skiing and snowboarding.",
       "directions": {
         "north": "hills",
         "east": "",
         "south": "cave",
         "west": "hills"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     }
   ],
 
@@ -446,18 +474,20 @@
       "name": "village2",
       "x": "0",
       "y": "5",
+      "description": "As we entered the run-down village, we were struck by the dilapidated buildings and crumbling infrastructure. The streets were littered with trash and debris, and the few residents we saw looked weary and worn. It was clear that this once thriving community had fallen on hard times.",
       "directions": {
         "north":"plains",
         "east": "road",
         "south": "",
         "west": ""
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "road",
       "x": "1",
       "y": "5",
+      "description": "As I navigated the winding, empty road, I couldn't help but feel a sense of eerie isolation, as if I were the last person left on earth.",
       "directions": {
         "north": "forest",
         "east": "road",
@@ -470,61 +500,66 @@
       "name": "road",
       "x": "2",
       "y": "5",
+      "description": "The road was overgrown with weeds and grass, its once-smooth surface now covered in debris and rubble.",
       "directions": {
         "north": "fields",
         "east": "road",
         "south": "",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "road",
       "x": "3",
       "y": "5",
+      "description": "The empty road stretched out before me, a seemingly endless expanse of cracked and crumbling pavement.",
       "directions": {
         "north": "road",
         "east": "hills",
         "south": "",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "hills",
       "x": "4",
       "y": "5",
+      "description": "You see before you rolling hills with lush green grass and patches of wildflowers.",
       "directions": {
         "north": "forest",
         "east": "mountains",
         "south": "",
         "west": "road"
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "mountains",
       "x": "5",
       "y": "5",
+      "description": "Mountains form a natural barrier that can affect weather patterns, wind direction, and other environmental factors.",
       "directions": {
         "north": "hills",
         "east": "cave",
         "south": "",
         "west": ""
       },
-      "items": []
+      "items": ["bag of brownies", "caramel latte in a can"]
     },
     {
       "name": "cave",
       "x": "6",
       "y": "5",
+      "description": "The cavernous cave loomed ahead, its entrance beckoning with a dark, mysterious allure. As we approached, the sound of dripping water echoed off the stone walls, adding to the eerie atmosphere. The air inside was damp and musty, with a faint hint of decay.\n\nStepping cautiously into the cave, we were immediately struck by its vastness. The ceiling soared overhead, disappearing into the darkness above. The walls were rough and jagged, as if they had been carved out by some ancient, powerful force.\n\nAs we made our way deeper into the cave, the darkness closed in around us, making it difficult to see more than a few feet in front of us. We could hear the sound of our own footsteps, muffled by the damp earth beneath our feet.\n\nDespite the fear that crept over us, we continued forward, drawn by the sense of adventure and the unknown. We could feel the weight of the cave pressing down on us, as if the very walls were alive and watching our every move.\n\nSuddenly, we stumbled upon a vast underground chamber, filled with sparkling crystal formations and glittering stalactites. The light from our torches danced across the sparkling walls, creating a dazzling display of color and beauty.\n\nBut even as we marveled at the beauty of the cave, we couldn't shake the feeling of being watched. We knew that we were not alone in this dark, mysterious place, and the thought sent a shiver down our spines.",
       "directions": {
         "north": "mountains",
         "east": "",
         "south": "",
         "west": "mountains"
       },
-      "items": ["someHealth"]
+      "items": ["chicken gumbo"]
     }
   ]
 }
