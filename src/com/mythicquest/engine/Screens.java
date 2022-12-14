@@ -70,6 +70,7 @@ public class Screens {
 
         if (menu.toLowerCase().contains("play")) {
             System.out.println("\nLet's get started!" + RESET);
+            System.out.println("If you want to see the Map, type 'check map'");
             System.out.println("If you need help, type 'help commands'\n");
 
             // Get start location and create a Player

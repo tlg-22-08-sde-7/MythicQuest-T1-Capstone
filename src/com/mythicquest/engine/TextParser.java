@@ -117,21 +117,66 @@ public class TextParser {
             }
         }
 
-        if (command.contains("help")) {
+         if (verb.equals("help") && noun.equals("commands")) {
            commandsAvailable();
         }
-        if(verb.equals("check") && noun.equals("map")) {
+         else if(verb.equals("check") && noun.equals("map")) {
             Screens.scenes.printMap();
         }
+
+        else if(verb.equals("go")) {
+            movePlayer(player, noun);
+        }
+    }
+
+    private static void movePlayer(Player player, String noun) {
+        Location newLocation = null;
+        if(noun.equals("north")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
+            if (newLocation == null) {
+                System.out.println("You can't go North.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("east")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
+            if (newLocation == null) {
+                System.out.println("You can't go East.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("south")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
+            if (newLocation == null) {
+                System.out.println("You can't go South.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("west")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
+            if (newLocation == null) {
+                System.out.println("You can't go West.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else System.out.println("You have LOST your way !");
     }
 
     public static void commandsAvailable() {
         System.out.println();
+        System.out.println("As you play this game, please remember that commands require both a verb and a noun");
+        System.out.println();
         System.out.println("Valid commands are:");
         for (int i = 0; i < command.size(); i++) {
-            System.out.print(command.get(i) + ", ");
-            System.out.println();
+            System.out.print(" | " + command.get(i));
+        }
+        System.out.println("\nValid objects are:");
+        for (int i = 0; i < objects.size(); i++) {
+            System.out.print(" | " + objects.get(i));
         }
     }
-
 }
