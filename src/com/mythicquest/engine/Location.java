@@ -9,13 +9,19 @@ class Location {
     private int x;
     private int y;
     private Directions directions;
+    private String description;
 
     // ctor.  Will be called to initialize instance variables with data.
-    public Location(String name, ArrayList<String> items, int x, int y) {
+    public Location(String name, ArrayList<String> items, int x, int y, String description) {
         this.name = name;
         this.items = items;
         this.x = x;
         this.y = y;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getName() {

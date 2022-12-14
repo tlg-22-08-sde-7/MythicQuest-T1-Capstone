@@ -33,9 +33,30 @@ class Player {
         }
 
         public void statusInfo() {
+            System.out.println();
             System.out.println("Current health: " + healthLevel);
             System.out.println("Location: " + location.moreInfo());
+            System.out.println("Description: " + location.getDescription());
+            System.out.println("Items available: " + location.getItems());
             checkItem();
+
+            System.out.println();
+
         }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public ArrayList<String> getInventory() {
+        return inventory;
+    }
+
+    public int getHealthLevel() {
+        return healthLevel;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 }
