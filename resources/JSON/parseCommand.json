@@ -1,6 +1,6 @@
 {
   "commands": {
-    "command": ["take", "drop", "go", "look", "get"],
-    "objects": ["gloves", "googles", "weapon", "table"]
+    "command": ["go", "help", "check"],
+    "objects": ["commands", "status", "map", "east", "west", "north", "south"]
   }
 }

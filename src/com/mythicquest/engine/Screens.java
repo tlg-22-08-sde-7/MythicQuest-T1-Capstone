@@ -27,10 +27,13 @@ public class Screens {
     public static String winBanner;
     public static String lostBanner;
 
+    public static Scenes scenes;    // Bringing in Scenes as static
+
     static {
         try {
             winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
             lostBanner = Files.readString(Path.of("resources/Banners/endLost.txt"));
+            scenes = new Scenes();  // Create an Instance of Scenes (aka the map)
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,10 +69,16 @@ public class Screens {
         String menu = scan.nextLine();
 
         if (menu.toLowerCase().contains("play")) {
-            System.out.println("\nLet's get started!\n" + RESET);
+            System.out.println("\nLet's get started!" + RESET);
+            System.out.println("If you want to see the Map, type 'check map'");
+            System.out.println("If you need help, type 'help commands'\n");
+
+            // Get start location and create a Player
+            Location startingPoint = scenes.getLocations()[0][0];
+            Player player = new Player(startingPoint);
 
             // go to screen with the first position of the HERO
-            TextParser.textParser2();
+            TextParser.textParser2(player);
         }
 
         if (menu.toLowerCase().contains("read")) {
@@ -81,6 +90,10 @@ public class Screens {
         }
         if (menu.toLowerCase().contains("quit")) {
             Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
+        }
+
+        if(menu.toLowerCase().contains("help")) {
+        TextParser.commandsAvailable();
         }
     }
 
