@@ -42,7 +42,7 @@ public class MythicQuestApp {
     private void play() {
         int quit = 0;
 
-        while (game.getRunning() == true) {
+        while (game.getRunning()) {
             clearScreen();
 
             String input = scan.nextLine();  // "quit the game" using Parser

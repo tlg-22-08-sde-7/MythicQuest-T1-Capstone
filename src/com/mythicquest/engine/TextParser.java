@@ -70,6 +70,7 @@ public class TextParser {
     public static String runCommand(String Move, Player player) {
         List<String> wordList;
         String out = "";
+        System.out.println("Move: " + Move);
         String lowerMove = Move.trim().toLowerCase();
 
         if (lowerMove.equals("")) {
@@ -99,22 +100,21 @@ public class TextParser {
         String noun = "";
         // List<String> command = new ArrayList<>(Arrays.asList("take", "drop", "go", "look", "get"));
         // List<String> objects = new ArrayList<>(Arrays.asList("gloves", "googles", "weapon", "table"));
-
+        if (moveInput.equals("quit") || moveInput.equals("q")){
+            quitGame();
+        }
         if (moveInput.size() != 2) {
-            System.out.println("Please provide 2 worded commands only");
+                System.out.println("Please provide 2 worded commands only");
+
         } else {
             verb = moveInput.get(0);
             noun = moveInput.get(1);
-            if (!command.contains(verb)) {
+            if (!command.contains(verb) || !objects.contains(noun)) {
                 System.out.println(verb + " is not a valid verb");
                 commandsAvailable();
                 System.out.println("");
             }
-            if (!objects.contains(noun)) {
-                System.out.println(noun + " is not a valid noun");
-                commandsAvailable();
-                System.out.println("");
-            }
+
         }
 
          if (verb.equals("help") && noun.equals("commands")) {
@@ -129,6 +129,10 @@ public class TextParser {
         }
     }
 
+    public static void quitGame(){
+        System.out.println("You have exited Mythic Quest. Thanks for playing");
+        System.exit(0);
+    }
     private static void movePlayer(Player player, String noun) {
         Location newLocation = null;
         if(noun.equals("north")) {
