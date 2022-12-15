@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Dialogue {
-
     // TESTING ExitGame from MythicQuestApp.java
 
     // Used Buffered Reader to re-use it, from line 23 (in MysticQuestApp)
