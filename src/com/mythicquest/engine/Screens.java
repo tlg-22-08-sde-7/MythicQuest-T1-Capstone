@@ -113,5 +113,6 @@ public class Screens {
         Console.blankLines(2);
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
+        chooseScreen();
     }
 }
