@@ -109,7 +109,7 @@ public class Screens {
         Console.pause(1000);
         Console.blankLines(2);
         System.out.println(GREEN + instructBody + RESET);
-        Console.pause(7700);
+        Console.pause(10000);
         Console.blankLines(2);
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
