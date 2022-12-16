@@ -39,6 +39,7 @@ public class Screens {
         }
     }
 
+    //this calls splash screen (banners)
     public static void startScreen() throws IOException {
         welcomeBanner();
         getUserInput();
@@ -73,7 +74,7 @@ public class Screens {
             System.out.println("If you want to see the Map, type 'check map'");
             System.out.println("If you need help, type 'help commands'\n");
 
-            // Get start location and create a Player
+            // Sets the starting location and creates an instance of a Player
             Location startingPoint = scenes.getLocations()[0][0];
             Player player = new Player(startingPoint);
 
@@ -81,15 +82,13 @@ public class Screens {
             TextParser.textParser2(player);
         }
 
+        //handles if a user wants to see instructions
         if (menu.toLowerCase().contains("read")) {
             try {
                 instructions();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        if (menu.toLowerCase().contains("quit")) {
-            Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
         }
 
         if(menu.toLowerCase().contains("help")) {
