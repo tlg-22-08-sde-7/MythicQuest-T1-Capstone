@@ -16,9 +16,21 @@ class Player {
 
     // Fight enemies
     public void fight(Enemy enemy) {
-        while (getHealthLevel() > 0 && enemy.getHealth() > 0) {
-//            setHealthLevel();
+        while (getHealthLevel() > 0 && enemy.getHealth() > 0)
+        {
+            enemy.setHealth(enemy.getHealth() - attack());
+            setHealthLevel(getHealthLevel() - enemy.attack());
         }
+        if (getHealthLevel() > 0) {
+            System.out.println("Player wins");
+        }
+        else {
+            System.out.println("Enemy wins");
+        }
+    }
+
+    private int attack() {
+        return (int) (Math.random() * 10) + 1;
     }
 
     // Add items to inventory
