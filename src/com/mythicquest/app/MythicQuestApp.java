@@ -1,5 +1,6 @@
 package com.mythicquest.app;
 
+import com.apps.util.Console;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mythicquest.engine.*;
@@ -9,6 +10,10 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
+
+/*
+ * The class serves as the game controller. It contains all the methods that will be used to control gameplay.
+ */
 
 public class MythicQuestApp {
     // statics
@@ -30,6 +35,7 @@ public class MythicQuestApp {
     }
 
     public void start() throws Exception {
+        Console.clear();
         welcome();
         play();
         // etc
