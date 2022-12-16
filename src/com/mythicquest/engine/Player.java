@@ -14,6 +14,14 @@ class Player {
         this.healthLevel = 100;
     }
 
+    // Fight enemies
+    public void fight(Enemy enemy) {
+        while (getHealthLevel() > 0 && enemy.getHealth() > 0)
+        {
+//            setHealthLevel();
+        }
+    }
+
     // Add items to inventory
     public void addItem(String itemAdd) {
         inventory.add(itemAdd);
@@ -54,6 +62,10 @@ class Player {
 
     public int getHealthLevel() {
         return healthLevel;
+    }
+
+    public void setHealthLevel(int healthLevel) {
+        this.healthLevel = healthLevel;
     }
 
     public void setLocation(Location location) {
