@@ -46,6 +46,7 @@ public class Screens {
         chooseScreen();
     }
 
+
     public static void getUserInput() {
         System.out.println("                                       Choose an option:" + RESET);
         Console.blankLines(1);
@@ -113,5 +114,16 @@ public class Screens {
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
         chooseScreen();
+    }
+
+    public static void endingOutcome(boolean outcome) throws IOException {
+        if (outcome) {
+            System.out.println(winBanner);
+            System.out.println("Hurray, COVID has been defeated! Thank you, hero!");
+        }
+        else {
+            System.out.println(lostBanner);
+            System.out.println("You have failed to defeat the boss. Better luck next time!");
+        }
     }
 }

@@ -85,7 +85,4 @@ public class MythicQuestApp {
         // call instructions
         // offers help based on keywords
     }
-
-
-
 }
