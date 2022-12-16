@@ -16,8 +16,7 @@ class Player {
 
     // Fight enemies
     public void fight(Enemy enemy) {
-        while (getHealthLevel() > 0 && enemy.getHealth() > 0)
-        {
+        while (getHealthLevel() > 0 && enemy.getHealth() > 0) {
 //            setHealthLevel();
         }
     }
