@@ -143,6 +143,12 @@ public class TextParser {
         else if (verb.equals("check")){
             checkItem(player, noun);
          }
+        else if (verb.equals("eat")){
+            consumeItem(player, noun);
+         }
+        else if (verb.equals("drink")){
+            consumeItem(player, noun);
+         }
 
     }
 
@@ -166,13 +172,8 @@ public class TextParser {
         }
     }
 
-    public static void checkItem(Player player, String item){
-        if (player.getInventory().contains(item)){
-            System.out.println(item + " is in your inventory");
-        }else {
-            System.out.println(item + " is not in your inventory");
-        }
-    }
+
+
 
     public static void quitGame(){
         System.out.println("You have exited Mythic Quest. Thanks for playing");
@@ -228,4 +229,50 @@ public class TextParser {
             System.out.print(" | " + objects.get(i));
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void checkItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            System.out.println(item + " is in your inventory");
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
+
+    public static void consumeItem(Player player, String randItems){
+        if (player.getInventory().contains(randItems)){
+            player.removeItem(randItems);
+            addHealth(player);
+        }else {
+            System.out.println(randItems + " is not in your inventory");
+        }
+    }
+    public static void addHealth(Player player){
+        player.setHealthLevel(player.getHealthLevel() + 10);
+        System.out.println("Health level is now " + player.getHealthLevel());
+    }
+
+
 }
