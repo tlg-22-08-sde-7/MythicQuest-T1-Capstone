@@ -29,10 +29,6 @@ public class Screens {
 
     public static Scenes scenes;    // Bringing in Scenes as static
 
-    public static void main(String[] args) throws IOException {
-        endingOutcome(true);
-    }
-
     static {
         try {
             winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
