@@ -106,6 +106,7 @@ public class TextParser {
         // List<String> objects = new ArrayList<>(Arrays.asList("gloves", "googles", "weapon", "table"));
         if (moveInput.equals("quit") || moveInput.equals("q")){
             quitGame();
+
         }
         if (moveInput.size() != 2) {
                 System.out.println("Please provide 2 worded commands only");
