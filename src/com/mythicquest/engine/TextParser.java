@@ -21,6 +21,8 @@ public class TextParser {
     private static List<String> command;
     private static List<String> objects;
 
+
+
     static {             // First time class is used, it runs the static block.  Populates list in line 18 & 19.
         // Initialize ArrayLists.
         command = new ArrayList<>();
@@ -40,10 +42,11 @@ public class TextParser {
         JsonArray verbs = commands.get("command").getAsJsonArray();
         JsonArray nouns = commands.get("objects").getAsJsonArray();
 
+        //adds verbs data from json into an array list
         for (int i = 0; i < verbs.size(); i++) {
             command.add(verbs.get(i).getAsString());
         }
-
+        //adds nouns data from json into an array list
         for (int i = 0; i < nouns.size(); i++) {
             objects.add(nouns.get(i).getAsString());
         }
@@ -60,6 +63,7 @@ public class TextParser {
                 player.statusInfo();
                 System.out.println("What is your move ? ");
                 input = in.readLine();     // Command to be provided by the user
+              //takes user input and calls runCommand function
                 output = runCommand(input, player);
                 System.out.println(output);
             } while (!"quit".equals(input));
@@ -70,18 +74,21 @@ public class TextParser {
     public static String runCommand(String Move, Player player) {
         List<String> wordList;
         String out = "";
+        System.out.println("Move: " + Move);
         String lowerMove = Move.trim().toLowerCase();
 
         if (lowerMove.equals("")) {
-
             out = "You must enter a valid command";
         } else {
+            //sends userinput to wordlist which removes random characters
             wordList = wordList(lowerMove);
+            //then it calls parseCommand which executes verb/noun
             parseCommand(wordList, player);
         }
         return out;
     }
 
+    //removes special characters from user input
     public static List<String> wordList(String input) {
         String delims = "[ \t,.;:/?!\"']+";
         List<String> moveList = new ArrayList<>();
@@ -99,22 +106,22 @@ public class TextParser {
         String noun = "";
         // List<String> command = new ArrayList<>(Arrays.asList("take", "drop", "go", "look", "get"));
         // List<String> objects = new ArrayList<>(Arrays.asList("gloves", "googles", "weapon", "table"));
+        if (moveInput.equals("quit") || moveInput.equals("q")){
+            quitGame();
 
+        }
         if (moveInput.size() != 2) {
-            System.out.println("Please provide 2 worded commands only");
+                System.out.println("Please provide 2 worded commands only");
+
         } else {
             verb = moveInput.get(0);
             noun = moveInput.get(1);
-            if (!command.contains(verb)) {
-                System.out.println(verb + " is not a valid verb");
+            if (!command.contains(verb) || !objects.contains(noun)) {
+                System.out.println("That is not a valid command");
                 commandsAvailable();
                 System.out.println("");
             }
-            if (!objects.contains(noun)) {
-                System.out.println(noun + " is not a valid noun");
-                commandsAvailable();
-                System.out.println("");
-            }
+
         }
 
          if (verb.equals("help") && noun.equals("commands")) {
@@ -127,8 +134,51 @@ public class TextParser {
         else if(verb.equals("go")) {
             movePlayer(player, noun);
         }
+        else if (verb.equals("get")){
+            getItem(player, noun);
+         }
+        else if (verb.equals("drop")){
+             dropItem(player, noun);
+         }
+        else if (verb.equals("check")){
+            checkItem(player, noun);
+         }
+        else if (verb.equals("eat")){
+            consumeItem(player, noun);
+         }
+        else if (verb.equals("drink")){
+            consumeItem(player, noun);
+         }
+
     }
 
+
+    private static void getItem(Player player, String item){
+        if (player.getLocation().getItems().contains(item) && !player.getInventory().contains(item)){
+            player.addItem(item);
+            player.getLocation().getItems().remove(item);
+        } else if (player.getInventory().contains(item)){
+            System.out.println(item + " is already in your inventory.");
+        }else {
+            System.out.println(item + " is not in this location.");
+        }
+    }
+
+    public static void dropItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            player.removeItem(item);
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
+
+
+
+
+    public static void quitGame(){
+        System.out.println("You have exited Mythic Quest. Thanks for playing");
+        System.exit(0);
+    }
     private static void movePlayer(Player player, String noun) {
         Location newLocation = null;
         if(noun.equals("north")) {
@@ -179,4 +229,50 @@ public class TextParser {
             System.out.print(" | " + objects.get(i));
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void checkItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            System.out.println(item + " is in your inventory");
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
+
+    public static void consumeItem(Player player, String randItems){
+        if (player.getInventory().contains(randItems)){
+            player.removeItem(randItems);
+            addHealth(player);
+        }else {
+            System.out.println(randItems + " is not in your inventory");
+        }
+    }
+    public static void addHealth(Player player){
+        player.setHealthLevel(player.getHealthLevel() + 10);
+        System.out.println("Health level is now " + player.getHealthLevel());
+    }
+
+
 }

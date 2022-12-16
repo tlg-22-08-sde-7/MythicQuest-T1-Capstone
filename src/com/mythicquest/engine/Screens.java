@@ -39,11 +39,13 @@ public class Screens {
         }
     }
 
+    //this calls splash screen (banners)
     public static void startScreen() throws IOException {
         welcomeBanner();
         getUserInput();
         chooseScreen();
     }
+
 
     public static void getUserInput() {
         System.out.println("                                       Choose an option:" + RESET);
@@ -73,7 +75,7 @@ public class Screens {
             System.out.println("If you want to see the Map, type 'check map'");
             System.out.println("If you need help, type 'help commands'\n");
 
-            // Get start location and create a Player
+            // Sets the starting location and creates an instance of a Player
             Location startingPoint = scenes.getLocations()[0][0];
             Player player = new Player(startingPoint);
 
@@ -81,15 +83,13 @@ public class Screens {
             TextParser.textParser2(player);
         }
 
+        //handles if a user wants to see instructions
         if (menu.toLowerCase().contains("read")) {
             try {
                 instructions();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        if (menu.toLowerCase().contains("quit")) {
-            Dialogue.exitGame(1, null);   // if no Buffered Reader is not available, create one.
         }
 
         if(menu.toLowerCase().contains("help")) {
@@ -109,9 +109,21 @@ public class Screens {
         Console.pause(1000);
         Console.blankLines(2);
         System.out.println(GREEN + instructBody + RESET);
-        Console.pause(7700);
+        Console.pause(20000);
         Console.blankLines(2);
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
+        chooseScreen();
+    }
+
+    public static void endingOutcome(boolean outcome) throws IOException {
+        if (outcome) {
+            System.out.println(winBanner);
+            System.out.println("Hurray, COVID has been defeated! Thank you, hero!");
+        }
+        else {
+            System.out.println(lostBanner);
+            System.out.println("You have failed to defeat the boss. Better luck next time!");
+        }
     }
 }
