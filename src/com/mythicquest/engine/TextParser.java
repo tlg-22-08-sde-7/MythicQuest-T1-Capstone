@@ -140,6 +140,9 @@ public class TextParser {
         else if (verb.equals("drop")){
              dropItem(player, noun);
          }
+        else if (verb.equals("check")){
+            checkItem(player, noun);
+         }
 
     }
 
@@ -158,6 +161,14 @@ public class TextParser {
     public static void dropItem(Player player, String item){
         if (player.getInventory().contains(item)){
             player.removeItem(item);
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
+
+    public static void checkItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            System.out.println(item + " is in your inventory");
         }else {
             System.out.println(item + " is not in your inventory");
         }
