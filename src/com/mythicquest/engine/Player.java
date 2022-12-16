@@ -21,6 +21,12 @@ class Player {
             enemy.setHealth(enemy.getHealth() - attack());
             setHealthLevel(getHealthLevel() - enemy.attack());
         }
+        if (getHealthLevel() > 0) {
+            System.out.println("Player wins");
+        }
+        else {
+            System.out.println("Enemy wins");
+        }
     }
 
     private int attack() {
