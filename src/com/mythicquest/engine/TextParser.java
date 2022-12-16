@@ -40,10 +40,11 @@ public class TextParser {
         JsonArray verbs = commands.get("command").getAsJsonArray();
         JsonArray nouns = commands.get("objects").getAsJsonArray();
 
+        //adds verbs data from json into an array list
         for (int i = 0; i < verbs.size(); i++) {
             command.add(verbs.get(i).getAsString());
         }
-
+        //adds nouns data from json into an array list
         for (int i = 0; i < nouns.size(); i++) {
             objects.add(nouns.get(i).getAsString());
         }
@@ -60,6 +61,7 @@ public class TextParser {
                 player.statusInfo();
                 System.out.println("What is your move ? ");
                 input = in.readLine();     // Command to be provided by the user
+              //takes user input and calls runCommand function
                 output = runCommand(input, player);
                 System.out.println(output);
             } while (!"quit".equals(input));
@@ -74,15 +76,17 @@ public class TextParser {
         String lowerMove = Move.trim().toLowerCase();
 
         if (lowerMove.equals("")) {
-
             out = "You must enter a valid command";
         } else {
+            //sends userinput to wordlist which removes random characters
             wordList = wordList(lowerMove);
+            //then it calls parseCommand which executes verb/noun
             parseCommand(wordList, player);
         }
         return out;
     }
 
+    //removes special characters from user input
     public static List<String> wordList(String input) {
         String delims = "[ \t,.;:/?!\"']+";
         List<String> moveList = new ArrayList<>();
@@ -110,7 +114,7 @@ public class TextParser {
             verb = moveInput.get(0);
             noun = moveInput.get(1);
             if (!command.contains(verb) || !objects.contains(noun)) {
-                System.out.println(verb + " is not a valid verb");
+                System.out.println("That is not a valid command");
                 commandsAvailable();
                 System.out.println("");
             }

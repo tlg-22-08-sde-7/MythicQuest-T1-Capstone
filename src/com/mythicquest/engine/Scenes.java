@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-// Class loads all locations from map.JSON, and manages them in a 2D Array.
+// Class loads all locations from map.JSON, and manages them in a 2D Array
+//
 class Scenes {
 
     private Location[][] locations;
@@ -36,6 +37,7 @@ class Scenes {
         Reader readerFields = null;
         Reader readerRoad = null;
 
+        //reads json files and saves it to variables
         try {
             reader = Files.newBufferedReader(Paths.get("resources/JSON/map.json"));
             readerHills = Files.newBufferedReader(Paths.get("resources/JSON/terrainDescriptions/hills.json"));
@@ -54,7 +56,7 @@ class Scenes {
             e.printStackTrace();
         }
 
-        // For Map
+        // parses map
         JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
 
         JsonArray parserHills = JsonParser.parseReader(readerHills).getAsJsonArray();
@@ -87,6 +89,7 @@ class Scenes {
                 for (int j = 0; j < itemsArray.size(); j++) {
                     items.add(itemsArray.get(j).getAsString());
                 }
+
 
                 String description = "";
                 switch (name) {
@@ -146,12 +149,14 @@ class Scenes {
         }
     }
 
+
     public void printLocations() {
         for (int i = 0; i < 6; i++) {
             System.out.println(Arrays.toString(locations[i]));
         }
     }
 
+    //this function allows the player to move
     public Location goToLocation(Location current, Direction direction) {
         // determine if cell exists in direction / grid and return
         int currentColumn = current.getX();
@@ -213,14 +218,15 @@ class Scenes {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        Scenes scenes = new Scenes();
-        scenes.printMap();
-        //scenes.printLocations();
-        Location startingPoint = scenes.getLocations()[2][0];
-        Location nextPoint = scenes.goToLocation(startingPoint, Direction.EAST);
-        System.out.println(nextPoint);
-    }
+    // this was probably for testing. It can be commented out.
+//    public static void main(String[] args) {
+//        Scenes scenes = new Scenes();
+//        scenes.printMap();
+//        //scenes.printLocations();
+//        Location startingPoint = scenes.getLocations()[2][0];
+//        Location nextPoint = scenes.goToLocation(startingPoint, Direction.EAST);
+//        System.out.println(nextPoint);
+//    }
 
     public Location[][] getLocations() {
         return locations;
