@@ -137,6 +137,9 @@ public class TextParser {
         else if (verb.equals("get")){
             getItem(player, noun);
          }
+        else if (verb.equals("drop")){
+             dropItem(player, noun);
+         }
 
     }
 
@@ -152,6 +155,13 @@ public class TextParser {
         }
     }
 
+    public static void dropItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            player.removeItem(item);
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
 
     public static void quitGame(){
         System.out.println("You have exited Mythic Quest. Thanks for playing");
