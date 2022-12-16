@@ -21,6 +21,8 @@ public class TextParser {
     private static List<String> command;
     private static List<String> objects;
 
+
+
     static {             // First time class is used, it runs the static block.  Populates list in line 18 & 19.
         // Initialize ArrayLists.
         command = new ArrayList<>();
@@ -132,7 +134,24 @@ public class TextParser {
         else if(verb.equals("go")) {
             movePlayer(player, noun);
         }
+        else if (verb.equals("get")){
+            getItem(player, noun);
+         }
+
     }
+
+
+    private static void getItem(Player player, String item){
+        if (player.getLocation().getItems().contains(item) && !player.getInventory().contains(item)){
+            player.addItem(item);
+            player.getLocation().getItems().remove(item);
+        } else if (player.getInventory().contains(item)){
+            System.out.println(item + " is already in your inventory.");
+        }else {
+            System.out.println(item + " is not in this location.");
+        }
+    }
+
 
     public static void quitGame(){
         System.out.println("You have exited Mythic Quest. Thanks for playing");

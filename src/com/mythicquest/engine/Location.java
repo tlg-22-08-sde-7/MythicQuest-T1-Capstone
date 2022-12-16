@@ -20,12 +20,20 @@ class Location {
         this.description = description;
     }
 
+    public Location(){
+
+    }
+
     public String getDescription() {
         return description;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void removeItem(String  item){
+        getItems().remove(item);
     }
 
     public ArrayList<String> getItems() {
