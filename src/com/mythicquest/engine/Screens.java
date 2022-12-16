@@ -29,6 +29,10 @@ public class Screens {
 
     public static Scenes scenes;    // Bringing in Scenes as static
 
+    public static void main(String[] args) throws IOException {
+        endingOutcome(true);
+    }
+
     static {
         try {
             winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
@@ -45,6 +49,7 @@ public class Screens {
         getUserInput();
         chooseScreen();
     }
+
 
     public static void getUserInput() {
         System.out.println("                                       Choose an option:" + RESET);
@@ -113,5 +118,16 @@ public class Screens {
         System.out.println(PURPLE + "Hope that helped.  Now let's play!" + RESET);
         Console.blankLines(2);
         chooseScreen();
+    }
+
+    public static void endingOutcome(boolean outcome) throws IOException {
+        if (outcome) {
+            System.out.println(winBanner);
+            System.out.println("Hurray, COVID has been defeated! Thank you, hero!");
+        }
+        else {
+            System.out.println(lostBanner);
+            System.out.println("You have failed to defeat the boss. Better luck next time!");
+        }
     }
 }
