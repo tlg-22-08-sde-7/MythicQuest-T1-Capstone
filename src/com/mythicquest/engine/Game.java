@@ -6,7 +6,7 @@ public class Game {
     // fields
     Boolean running = true;
 
-    // ctors
+    //  constructors
 
 
     // business methods

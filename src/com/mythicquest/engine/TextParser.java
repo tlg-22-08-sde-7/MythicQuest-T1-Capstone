@@ -148,14 +148,6 @@ public class TextParser {
                 System.out.println("That is not a valid command");
                 break;
         }
-//        if (verb.equals("help") && noun.equals("commands")) {
-//            commandsAvailable();
-//        }
-//        else if(verb.equals("check") && noun.equals("map")) {
-//            Screens.scenes.printMap();
-//        }
-
-
     }
 
     public static void quitGame(){
@@ -171,13 +163,6 @@ public class TextParser {
         System.out.println("Valid commands are:");
         getVerbsMap();
         System.out.println(verbsMap.keySet());
-//        for (int i = 0; i < verbsMap.size(); i++) {
-//            System.out.print(" | " + verbsMap.get(i));
-//        }
-//        System.out.println("\nValid objects are:");
-//        for (int i = 0; i < objects.size(); i++) {
-//            System.out.print(" | " + objects.get(i));
-//        }
     }
 
 
