@@ -212,7 +212,7 @@
         "south": "hills",
         "west": "forest"
       },
-      "items": ["bag of brownies", "dodgy-plant"]
+      "items": ["bag-of-brownies", "dodgy-plant"]
     },
     {
       "name": "river",
@@ -251,7 +251,7 @@
         "south": "plains",
         "west": "bridge"
       },
-      "items": ["bag of donuts", "nutella"]
+      "items": ["bag-of-donuts", "nutella"]
     },
     {
       "name": "bridge",
@@ -264,7 +264,7 @@
         "south": "forest",
         "west": "river"
       },
-      "items": ["bag of donuts", "vegemite"]
+      "items": ["bag-of-donuts", "vegemite"]
     },
     {
       "name": "river",
@@ -306,7 +306,7 @@
         "south": "forest",
         "west": "river"
       },
-      "items": ["bag of donuts", "vegemite"]
+      "items": ["bag-of-donuts", "vegemite"]
     },
     {
       "name": "town",
@@ -332,7 +332,7 @@
         "south": "road",
         "west": "town"
       },
-      "items": ["bag of brownies", "5-hr-energy", "rusty-nail", "carrots", "old shoes"]
+      "items": ["bag-of-brownies", "5-hr-energy", "rusty-nail", "carrots", "old shoes"]
     },
     {
       "name": "plains",
@@ -345,7 +345,7 @@
         "south": "forest",
         "west": "road"
       },
-      "items": ["vegemite", "2-hr-energy", "rusty-nail", "carrots", "old shoes"]
+      "items": ["vegemite", "2-hr-energy", "rusty-nail", "carrots", "old-shoes"]
     },
     {
       "name": "forest",
@@ -371,7 +371,7 @@
         "south": "mountains",
         "west": "forest"
       },
-      "items": ["bag of brownies", "dodgy-plant", "possibly-edible-plant"]
+      "items": ["bag-of-brownies", "dodgy-plant", "possibly-edible-plant"]
     }
   ],
 
@@ -387,7 +387,7 @@
         "south": "village2",
         "west": ""
       },
-      "items": ["bag of donuts", "rusty-nail"]
+      "items": ["bag-of-donuts", "rusty-nail"]
     },
     {
       "name": "forest",
@@ -426,7 +426,7 @@
         "south": "road",
         "west": "fields"
       },
-      "items": ["bag of donuts", "nutella"]
+      "items": ["bag-of-donuts", "nutella"]
     },
     {
       "name": "forest",
@@ -452,7 +452,7 @@
         "south": "mountains",
         "west": "forest"
       },
-      "items": ["Irish coffee"]
+      "items": ["Spiked-coffee"]
     },
     {
       "name": "mountains",
@@ -465,7 +465,7 @@
         "south": "cave",
         "west": "hills"
       },
-      "items": ["bag of brownies", "caramel latte in a can"]
+      "items": ["bag-of-brownies", "caramel latte in a can"]
     }
   ],
 
@@ -481,7 +481,7 @@
         "south": "",
         "west": ""
       },
-      "items": ["bag of brownies", "caramel latte in a can"]
+      "items": ["bag-of-brownies", "caramel latte in a can"]
     },
     {
       "name": "road",
@@ -507,7 +507,7 @@
         "south": "",
         "west": "road"
       },
-      "items": ["carrots", "caramel latte in a can"]
+      "items": ["carrots", "rusty-nail", "adult-beverage", "dodgy-plant", "possibly-edible-plant"]
     },
     {
       "name": "road",
@@ -520,7 +520,7 @@
         "south": "",
         "west": "road"
       },
-      "items": ["avocado", "caramel latte in a can"]
+      "items": ["avocado", "nutella"]
     },
     {
       "name": "hills",
@@ -559,7 +559,7 @@
         "south": "",
         "west": "mountains"
       },
-      "items": ["chicken gumbo"]
+      "items": ["chicken-gumbo"]
     }
   ]
 }
