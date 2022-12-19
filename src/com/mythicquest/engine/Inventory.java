@@ -54,8 +54,4 @@ class Inventory {
         System.out.println(armorItems);
         System.out.println(pharmacyItems);
     }
-
-    public static void main(String[] args) {
-        Inventory inventory = new Inventory();
-    }
 }
