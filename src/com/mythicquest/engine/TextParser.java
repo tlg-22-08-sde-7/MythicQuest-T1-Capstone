@@ -64,6 +64,10 @@ public class TextParser {
         System.out.println("Move: " + Move);
         String lowerMove = Move.trim().toLowerCase();
 
+        if ("help".equals(lowerMove)) {
+            commandsAvailable();
+        }
+
         if (lowerMove.equals("")) {
             out = "You must enter a valid command";
         } else {
@@ -171,9 +175,11 @@ public class TextParser {
         System.out.println("As you play this game, please remember that commands require both a verb and a noun");
         System.out.println();
         System.out.println("Valid commands are:");
-        for (int i = 0; i < verbsMap.size(); i++) {
-            System.out.print(" | " + verbsMap.get(i));
-        }
+        getVerbsMap();
+        System.out.println(verbsMap.keySet());
+//        for (int i = 0; i < verbsMap.size(); i++) {
+//            System.out.print(" | " + verbsMap.get(i));
+//        }
 //        System.out.println("\nValid objects are:");
 //        for (int i = 0; i < objects.size(); i++) {
 //            System.out.print(" | " + objects.get(i));
