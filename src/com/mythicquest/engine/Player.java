@@ -63,11 +63,14 @@ class Player {
     public void consumeItem(Player player, String randItems){
         // only if it contains these specific items:  "broccoli", "avocado", "carrots", "steak", "2-hr-energy", "5-hr-energy", "athletic-green-juice"
         if (player.getInventory().contains(randItems)){
-            if (randItems.equals("broccoli") || randItems.equals("avocado") || randItems.equals("carrots") || randItems.equals("steak")){
+            if (randItems.equalsIgnoreCase("broccoli") || randItems.equals("avocado") || randItems.equals(
+                    "carrots") || randItems.equals("steak")){
                 setHealthLevel(getHealthLevel() + 10);
+                removeItem(randItems, player);
                 System.out.println("Health level increased by 10");
             } else if (randItems.equals("2-hr-energy") || randItems.equals("5-hr-energy") || randItems.equals("athletic-green-juice")){
                 setHealthLevel(getHealthLevel() + 20);
+                removeItem(randItems, player);
                 System.out.println("Health level increased by 20");
             }
         } else {
