@@ -60,12 +60,18 @@ class Player {
         }
     }
     //player can eat and drink food items
-    public void consumeItem(Player player, String item){
-        if (player.getInventory().contains(item)){
-            inventory.remove(item);
-            addHealth(player);
-        }else {
-            System.out.println(item + " is not in your inventory");
+    public void consumeItem(Player player, String randItems){
+        // only if it contains these specific items:  "broccoli", "avocado", "carrots", "steak", "2-hr-energy", "5-hr-energy", "athletic-green-juice"
+        if (player.getInventory().contains(randItems)){
+            if (randItems.equals("broccoli") || randItems.equals("avocado") || randItems.equals("carrots") || randItems.equals("steak")){
+                setHealthLevel(getHealthLevel() + 10);
+                System.out.println("Health level increased by 10");
+            } else if (randItems.equals("2-hr-energy") || randItems.equals("5-hr-energy") || randItems.equals("athletic-green-juice")){
+                setHealthLevel(getHealthLevel() + 20);
+                System.out.println("Health level increased by 20");
+            }
+        } else {
+            System.out.println("You do not have this item in your inventory");
         }
     }
     public void addHealth(Player player){
