@@ -31,7 +31,7 @@ public class Screens {
 
     static {
         try {
-            winBanner = Files.readString(Path.of("resources/Banners/endWin.txt")) ;
+            winBanner = Files.readString(Path.of("resources/Banners/endWin.txt"));
             lostBanner = Files.readString(Path.of("resources/Banners/endLost.txt"));
             scenes = new Scenes();  // Create an Instance of Scenes (aka the map)
         } catch (IOException e) {
@@ -46,14 +46,6 @@ public class Screens {
         chooseScreen();
     }
 
-
-    public static void getUserInput() {
-        System.out.println("                                       Choose an option:" + RESET);
-        Console.blankLines(1);
-        System.out.println(CYAN + "                      Play Mythic Quest now" + PURPLE + "   |   Read the Game Instructions" + RESET);
-        Console.blankLines(1);
-    }
-
     public static void welcomeBanner() throws IOException {
         String welcome = Files.readString(Path.of("resources/Banners/welcomeTo.txt"));
         String banner = Files.readString(Path.of("resources/Banners/welcomeBanner.txt"));
@@ -62,6 +54,13 @@ public class Screens {
         Console.pause(1000);
         System.out.print(YELLOW + banner + RESET);
         Console.blankLines(2);
+    }
+
+    public static void getUserInput() {
+        System.out.println("                                       Choose an option:" + RESET);
+        Console.blankLines(1);
+        System.out.println(CYAN + "                      Play Mythic Quest now" + PURPLE + "   |   Read the Game Instructions" + RESET);
+        Console.blankLines(1);
     }
 
     public static void chooseScreen() throws IOException {
@@ -80,7 +79,7 @@ public class Screens {
             Player player = new Player(startingPoint);
 
             // go to screen with the first position of the HERO
-            TextParser.textParser2(player);
+            TextParser.textParser(player);
         }
 
         //handles if a user wants to see instructions
@@ -92,8 +91,8 @@ public class Screens {
             }
         }
 
-        if(menu.toLowerCase().contains("help")) {
-        TextParser.commandsAvailable();
+        if (!(menu.toLowerCase().contains("play") || menu.toLowerCase().contains("read"))) {
+            chooseScreen();
         }
     }
 
@@ -120,8 +119,7 @@ public class Screens {
         if (outcome) {
             System.out.println(winBanner);
             System.out.println("Hurray, COVID has been defeated! Thank you, hero!");
-        }
-        else {
+        } else {
             System.out.println(lostBanner);
             System.out.println("You have failed to defeat the boss. Better luck next time!");
         }

@@ -52,15 +52,13 @@ public class MythicQuestApp {
             clearScreen();
 
             String input = scan.nextLine();  // "quit the game" using Parser
-//            String input = TextParser(resp);
 
             if (input.toLowerCase().contains("quit")) {
                 exitGame(quit);
             }
 
             if (input.toLowerCase().contains("help")) {
-                // C ->> took out on 12-12-2022 @ 12:18 PM.
-                // helpScreen();
+
                 TextParser.commandsAvailable();
             }
         }
@@ -72,23 +70,16 @@ public class MythicQuestApp {
 
     private void exitGame(int exitStatus) {
 
-        // System.out.println("Oh hey!  Are you wanting to exit the game?");
-        // C (12-11-2022 @ 8:14 AM) ->> took out the below "sout" to test, and it works.
-        // System.out.println(parser.get("confirmExit").getAsString());
+
 
         String exitChoice = scan.nextLine();
 
         if (exitChoice.toLowerCase().contains("yes")) {
-            // Terminate JVM
-            // By convention, nonzero status code indicates abnormal termination
-            // C (12-11-2022 @ 8:11 AM) ->> took out the below "sout" to test, and it works.
-            // System.out.println("You got it - ending the game now...  See you again soon? :)");
+
             System.exit(exitStatus);
         }
     }
 
     private void helpScreen() {
-        // call instructions
-        // offers help based on keywords
     }
 }
