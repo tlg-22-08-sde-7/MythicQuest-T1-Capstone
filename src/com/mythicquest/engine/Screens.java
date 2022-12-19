@@ -94,10 +94,6 @@ public class Screens {
         if (!(menu.toLowerCase().contains("play") || menu.toLowerCase().contains("read"))) {
             chooseScreen();
         }
-//
-//        if (menu.toLowerCase().contains("help")) {
-//            TextParser.commandsAvailable();
-//        }
     }
 
     public static void instructions() throws IOException {

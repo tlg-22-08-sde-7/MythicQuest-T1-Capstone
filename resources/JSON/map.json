@@ -332,7 +332,7 @@
         "south": "road",
         "west": "town"
       },
-      "items": ["bag-of-brownies", "5-hr-energy", "rusty-nail", "carrots", "old shoes"]
+      "items": ["bag-of-brownies", "5-hr-energy", "rusty-nail", "carrots", "old-shoes"]
     },
     {
       "name": "plains",

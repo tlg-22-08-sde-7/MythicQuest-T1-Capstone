@@ -69,7 +69,7 @@ public class Player {
                 setHealthLevel(getHealthLevel() + 10);
                 removeItem(randItems, player);
                 System.out.println("Health level increased by 10");
-            } else if (randItems.equals("2-hr-energy") || randItems.equals("5-hr-energy") || randItems.equals("athletic-green-juice")) {
+            } else if (randItems.equals("2-hr-energy") || randItems.equals("5-hr-energy") || randItems.equals("athletic-green-juice")  || randItems.equals ("wild-bluerries")) {
                 setHealthLevel(getHealthLevel() + 20);
                 removeItem(randItems, player);
                 System.out.println("Health level increased by 20");
