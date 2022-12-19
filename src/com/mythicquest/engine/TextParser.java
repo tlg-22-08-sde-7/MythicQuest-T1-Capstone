@@ -58,11 +58,15 @@ public class TextParser {
         }
     }
 
-    public static String runCommand(String Move, Player player) {
+    public static String runCommand(String Move, Player player) throws IOException {
         List<String> wordList;
         String out = "";
         System.out.println("Move: " + Move);
         String lowerMove = Move.trim().toLowerCase();
+
+        if ("help".equals(lowerMove)) {
+            commandsAvailable();
+        }
 
         if (lowerMove.equals("")) {
             out = "You must enter a valid command";
@@ -104,7 +108,7 @@ public class TextParser {
     }
 
 
-    public static void parseCommand(List<String> moveInput, Player player) {
+    public static void parseCommand(List<String> moveInput, Player player) throws IOException {
         if (moveInput.equals("quit") || moveInput.equals("q")){
             quitGame();
         }
@@ -114,7 +118,7 @@ public class TextParser {
     }
 
 
-    public static void route(List<String> userInput, Player player){
+    public static void route(List<String> userInput, Player player) throws IOException {
         String verb = userInput.get(0);
         String noun = userInput.get(1);
 
@@ -171,9 +175,11 @@ public class TextParser {
         System.out.println("As you play this game, please remember that commands require both a verb and a noun");
         System.out.println();
         System.out.println("Valid commands are:");
-        for (int i = 0; i < verbsMap.size(); i++) {
-            System.out.print(" | " + verbsMap.get(i));
-        }
+        getVerbsMap();
+        System.out.println(verbsMap.keySet());
+//        for (int i = 0; i < verbsMap.size(); i++) {
+//            System.out.print(" | " + verbsMap.get(i));
+//        }
 //        System.out.println("\nValid objects are:");
 //        for (int i = 0; i < objects.size(); i++) {
 //            System.out.print(" | " + objects.get(i));
