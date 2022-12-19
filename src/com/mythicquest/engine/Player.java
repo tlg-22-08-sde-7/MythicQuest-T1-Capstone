@@ -150,6 +150,7 @@ public class Player {
                 if ("cave".equals(newLocation.getName())) {
                     Enemy boss = new Enemy();
                     Screens.endingOutcome(player.fight(boss));
+                    System.exit(0);
                 }
             }
         } else if (noun.equals("south")) {
@@ -161,6 +162,7 @@ public class Player {
                 if ("cave".equals(newLocation.getName())) {
                     Enemy boss = new Enemy();
                     Screens.endingOutcome(player.fight(boss));
+                    System.exit(0);
                 }
             }
         } else if (noun.equals("west")) {
