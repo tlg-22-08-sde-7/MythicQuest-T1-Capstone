@@ -38,7 +38,6 @@ public class TextParser {
         return verbsMap;
     }
 
-
     public static void textParser(Player player) throws IOException {
         BufferedReader in;
         String input;
@@ -133,13 +132,10 @@ public class TextParser {
                 player.addItem(noun, player);
                 break;
             case "look":
-                //
+                Screens.scenes.printMap();
                 break;
             case "drop":
                 player.removeItem(noun, player);
-                break;
-            case "check":
-                Screens.scenes.printMap();
                 break;
             case "eat":
             case "drink":
@@ -161,8 +157,6 @@ public class TextParser {
 
 
     }
-
-
 
     public static void quitGame(){
         System.out.println("You have exited Mythic Quest. Thanks for playing");
