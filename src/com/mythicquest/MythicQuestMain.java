@@ -16,4 +16,4 @@ public class MythicQuestMain {
         // Call the start method to run the game
         app.start();
     }
-}
+}                   
