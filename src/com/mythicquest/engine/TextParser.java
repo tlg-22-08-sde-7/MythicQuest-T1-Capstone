@@ -58,7 +58,7 @@ public class TextParser {
         }
     }
 
-    public static String runCommand(String Move, Player player) {
+    public static String runCommand(String Move, Player player) throws IOException {
         List<String> wordList;
         String out = "";
         System.out.println("Move: " + Move);
@@ -104,7 +104,7 @@ public class TextParser {
     }
 
 
-    public static void parseCommand(List<String> moveInput, Player player) {
+    public static void parseCommand(List<String> moveInput, Player player) throws IOException {
         if (moveInput.equals("quit") || moveInput.equals("q")){
             quitGame();
         }
@@ -114,7 +114,7 @@ public class TextParser {
     }
 
 
-    public static void route(List<String> userInput, Player player){
+    public static void route(List<String> userInput, Player player) throws IOException {
         String verb = userInput.get(0);
         String noun = userInput.get(1);
 
