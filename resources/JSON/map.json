@@ -465,7 +465,7 @@
         "south": "cave",
         "west": "hills"
       },
-      "items": ["bag-of-brownies", "caramel latte in a can"]
+      "items": ["bag-of-brownies", "carrots", "adult-beverage", "chicken-gumbo"]
     }
   ],
 
@@ -481,7 +481,7 @@
         "south": "",
         "west": ""
       },
-      "items": ["bag-of-brownies", "caramel latte in a can"]
+      "items": ["bag-of-brownies", "dodgy-plant", "rusty-nail", "5-hr-energy"]
     },
     {
       "name": "road",
