@@ -3,7 +3,7 @@ package com.mythicquest.engine;
 import java.io.IOException;
 import java.util.ArrayList;
 
-class Player {
+public class Player {
     private Location location;
     private ArrayList<String> inventory;
     private int healthLevel;
@@ -73,11 +73,24 @@ class Player {
                 setHealthLevel(getHealthLevel() + 20);
                 removeItem(randItems, player);
                 System.out.println("Health level increased by 20");
+            } else if (randItems.equals("adult-beverage") || randItems.equals("dodgy-plant") || randItems.equals("bag-of-brownies") || randItems.equals("bag-of-donuts")) {
+                setHealthLevel(getHealthLevel() - 10);
+                removeItem(randItems, player);
+                System.out.println("Health level decreased by 10");
+            } else if (randItems.equals("Spiked-Coffee")){
+                setHealthLevel(getHealthLevel() - 3);
+                removeItem(randItems, player);
+                System.out.println("Health level decreased by 3");
+            }             else if (randItems.equals("chicken-gumbo")) {
+                setHealthLevel(getHealthLevel() + 35);
+                removeItem(randItems, player);
+                System.out.println("Health level increased by 35!!!!!");
             }
         } else {
             System.out.println("You do not have this item in your inventory");
         }
     }
+    
 
     public void addHealth(Player player) {
         player.setHealthLevel(player.getHealthLevel() + 10);
@@ -159,6 +172,4 @@ class Player {
             }
         } else System.out.println("You have LOST your way !");
     }
-
-
 }
