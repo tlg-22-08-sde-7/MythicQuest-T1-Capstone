@@ -15,18 +15,21 @@ class Player {
     }
 
     // Fight enemies
-    public void fight(Enemy enemy) {
+    public boolean fight(Enemy enemy) {
+        boolean outcome = false;
+
         while (getHealthLevel() > 0 && enemy.getHealth() > 0)
         {
             enemy.setHealth(enemy.getHealth() - attack());
             setHealthLevel(getHealthLevel() - enemy.attack());
         }
         if (getHealthLevel() > 0) {
-            System.out.println("Player wins");
+            outcome = true;
         }
-        else {
-            System.out.println("Enemy wins");
-        }
+//        else {
+//            System.out.println("Enemy wins");
+//        }
+        return outcome;
     }
 
     private int attack() {
