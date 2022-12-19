@@ -80,7 +80,7 @@ public class Screens {
             Player player = new Player(startingPoint);
 
             // go to screen with the first position of the HERO
-            TextParser.textParser2(player);
+            TextParser.textParser(player);
         }
 
         //handles if a user wants to see instructions

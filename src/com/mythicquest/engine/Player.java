@@ -34,13 +34,22 @@ class Player {
     }
 
     // Add items to inventory
-    public void addItem(String itemAdd) {
-        inventory.add(itemAdd);
+    public void addItem(String item, Player player) {
+        if (player.getLocation().getItems().contains(item) && !inventory.contains(item)){
+            inventory.add(item);
+            getLocation().getItems().remove(item);
+        } else if (inventory.contains(item)){
+            System.out.println(item + " is already in your inventory.");
+        }
     }
 
     // Remove items from inventory
-    public void removeItem(String itemRemove) {
-        inventory.remove(itemRemove);
+    public void removeItem(String item, Player player) {
+            if (player.getInventory().contains(item)){
+                inventory.remove(item);
+            }else {
+                System.out.println(item + " is not in your inventory");
+            }
     }
 
     // Check items in inventory
@@ -50,6 +59,20 @@ class Player {
             System.out.println(inventory.get(i));
         }
     }
+    //player can eat and drink food items
+    public void consumeItem(Player player, String item){
+        if (player.getInventory().contains(item)){
+            inventory.remove(item);
+            addHealth(player);
+        }else {
+            System.out.println(item + " is not in your inventory");
+        }
+    }
+    public void addHealth(Player player){
+        player.setHealthLevel(player.getHealthLevel() + 10);
+        System.out.println("Health level is now " + player.getHealthLevel());
+    }
+
 
     public void statusInfo() {
         System.out.println();
@@ -82,4 +105,47 @@ class Player {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+
+//move player to new location
+    static void movePlayer(Player player, String noun) {
+        Location newLocation = null;
+        if(noun.equals("north")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
+            if (newLocation == null) {
+                System.out.println("You can't go North.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("east")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
+            if (newLocation == null) {
+                System.out.println("You can't go East.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("south")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
+            if (newLocation == null) {
+                System.out.println("You can't go South.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else if(noun.equals("west")) {
+            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
+            if (newLocation == null) {
+                System.out.println("You can't go West.  Please choose another direction");
+            } else {
+                player.setLocation(newLocation);
+            }
+        }
+        else System.out.println("You have LOST your way !");
+    }
+
+
+
+
 }
