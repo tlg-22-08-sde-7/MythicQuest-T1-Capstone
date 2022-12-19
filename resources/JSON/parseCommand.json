@@ -1,6 +1,121 @@
+
 {
-  "commands": {
-    "command": ["go", "help", "check"],
-    "objects": ["commands", "status", "map", "east", "west", "north", "south"]
-  }
+  "go": [
+    "head",
+    "move",
+    "travel",
+    "fly",
+    "flee",
+    "run",
+    "drive",
+    "push",
+    "snap",
+    "act",
+    "maneuver",
+    "step",
+    "proceed",
+    "do"
+  ],
+  "dig": [
+    "cut",
+    "crack"
+  ],
+  "get": [
+    "pickup",
+    "access",
+    "earn",
+    "take",
+    "gain",
+    "take",
+    "grab",
+    "land",
+    "make",
+    "capture",
+    "procure",
+    "net",
+    "win",
+    "fetch",
+    "reap"
+  ],
+  "drink": [
+    "booze",
+    "turn-up",
+    "shot",
+    "slug",
+    "swig",
+    "brew",
+    "refresh",
+    "sip",
+    "taste"
+  ],
+  "play": [
+    "hit",
+    "show",
+    "sing",
+    "ballout",
+    "smash",
+    "amuse",
+    "do"
+  ],
+  "talk": [
+    "lecture",
+    "discourse",
+    "discuss",
+    "debate",
+    "rap",
+    "sermon",
+    "preach",
+    "chalk",
+    "orator",
+    "screed"
+  ],
+  "drop": [
+    "bit",
+    "crumb",
+    "dash",
+    "dewdrop",
+    "let-fall",
+    "lay",
+    "leave",
+    "relinquish",
+    "sink"
+  ],
+  "use": [
+    "utilize",
+    "employ",
+    "work",
+    "operate",
+    "apply",
+    "maneuver",
+    "handle",
+    "purpose",
+    "call",
+    "dress",
+    "wear",
+    "put-on"
+
+  ],
+  "look": [
+    "glance",
+    "stare",
+    "gaze",
+    "peer",
+    "focus",
+    "peep",
+    "survey",
+    "watch",
+    "examine",
+    "study",
+    "inspect",
+    "scrutinize",
+    "consider",
+    "judge",
+    "see",
+    "view"
+  ],
+  "eat": [
+
+]
+
+
 }
