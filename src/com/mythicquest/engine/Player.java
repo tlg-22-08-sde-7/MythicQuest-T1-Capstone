@@ -26,9 +26,6 @@ class Player {
         if (getHealthLevel() > 0) {
             playerWins = true;
         }
-//        else {
-//            System.out.println("Enemy wins");
-//        }
         return playerWins;
     }
 
