@@ -1,5 +1,9 @@
 package com.mythicquest.engine;
 
-class Sprite {
+import javax.swing.*;
+import java.awt.*;
 
+class Sprite {
+    private Image image;
+    private ImageIcon imageIcon;
 }
