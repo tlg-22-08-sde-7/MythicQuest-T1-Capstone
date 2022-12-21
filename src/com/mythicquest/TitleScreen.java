@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class GamePanel {
+public class TitleScreen {
     JFrame window;
     Container con;
     JPanel topNamePanel, bottomNamePanel, readPanel, startPanel;
@@ -18,10 +18,10 @@ public class GamePanel {
     Font btnFont = new Font("Times New Roman", Font.PLAIN, 25);
 
     public static void main(String[] args) throws IOException {
-        new GamePanel();
+        new TitleScreen();
     }
 
-    public GamePanel() throws IOException {
+    public TitleScreen() throws IOException {
         window = new JFrame();
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,7 +36,7 @@ public class GamePanel {
         topNamePanel.setBounds(100, 80, 600, 110); // Space around text, width and height
         topNamePanel.setOpaque(false); // Creates transparent background
         topNameLabel = new JLabel("MYTHIC");
-        topNameLabel.setForeground(Color.yellow); // font color
+        topNameLabel.setForeground(Color.yellow); // Font color
         topNameLabel.setFont(titleFont);
 
         // Title panel and text (bottom)
