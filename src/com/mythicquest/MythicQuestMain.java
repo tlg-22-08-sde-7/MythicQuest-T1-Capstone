@@ -8,7 +8,6 @@ import com.mythicquest.app.MythicQuestApp;
 
 public class MythicQuestMain {
 
-    // TODO: Handle exception before it gets to the main class
     public static void main(String[] args) throws Exception {
         // Create an instance of MythicQuestApp
         MythicQuestApp app = new MythicQuestApp();
@@ -16,4 +15,4 @@ public class MythicQuestMain {
         // Call the start method to run the game
         app.start();
     }
-}
+}                   

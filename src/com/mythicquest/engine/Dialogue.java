@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Dialogue {
-    // TESTING ExitGame from MythicQuestApp.java
 
     // Used Buffered Reader to re-use it, from line 23 (in MysticQuestApp)
     public static void exitGame(int exitStatus, BufferedReader scan) throws IOException {
@@ -35,19 +34,4 @@ public class Dialogue {
     }
 }
 
-
-//        public static void exitGame () {
-//
-//            // create a reader
-//            try {
-//                Reader reader = Files.newBufferedReader(Paths.get("resources/JSON/exitGame.json"));
-//                JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
-//                String confirmExit = parser.get("confirmExit").getAsString();
-//                String exitConfirmed = parser.get("exitConfirmed").getAsString();
-//                System.out.println(confirmExit);
-//                System.out.println(exitConfirmed);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
 
