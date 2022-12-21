@@ -1,7 +1,12 @@
 package com.mythicquest;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class GamePanel {
     JFrame window;
@@ -12,16 +17,16 @@ public class GamePanel {
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
     Font btnFont = new Font("Times New Roman", Font.PLAIN, 25);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new GamePanel();
     }
 
-    public GamePanel() {
+    public GamePanel() throws IOException {
         window = new JFrame();
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.getContentPane().setBackground(Color.black);
         window.setLayout(null);
+        window.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("resources/images/title_screen_img.jpg")))));
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         con = window.getContentPane();
@@ -29,7 +34,7 @@ public class GamePanel {
         // Title panel and text (top)
         topNamePanel = new JPanel();
         topNamePanel.setBounds(100, 80, 600, 110); // Space around text, width and height
-        topNamePanel.setBackground(Color.black);
+        topNamePanel.setOpaque(false); // Creates transparent background
         topNameLabel = new JLabel("MYTHIC");
         topNameLabel.setForeground(Color.yellow); // font color
         topNameLabel.setFont(titleFont);
@@ -37,7 +42,7 @@ public class GamePanel {
         // Title panel and text (bottom)
         bottomNamePanel = new JPanel();
         bottomNamePanel.setBounds(100, 195, 600, 100);
-        bottomNamePanel.setBackground(Color.black);
+        bottomNamePanel.setOpaque(false);
         bottomNameLabel = new JLabel("QUEST");
         bottomNameLabel.setForeground(Color.yellow);
         bottomNameLabel.setFont(titleFont);
@@ -45,20 +50,32 @@ public class GamePanel {
         // Read panel and button
         readPanel = new JPanel();
         readPanel.setBounds(285, 330, 250, 80);
-        readPanel.setBackground(Color.black);
+        readPanel.setOpaque(false);
         readBtn = new JButton("Read Instructions");
         readBtn.setBackground(Color.black);
         readBtn.setForeground(Color.white);
         readBtn.setFont(btnFont);
+        readBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Shows instruction
+            }
+        });
 
         // Start panel and button
         startPanel = new JPanel();
-        startPanel.setBounds(280, 400, 250, 80);
-        startPanel.setBackground(Color.black);
+        startPanel.setBounds(282, 400, 250, 80);
+        startPanel.setOpaque(false);
         startBtn = new JButton("Start Game");
         startBtn.setBackground(Color.black);
         startBtn.setForeground(Color.white);
         startBtn.setFont(btnFont);
+        startBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         // Add label to panels, panels to containers in order to be visible
         topNamePanel.add(topNameLabel);
