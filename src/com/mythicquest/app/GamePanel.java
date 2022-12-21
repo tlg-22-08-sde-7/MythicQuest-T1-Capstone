@@ -1,7 +1,13 @@
 package com.mythicquest.app;
 
-import javax.swing.*;
-import java.awt.*;
+import com.mythicquest.engine.PlayerA;
+
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class GamePanel extends JPanel implements Runnable {
     // Screen settings
@@ -19,11 +25,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-
-    // Set player's default position
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
+    PlayerA player = new PlayerA(this, keyH);
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -76,15 +78,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        if (keyH.up == true) {
-            playerY -= playerSpeed;
-        } else if (keyH.down == true) {
-            playerY += playerSpeed;
-        } else if (keyH.left == true) {
-            playerX -= playerSpeed;
-        } else if (keyH.right == true) {
-            playerX += playerSpeed;
-        }
+        player.update();
     }
 
     @Override
@@ -93,10 +87,12 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setColor(Color.white);
-
-        g2.fillRect(playerX, playerY, scaledTileSize, scaledTileSize);
+        player.draw(g2);
 
         g2.dispose();
+    }
+
+    public int getScaledTileSize() {
+        return scaledTileSize;
     }
 }
