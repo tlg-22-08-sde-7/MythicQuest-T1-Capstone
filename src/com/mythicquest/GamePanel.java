@@ -10,7 +10,7 @@ public class GamePanel {
     JLabel topNameLabel, bottomNameLabel;
     JButton readBtn, startBtn;
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
-    Font btnFont = new Font("Times New Roman", Font.PLAIN, 30);
+    Font btnFont = new Font("Times New Roman", Font.PLAIN, 25);
 
     public static void main(String[] args) {
         new GamePanel();
@@ -31,7 +31,7 @@ public class GamePanel {
         topNamePanel.setBounds(100, 80, 600, 110); // Space around text, width and height
         topNamePanel.setBackground(Color.black);
         topNameLabel = new JLabel("MYTHIC");
-        topNameLabel.setForeground(Color.white); // font color
+        topNameLabel.setForeground(Color.yellow); // font color
         topNameLabel.setFont(titleFont);
 
         // Title panel and text (bottom)
@@ -39,12 +39,12 @@ public class GamePanel {
         bottomNamePanel.setBounds(100, 195, 600, 100);
         bottomNamePanel.setBackground(Color.black);
         bottomNameLabel = new JLabel("QUEST");
-        bottomNameLabel.setForeground(Color.white);
+        bottomNameLabel.setForeground(Color.yellow);
         bottomNameLabel.setFont(titleFont);
 
         // Read panel and button
         readPanel = new JPanel();
-        readPanel.setBounds(310, 330, 250, 80);
+        readPanel.setBounds(285, 330, 250, 80);
         readPanel.setBackground(Color.black);
         readBtn = new JButton("Read Instructions");
         readBtn.setBackground(Color.black);
@@ -53,7 +53,7 @@ public class GamePanel {
 
         // Start panel and button
         startPanel = new JPanel();
-        startPanel.setBounds(310, 400, 250, 80);
+        startPanel.setBounds(280, 400, 250, 80);
         startPanel.setBackground(Color.black);
         startBtn = new JButton("Start Game");
         startBtn.setBackground(Color.black);
