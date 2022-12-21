@@ -1,14 +1,12 @@
 package com.mythicquest.engine;
 
-
-import javax.swing.*;
-import java.awt.image.BufferedImage;
+import java.awt.Image;
 
 class Sprite {
     private int x;
     private int y;
     private int speed;
-    private BufferedImage playerImage;
+    private Image playerImage;
     private String direction;
 
     public void setX(int x) {
@@ -23,7 +21,7 @@ class Sprite {
         this.speed = speed;
     }
 
-    public void setPlayerImage(BufferedImage playerImage) {
+    public void setPlayerImage(Image playerImage) {
         this.playerImage = playerImage;
     }
 
@@ -43,7 +41,7 @@ class Sprite {
         return speed;
     }
 
-    public BufferedImage getPlayerImage() {
+    public Image getPlayerImage() {
         return playerImage;
     }
 
