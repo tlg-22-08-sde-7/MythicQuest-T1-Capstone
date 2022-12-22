@@ -30,6 +30,7 @@ public class TitleScreen {
             window.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("resources/images/title_screen_img.jpg")))));
             window.setVisible(true);
             window.setLocationRelativeTo(null);
+            window.setResizable(false);
             con = window.getContentPane();
 
             // Title panel and text (top)
