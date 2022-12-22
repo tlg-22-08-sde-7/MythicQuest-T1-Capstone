@@ -1,7 +1,6 @@
 package com.mythicquest.app;
 
-import com.mythicquest.engine.PlayerA;
-
+import com.mythicquest.engine.Player;
 
 import javax.swing.JPanel;
 
@@ -27,7 +26,7 @@ public class GamePanel extends JPanel implements Runnable {
     int FPS = 60;
 
     KeyHandler keyH = new KeyHandler();
-    PlayerA player = new PlayerA(this, keyH);
+    Player player = new Player(this, keyH);
     TileManager titleManager = new TileManager(this);
 
     Thread gameThread;
