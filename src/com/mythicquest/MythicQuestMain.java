@@ -8,11 +8,11 @@ import com.mythicquest.app.MythicQuestApp;
 
 public class MythicQuestMain {
 
-    public static void main(String[] args) throws Exception {
-        // Create an instance of MythicQuestApp
-        MythicQuestApp app = new MythicQuestApp();
-
-        // Call the start method to run the game
-        app.start();
-    }
+//    public static void main(String[] args) throws Exception {
+//        // Create an instance of MythicQuestApp
+//        MythicQuestApp app = new MythicQuestApp();
+//
+//        // Call the start method to run the game
+//        app.start();
+//    }
 }                   

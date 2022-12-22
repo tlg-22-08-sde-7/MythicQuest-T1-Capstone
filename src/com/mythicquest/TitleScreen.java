@@ -17,9 +17,9 @@ public class TitleScreen {
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
     Font btnFont = new Font("Times New Roman", Font.PLAIN, 25);
 
-    public static void main(String[] args) throws IOException {
-        new TitleScreen();
-    }
+//    public static void main(String[] args) throws IOException {
+//        new TitleScreen();
+//    }
 
     public TitleScreen() {
         try {
