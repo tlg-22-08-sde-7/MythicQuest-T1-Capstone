@@ -14,5 +14,14 @@
     <orderEntry type="library" name="app-utils-1.1" level="project" />
     <orderEntry type="library" name="gson-2.10" level="project" />
     <orderEntry type="library" name="google.code.gson" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/resources" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

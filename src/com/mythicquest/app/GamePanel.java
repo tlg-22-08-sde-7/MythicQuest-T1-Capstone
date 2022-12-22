@@ -2,6 +2,7 @@ package com.mythicquest.app;
 
 import com.mythicquest.engine.PlayerA;
 
+
 import javax.swing.JPanel;
 
 import java.awt.Color;
@@ -20,12 +21,17 @@ public class GamePanel extends JPanel implements Runnable {
     final int screenWidth = scaledTileSize * maxColumns; // 768 pixels
     final int screenHeight = scaledTileSize * maxRows; // 576 pixels
 
+
+
     // Frames per second (FPS)
     int FPS = 60;
 
     KeyHandler keyH = new KeyHandler();
-    Thread gameThread;
     PlayerA player = new PlayerA(this, keyH);
+    TileManager titleManager = new TileManager(this);
+
+    Thread gameThread;
+
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -86,6 +92,9 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
+        titleManager.draw(g2);
+
+
 
         player.draw(g2);
 
