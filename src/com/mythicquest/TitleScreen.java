@@ -87,5 +87,7 @@ public class TitleScreen {
         con.add(bottomNamePanel);
         con.add(readPanel);
         con.add(startPanel);
+
+        window.revalidate();
     }
 }
