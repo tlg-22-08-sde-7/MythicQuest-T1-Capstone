@@ -16,12 +16,17 @@ public class TextParser {
     // declared at top level, so it can be reused.
 
     private static HashMap<String, List<?>> verbsMap;
-    private static Gson gson;
+    private static Gson gson;                               // not instance field, it's static
 
 
 
     // First time class is used, it runs the static block.  Populates list in line 18 & 19.
     public static Map getVerbsMap() {
+
+        //TODO: , rename this to populateVerbsMap
+        // and make public getter that
+        // returns private field
+        // to test it
 
         // Read in data from JSON file
         Reader reader = null;
@@ -31,8 +36,8 @@ public class TextParser {
             e.printStackTrace();
         }
         gson = new Gson();
-        verbsMap = new HashMap<>();
-        verbsMap = gson.fromJson(reader, verbsMap.getClass());
+        verbsMap = new HashMap<>();      // populates it
+        verbsMap = gson.fromJson(reader, verbsMap.getClass());    // returns it to confirm
         //  JsonObject parser = JsonParser.parseReader(reader).getAsJsonObject();
 
         return verbsMap;
@@ -58,10 +63,11 @@ public class TextParser {
     }
 
     public static String runCommand(String Move, Player player) throws IOException {
-        List<String> wordList;
-        String out = "";
-        System.out.println("Move: " + Move);
-        String lowerMove = Move.trim().toLowerCase();
+        List<String> wordList; // reference to wordList, declares it
+        String out = "";       // empty string, what length of this string, yet not null
+        System.out.println("Move: " + Move);  // TODO: if Move not equal to null.. etc
+        String lowerMove = Move.trim().toLowerCase(); // TODO: fix this if string is null... null
+        // Pointer exception
 
         if ("help".equals(lowerMove)) {
             commandsAvailable();
@@ -86,7 +92,7 @@ public class TextParser {
         String[] words = input.split(delims); //String split into Array
         String verb = words[0];
 
-        getVerbsMap();
+        getVerbsMap();                // populating the map ... TODO: what if returned map and map
         List<String> action = new ArrayList<>();
 
         if (verbsMap.containsKey(verb.toLowerCase(Locale.ROOT))) {
@@ -154,14 +160,15 @@ public class TextParser {
         System.out.println("You have exited Mythic Quest. Thanks for playing");
         System.exit(0);
     }
+                         // TODO: how would we do a unit test on TextParser class
 
 
     public static void commandsAvailable() {
         System.out.println();
         System.out.println("As you play this game, please remember that commands require both a verb and a noun");
         System.out.println();
-        System.out.println("Valid commands are:");
-        getVerbsMap();
+        System.out.println("Valid commands are:");       // not accessible in a unit test
+        getVerbsMap();                                   // verbsMap is private
         System.out.println(verbsMap.keySet());
     }
 
