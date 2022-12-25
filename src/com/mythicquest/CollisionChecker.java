@@ -11,14 +11,15 @@ import java.awt.*;
 public class CollisionChecker {
     GamePanel gp;
 
+
     public CollisionChecker(GamePanel gp){
         this.gp = gp;
     }
     public void checkTile(PlayerA player){
-        int leftX = player.getWorldX() + player.solidArea.x;
-        int rightX = player.getWorldX() + player.solidArea.x + player.solidArea.width;
-        int topY = player.getWorldY() + player.solidArea.y;
-        int bottomY = player.getWorldY() + player.solidArea.y + player.solidArea.height;
+        int leftX = player.getX() + player.solidArea.x;
+        int rightX = player.getX() + player.solidArea.x + player.solidArea.width;
+        int topY = player.getY() + player.solidArea.y;
+        int bottomY = player.getY() + player.solidArea.y + player.solidArea.height;
 
         int pLeftCol = leftX / gp.getScaledTileSize();
         int pRightCol = rightX/gp.getScaledTileSize();
@@ -40,6 +41,8 @@ public class CollisionChecker {
                     for (int i = 0; i < gp.tm.tile.length; i++){
                         if (gp.tm.tile[i] != null && gp.tm.tile[i].tileNumber == 2){
                             gp.tm.loadNewMap(1);
+                            player.setX(gp.getScaledTileSize()*1);
+                            player.setY(gp.getScaledTileSize()*1);
 
                         }
 

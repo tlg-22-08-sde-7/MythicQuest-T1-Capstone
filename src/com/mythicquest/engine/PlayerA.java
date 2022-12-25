@@ -2,41 +2,28 @@ package com.mythicquest.engine;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
-import com.mythicquest.app.TileManager;
 
 import javax.swing.ImageIcon;
 import java.awt.*;
-import java.security.Key;
 
 public class PlayerA extends Sprite {
     GamePanel gp;
     KeyHandler keyH;
     public Rectangle solidArea;
-    public final int screenX;
-    public final int screenY;
-
-
-
-
-    //public int playerAction = IDLE;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
-        screenX = gp.screenWidth/2 - (gp.getScaledTileSize()/2);
-        screenY = gp.screenHeight/2 - (gp.getScaledTileSize()/2);
-        solidArea = new Rectangle(8,12,16,16);
         setDefaultValues();
+        solidArea = new Rectangle(8,16,32,32);
         getImage();
     }
 
-
     public void setDefaultValues() {
-        setWorldX(gp.getScaledTileSize() * 23);
-        setWorldY(gp.getScaledTileSize() * 21);
+        setX(gp.getScaledTileSize() * 2);
+        setY(gp.getScaledTileSize());
         setSpeed(4);
         setDirection("up");
-
     }
 
     public void getImage() {
@@ -45,9 +32,8 @@ public class PlayerA extends Sprite {
         setPlayerImage(player.getImage());
     }
 
-
     public void update() {
-        if (keyH.up || keyH.down || keyH.left || keyH.right){
+        if (keyH.up || keyH.down || keyH.left || keyH.right) {
             if (keyH.up) {
                 setDirection("up");
                 //setWorldY(getWorldY() - getSpeed());
@@ -66,37 +52,26 @@ public class PlayerA extends Sprite {
             gp.cChecker.checkTile(this);
 
             //if collision is false, player can move
-            if (!collisionOn){
-                switch (getDirection()){
+            if (!collisionOn) {
+                switch (getDirection()) {
                     case "up":
-                        setWorldY(getWorldY() - getSpeed());
+                        setY(getY() - getSpeed());
                         break;
                     case "down":
-                        setWorldY(getWorldY() + getSpeed());
+                        setY(getY() + getSpeed());
                         break;
                     case "left":
-                        setWorldX(getWorldX() - getSpeed());
+                        setX(getX() - getSpeed());
                         break;
                     case "right":
-                        setWorldX(getWorldX() + getSpeed());
+                        setX(getX() + getSpeed());
                         break;
                 }
             }
         }
-
-
-
-
-
-
-
     }
 
-
-
-
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
-
+        g2.drawImage(getPlayerImage(), getX(), getY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 }

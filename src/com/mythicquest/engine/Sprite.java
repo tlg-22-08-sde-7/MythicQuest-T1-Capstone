@@ -4,26 +4,24 @@ import java.awt.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Sprite {
-    public int getWorldX() {
-        return worldX;
-    }
 
-    private int worldX;
-    private int worldY;
+    private int x;
+    private int y;
     private int speed;
     private Image playerImage;
     private String direction;
+
     public Rectangle solidArea;
     public boolean collisionOn = false;
 
 
 
-    public void setWorldX(int x) {
-        this.worldX = x;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public void setWorldY(int y) {
-        this.worldY = y;
+    public void setY(int y) {
+        this.y = y;
     }
 
     public void setSpeed(int speed) {
@@ -39,8 +37,11 @@ public class Sprite {
     }
 
 
-    public int getWorldY() {
-        return worldY;
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
     }
 
     public int getSpeed() {
