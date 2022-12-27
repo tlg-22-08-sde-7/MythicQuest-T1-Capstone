@@ -13,7 +13,7 @@ public class TileManager {
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
-        tile = new Tile[15];
+        tile = new Tile[20];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         //loads the first map
@@ -23,10 +23,14 @@ public class TileManager {
 
     public ArrayList<String> getMapsPath() {
         ArrayList<String> maps = new ArrayList<>();
+        maps.add("resources/tiles/maps/map0.txt");
         maps.add("resources/tiles/maps/map1.txt");
         maps.add("resources/tiles/maps/map2.txt");
         maps.add("resources/tiles/maps/map3.txt");
         maps.add("resources/tiles/maps/map4.txt");
+        maps.add("resources/tiles/maps/map5.txt");
+        maps.add("resources/tiles/maps/map6.txt");
+        maps.add("resources/tiles/maps/map7.txt");
         return maps;
     }
 
@@ -57,6 +61,21 @@ public class TileManager {
             case 3:
                 renderTileImagesMap3();
                 break;
+            case 4:
+                renderTileImagesMap4();
+            break;
+            case 5:
+                renderTileImagesMap5();
+                break;
+            case 6:
+                renderTileImagesMap6();
+            break;
+            case 7:
+                renderTileImagesMap7();
+            break;
+            case 8:
+                renderTileImagesMap8();
+            break;
             default:
                 System.out.println("nah brah");
                // renderTileImagesMap1()
@@ -278,6 +297,168 @@ public class TileManager {
         tile[7].collision = true;
         tile[7].isAPortal = true;
         tile[7].tileNumber = "2";
+    }
+
+    private void renderTileImagesMap4() {
+        ImageIcon grass1 = new ImageIcon("resources/tiles/grasslg.png");
+        tile[0] = new Tile();
+        tile[0].image = grass1.getImage();
+
+        ImageIcon rocks = new ImageIcon("resources/tiles/SPRITESHEET/floor/rocks.png");
+        tile[1] = new Tile();
+        tile[1].image = rocks.getImage();
+
+        ImageIcon portal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[6] = new Tile();
+        tile[6].image = portal.getImage();
+        tile[6].collision = true;
+        tile[6].isAPortal = true;
+        tile[6].tileNumber = "5";
+
+        ImageIcon returnPortal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[7] = new Tile();
+        tile[7].image = returnPortal.getImage();
+        tile[7].collision = true;
+        tile[7].isAPortal = true;
+        tile[7].tileNumber = "3";
+    }
+
+    private void renderTileImagesMap5() {
+        ImageIcon grass1 = new ImageIcon("resources/tiles/grasslg.png");
+        tile[0] = new Tile();
+        tile[0].image = grass1.getImage();
+
+
+        ImageIcon portal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[6] = new Tile();
+        tile[6].image = portal.getImage();
+        tile[6].collision = true;
+        tile[6].isAPortal = true;
+        tile[6].tileNumber = "6";
+
+        ImageIcon returnPortal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[7] = new Tile();
+        tile[7].image = returnPortal.getImage();
+        tile[7].collision = true;
+        tile[7].isAPortal = true;
+        tile[7].tileNumber = "4";
+    }
+    private void renderTileImagesMap6() {
+        ImageIcon grass1 = new ImageIcon("resources/tiles/grasslg.png");
+        tile[0] = new Tile();
+        tile[0].image = grass1.getImage();
+
+        ImageIcon building1 = new ImageIcon("resources/tiles/b1.png");
+        tile[1] = new Tile();
+        tile[1].image = building1.getImage();
+        tile[1].collision = true;
+        ImageIcon building2 = new ImageIcon("resources/tiles/b2.png");
+        tile[2] = new Tile();
+        tile[2].image = building2.getImage();
+        tile[2].collision = true;
+
+
+
+        ImageIcon building3 = new ImageIcon("resources/tiles/b3.png");
+        tile[3] = new Tile();
+        tile[3].image = building3.getImage();
+        tile[3].collision = true;
+        ImageIcon building4 = new ImageIcon("resources/tiles/b4.png");
+        tile[4] = new Tile();
+        tile[4].image = building4.getImage();
+        tile[4].collision = true;
+        ImageIcon building5 = new ImageIcon("resources/tiles/b5.png");
+        tile[5] = new Tile();
+        tile[5].image = building5.getImage();
+        tile[5].collision = true;
+        ImageIcon building6 = new ImageIcon("resources/tiles/b8.png");
+        tile[8] = new Tile();
+        tile[8].image = building6.getImage();
+        tile[8].collision = true;
+        ImageIcon building7 = new ImageIcon("resources/tiles/b7.png");
+        tile[9] = new Tile();
+        tile[9].image = building7.getImage();
+        tile[9].collision = true;
+        ImageIcon building8 = new ImageIcon("resources/tiles/b88.png");
+        tile[10] = new Tile();
+        tile[10].image = building8.getImage();
+        tile[10].collision = true;
+        ImageIcon building9 = new ImageIcon("resources/tiles/b9.png");
+        tile[11] = new Tile();
+        tile[11].image = building9.getImage();
+        tile[11].collision = true;
+        ImageIcon building10 = new ImageIcon("resources/tiles/bBottom.png");
+        tile[12] = new Tile();
+        tile[12].image = building10.getImage();
+        tile[12].collision = true;
+        ImageIcon portal = new ImageIcon("resources/tiles/bdoor.png");
+        tile[13] = new Tile();
+        tile[13].image = portal.getImage();
+        tile[13].collision = true;
+        tile[13].isAPortal = true;
+        tile[13].tileNumber = "7";
+        ImageIcon statute1 = new ImageIcon("resources/tiles/stoneTop.png");
+        tile[14] = new Tile();
+        tile[14].image = statute1.getImage();
+        tile[14].collision = true;
+        ImageIcon statute2 = new ImageIcon("resources/tiles/stoneBottom.png");
+        tile[15] = new Tile();
+        tile[15].image = statute2.getImage();
+        tile[15].collision = true;
+
+//        ImageIcon portal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+//        tile[6] = new Tile();
+//        tile[6].image = portal.getImage();
+//        tile[6].collision = true;
+//        tile[6].isAPortal = true;
+//        tile[6].tileNumber = "7";
+
+        ImageIcon returnPortal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[7] = new Tile();
+        tile[7].image = returnPortal.getImage();
+        tile[7].collision = true;
+        tile[7].isAPortal = true;
+        tile[7].tileNumber = "5";
+    }
+    private void renderTileImagesMap7() {
+        ImageIcon grass1 = new ImageIcon("resources/tiles/grasslg.png");
+        tile[0] = new Tile();
+        tile[0].image = grass1.getImage();
+
+
+        ImageIcon portal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[6] = new Tile();
+        tile[6].image = portal.getImage();
+        tile[6].collision = true;
+        tile[6].isAPortal = true;
+        tile[6].tileNumber = "7";
+
+        ImageIcon returnPortal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[7] = new Tile();
+        tile[7].image = returnPortal.getImage();
+        tile[7].collision = true;
+        tile[7].isAPortal = true;
+        tile[7].tileNumber = "6";
+    }
+    private void renderTileImagesMap8() {
+        ImageIcon grass1 = new ImageIcon("resources/tiles/grasslg.png");
+        tile[0] = new Tile();
+        tile[0].image = grass1.getImage();
+
+
+//        ImageIcon portal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+//        tile[6] = new Tile();
+//        tile[6].image = portal.getImage();
+//        tile[6].collision = true;
+//        tile[6].isAPortal = true;
+//        tile[6].tileNumber = "8";
+
+        ImageIcon returnPortal = new ImageIcon("resources/tiles/SPRITESHEET/floor/portal.png");
+        tile[7] = new Tile();
+        tile[7].image = returnPortal.getImage();
+        tile[7].collision = true;
+        tile[7].isAPortal = true;
+        tile[7].tileNumber = "7";
     }
 
 
