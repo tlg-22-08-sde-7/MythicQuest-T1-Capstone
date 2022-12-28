@@ -1,6 +1,7 @@
 package com.mythicquest.app;
 
-import com.mythicquest.engine.Player;
+import com.mythicquest.CollisionChecker;
+import com.mythicquest.engine.PlayerA;
 
 import javax.swing.JPanel;
 
@@ -10,6 +11,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 public class GamePanel extends JPanel implements Runnable {
+
+
     // Screen settings
     final int tileSize = 16;
     final int scaler = 3;
@@ -17,20 +20,28 @@ public class GamePanel extends JPanel implements Runnable {
     final int scaledTileSize = tileSize * scaler; // 48 * 48 tile
     final int maxColumns = 16;
     final int maxRows = 12;
-    final int screenWidth = scaledTileSize * maxColumns; // 768 pixels
-    final int screenHeight = scaledTileSize * maxRows; // 576 pixels
-
-
+    public final int screenWidth = scaledTileSize * maxColumns; // 768 pixels
+    public final int screenHeight = scaledTileSize * maxRows; // 576 pixels
 
     // Frames per second (FPS)
     int FPS = 60;
 
+    //world settings
+    public final int maxWorldCol = 48;
+    public final  int maxWorldRow = 48;
+    public final int worldWidth = scaledTileSize * maxWorldCol;
+    public final int worldHeight = scaledTileSize * maxWorldRow;
+
     KeyHandler keyH = new KeyHandler();
-    Player player = new Player(this, keyH);
-    TileManager titleManager = new TileManager(this);
-
     Thread gameThread;
+    public TileManager tm = new TileManager(this);
+    public CollisionChecker cChecker = new CollisionChecker(this);
 
+    PlayerA player = new PlayerA(this, keyH);
+
+//    public void initClasses(){
+//        player.loadTileData(tm.getCurrentTile());
+//    }
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -44,6 +55,7 @@ public class GamePanel extends JPanel implements Runnable {
         gameThread = new Thread(this);
         gameThread.start();
     }
+
 
     @Override
     public void run() {
@@ -82,8 +94,13 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
+    public int getTileSize() {
+        return tileSize;
+    }
+
     public void update() {
         player.update();
+
     }
 
     @Override
@@ -91,10 +108,7 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
-        titleManager.draw(g2);
-
-
-
+        tm.draw(g2);
         player.draw(g2);
 
         g2.dispose();
