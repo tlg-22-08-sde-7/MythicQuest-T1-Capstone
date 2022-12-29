@@ -69,7 +69,7 @@ public class TextParser {
         String lowerMove = Move.trim().toLowerCase(); // TODO: fix this if string is null... null
         // Pointer exception
 
-        if ("help".equals(lowerMove)) {
+xc          if ("help".equals(lowerMove)) {
             commandsAvailable();
         }
 
