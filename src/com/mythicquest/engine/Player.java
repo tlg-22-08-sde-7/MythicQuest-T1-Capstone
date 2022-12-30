@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
+import com.mythicquest.entity.Sprite;
 
 import javax.swing.ImageIcon;
 import java.awt.Graphics2D;
@@ -32,8 +33,8 @@ public class Player extends Sprite {
     }
 
     public void setDefaultValues() {
-        setX(100);
-        setY(100);
+        setWorldX(100);
+        setWorldY(100);
         setSpeed(4);
     }
 
@@ -45,18 +46,18 @@ public class Player extends Sprite {
 
     public void update() {
         if (keyH.up) {
-            setY(getY() - getSpeed());
+            setWorldY(getWorldY() - getSpeed());
         } else if (keyH.down) {
-            setY(getY() + getSpeed());
+            setWorldY(getWorldY() + getSpeed());
         } else if (keyH.left) {
-            setX(getX() - getSpeed());
+            setWorldX(getWorldX() - getSpeed());
         } else if (keyH.right) {
-            setX(getX() + getSpeed());
+            setWorldX(getWorldX() + getSpeed());
         }
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getX(), getY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getPlayerImage(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 
     // Fight enemies

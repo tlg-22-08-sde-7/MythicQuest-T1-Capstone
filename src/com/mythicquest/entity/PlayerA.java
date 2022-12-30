@@ -1,4 +1,4 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
@@ -9,19 +9,23 @@ import java.awt.*;
 public class PlayerA extends Sprite {
     GamePanel gp;
     KeyHandler keyH;
+    public final int screenX;
+    public final int screenY;
     public Rectangle solidArea;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
+        screenX = gp.screenWidth/2 - (gp.getScaledTileSize()/2);
+        screenY = gp.screenHeight/2 - (gp.getScaledTileSize()/2);
         setDefaultValues();
         solidArea = new Rectangle(8,16,32,32);
         getImage();
     }
 
     public void setDefaultValues() {
-        setX(gp.getScaledTileSize() * 2);
-        setY(gp.getScaledTileSize());
+        setWorldX(gp.getScaledTileSize() * 2);
+        setWorldY(gp.getScaledTileSize());
         setSpeed(4);
         setDirection("up");
     }
@@ -55,16 +59,16 @@ public class PlayerA extends Sprite {
             if (!collisionOn) {
                 switch (getDirection()) {
                     case "up":
-                        setY(getY() - getSpeed());
+                        setWorldY(getWorldY() - getSpeed());
                         break;
                     case "down":
-                        setY(getY() + getSpeed());
+                        setWorldY(getWorldY() + getSpeed());
                         break;
                     case "left":
-                        setX(getX() - getSpeed());
+                        setWorldX(getWorldX() - getSpeed());
                         break;
                     case "right":
-                        setX(getX() + getSpeed());
+                        setWorldX(getWorldX() + getSpeed());
                         break;
                 }
             }
@@ -72,6 +76,6 @@ public class PlayerA extends Sprite {
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getX(), getY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getPlayerImage(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 }

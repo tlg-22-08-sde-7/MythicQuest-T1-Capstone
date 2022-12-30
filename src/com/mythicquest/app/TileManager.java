@@ -141,9 +141,6 @@ public class TileManager {
         tile[8] = new Tile();
         tile[8].image = eight1.getImage();
         tile[8].collision = true;
-
-
-
     }
 
     public void renderTileImagesMap1() {

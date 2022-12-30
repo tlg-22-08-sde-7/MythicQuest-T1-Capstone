@@ -1,7 +1,8 @@
 package com.mythicquest.app;
 
 import com.mythicquest.CollisionChecker;
-import com.mythicquest.engine.PlayerA;
+import com.mythicquest.entity.PlayerA;
+import com.mythicquest.object.SuperObject;
 
 import javax.swing.JPanel;
 
@@ -36,8 +37,9 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public TileManager tm = new TileManager(this);
     public CollisionChecker cChecker = new CollisionChecker(this);
-
     public PlayerA player = new PlayerA(this, keyH);
+    public AssetSetter aSetter = new AssetSetter(this);
+    public SuperObject obj[] = new SuperObject[10];
 
 //    public void initClasses(){
 //        player.loadTileData(tm.getCurrentTile());
@@ -49,6 +51,10 @@ public class GamePanel extends JPanel implements Runnable {
         this.setDoubleBuffered(true); // Improves rendering performance
         this.addKeyListener(keyH);
         this.setFocusable(true);
+    }
+
+    public void setUpGame() {
+        aSetter.setObject();
     }
 
     public void startGameThread() {
@@ -109,6 +115,14 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
         tm.draw(g2);
+
+        // OBJECT
+        for (int i = 0; i < obj.length; i++) {
+            if (obj[i] != null) {
+                obj[i].draw(g2, this);
+            }
+        }
+
         player.draw(g2);
 
         g2.dispose();

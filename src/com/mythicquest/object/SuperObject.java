@@ -14,16 +14,19 @@ public class SuperObject {
     public int solidAreaDefaultX = 0;
     public int solidAreaDefaultY = 0;
 
+    // Shows the objects on the map
     public void draw(Graphics2D g2, GamePanel gp) {
-        int screenX = worldX - gp.player.worldX + gp.player.screenX;
-        int screenY = worldY - gp.player.worldY + gp.player.screenY;
+//        int screenX = worldX - gp.player.getWorldX() + gp.player.screenX;
+//        int screenY = worldY - gp.player.getWorldX() + gp.player.screenY;
+        int screenX = gp.player.screenX;
+        int screenY = gp.player.screenY;
 
-        if (worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
-                worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
-                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
-                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
-            g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-        }
+//        if (worldX + gp.getScaledTileSize() > gp.player.getWorldX() - gp.player.screenX &&
+//                worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
+//                worldY + gp.getScaledTileSize() > gp.player.getWorldY() - gp.player.screenY &&
+//                worldY - gp.getScaledTileSize() < gp.player.getWorldY() + gp.player.screenY) {
+//        }
+        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 
 }

@@ -1,12 +1,7 @@
 package com.mythicquest;
 
 import com.mythicquest.app.GamePanel;
-import com.mythicquest.app.TileManager;
-import com.mythicquest.engine.Player;
-import com.mythicquest.engine.PlayerA;
-import com.mythicquest.engine.Sprite;
-
-import java.awt.*;
+import com.mythicquest.entity.PlayerA;
 
 public class CollisionChecker {
     GamePanel gp;
@@ -16,10 +11,10 @@ public class CollisionChecker {
         this.gp = gp;
     }
     public void checkTile(PlayerA player){
-        int leftX = player.getX() + player.solidArea.x;
-        int rightX = player.getX() + player.solidArea.x + player.solidArea.width;
-        int topY = player.getY() + player.solidArea.y;
-        int bottomY = player.getY() + player.solidArea.y + player.solidArea.height;
+        int leftX = player.getWorldX() + player.solidArea.x;
+        int rightX = player.getWorldX() + player.solidArea.x + player.solidArea.width;
+        int topY = player.getWorldY() + player.solidArea.y;
+        int bottomY = player.getWorldY() + player.solidArea.y + player.solidArea.height;
 
         int pLeftCol = leftX / gp.getScaledTileSize();
         int pRightCol = rightX/gp.getScaledTileSize();
@@ -47,12 +42,9 @@ public class CollisionChecker {
                             //System.out.println(Integer.parseInt(gp.tm.tile[i].tileNumber));
                              tileNumber = gp.tm.tile[i].tileNumber;
                            // System.out.println("i inside: " + gp.tm.tile[i].tileNumber);
-                            player.setX(8);
-                            player.setY(8);
-
+                            player.setWorldX(8);
+                            player.setWorldY(8);
                         }
-
-
                     }
                     //System.out.println("tileNumer ");
                     String t2 = "";
