@@ -1,10 +1,15 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
+//import com.mythicquest.entity.Enemy;
+import com.mythicquest.engine.Direction;
+import com.mythicquest.engine.Location;
+import com.mythicquest.engine.Screens;
 
 import javax.swing.ImageIcon;
 import java.awt.Graphics2D;
@@ -32,31 +37,31 @@ public class Player extends Sprite {
     }
 
     public void setDefaultValues() {
-        setX(100);
-        setY(100);
+        setWorldX(100);
+        setWorldY(100);
         setSpeed(4);
     }
 
     public void getImage() {
         String playerImagePath = "resources/Sprites/pixil-frame-0.png";
         ImageIcon player = new ImageIcon(playerImagePath);
-        setPlayerImage(player.getImage());
+        setPlayerImage((BufferedImage) player.getImage());
     }
 
     public void update() {
         if (keyH.up) {
-            setY(getY() - getSpeed());
+            setWorldY(getWorldY() - getSpeed());
         } else if (keyH.down) {
-            setY(getY() + getSpeed());
+            setWorldY(getWorldY() + getSpeed());
         } else if (keyH.left) {
-            setX(getX() - getSpeed());
+            setWorldX(getWorldX() - getSpeed());
         } else if (keyH.right) {
-            setX(getX() + getSpeed());
+            setWorldX(getWorldX() + getSpeed());
         }
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getX(), getY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getPlayerImage(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 
     // Fight enemies
@@ -176,46 +181,46 @@ public class Player extends Sprite {
 
 
     //move player to new location
-    static void movePlayer(Player player, String noun) throws IOException {
-        Location newLocation = null;
-        if (noun.equals("north")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
-            if (newLocation == null) {
-                System.out.println("You can't go North.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-            }
-        } else if (noun.equals("east")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
-            if (newLocation == null) {
-                System.out.println("You can't go East.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-                if ("cave".equals(newLocation.getName())) {
-                    Enemy boss = new Enemy();
-                    Screens.endingOutcome(player.fight(boss));
-                    System.exit(0);
-                }
-            }
-        } else if (noun.equals("south")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
-            if (newLocation == null) {
-                System.out.println("You can't go South.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-                if ("cave".equals(newLocation.getName())) {
-                    Enemy boss = new Enemy();
-                    Screens.endingOutcome(player.fight(boss));
-                    System.exit(0);
-                }
-            }
-        } else if (noun.equals("west")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
-            if (newLocation == null) {
-                System.out.println("You can't go West.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-            }
-        } else System.out.println("You have LOST your way !");
-    }
+//    public static void movePlayer(Player player, String noun) throws IOException {
+//        Location newLocation = null;
+//        if (noun.equals("north")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
+//            if (newLocation == null) {
+//                System.out.println("You can't go North.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//            }
+//        } else if (noun.equals("east")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
+//            if (newLocation == null) {
+//                System.out.println("You can't go East.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//                if ("cave".equals(newLocation.getName())) {
+//                    Enemy boss = new Enemy();
+//                    Screens.endingOutcome(player.fight(boss));
+//                    System.exit(0);
+//                }
+//            }
+//        } else if (noun.equals("south")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
+//            if (newLocation == null) {
+//                System.out.println("You can't go South.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//                if ("cave".equals(newLocation.getName())) {
+//                    Enemy boss = new Enemy();
+//                    Screens.endingOutcome(player.fight(boss));
+//                    System.exit(0);
+//                }
+//            }
+//        } else if (noun.equals("west")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
+//            if (newLocation == null) {
+//                System.out.println("You can't go West.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//            }
+//        } else System.out.println("You have LOST your way !");
+//    }
 }

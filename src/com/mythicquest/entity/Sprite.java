@@ -1,34 +1,35 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
 import java.awt.*;
-import java.util.concurrent.locks.ReentrantLock;
+import java.awt.image.BufferedImage;
 
 public class Sprite {
 
-    private int x;
-    private int y;
+    private int worldX;
+    private int worldY;
     private int speed;
-    private Image playerImage;
+    private BufferedImage playerImage;
     private String direction;
 
     public Rectangle solidArea;
+    public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
 
 
 
-    public void setX(int x) {
-        this.x = x;
+    public void setWorldX(int worldX) {
+        this.worldX = worldX;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setWorldY(int worldY) {
+        this.worldY = worldY;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    public void setPlayerImage(Image playerImage) {
+    public void setPlayerImage(BufferedImage playerImage) {
         this.playerImage = playerImage;
     }
 
@@ -37,11 +38,11 @@ public class Sprite {
     }
 
 
-    public int getX() {
-        return x;
+    public int getWorldX() {
+        return worldX;
     }
-    public int getY() {
-        return y;
+    public int getWorldY() {
+        return worldY;
     }
 
     public int getSpeed() {

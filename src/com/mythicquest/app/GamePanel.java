@@ -1,7 +1,8 @@
 package com.mythicquest.app;
 
 import com.mythicquest.CollisionChecker;
-import com.mythicquest.engine.PlayerA;
+import com.mythicquest.entity.PlayerA;
+import com.mythicquest.object.SuperObject;
 
 import javax.swing.JPanel;
 
@@ -12,11 +13,11 @@ import java.awt.Graphics2D;
 
 public class GamePanel extends JPanel implements Runnable {
 
-
     // Screen settings
     final int tileSize = 16;
     final int scaler = 3;
 
+    // Window size
     final int scaledTileSize = tileSize * scaler; // 48 * 48 tile
     final int maxColumns = 16;
     final int maxRows = 12;
@@ -27,17 +28,18 @@ public class GamePanel extends JPanel implements Runnable {
     int FPS = 60;
 
     //world settings
-    public final int maxWorldCol = 48;
-    public final  int maxWorldRow = 48;
-    public final int worldWidth = scaledTileSize * maxWorldCol;
-    public final int worldHeight = scaledTileSize * maxWorldRow;
+    public final int maxWorldCol = 50;
+    public final  int maxWorldRow = 50;
+//    public final int worldWidth = scaledTileSize * maxWorldCol;
+//    public final int worldHeight = scaledTileSize * maxWorldRow;
 
+    public TileManager tm = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    public TileManager tm = new TileManager(this);
     public CollisionChecker cChecker = new CollisionChecker(this);
-
-    PlayerA player = new PlayerA(this, keyH);
+    public PlayerA player = new PlayerA(this, keyH);
+    public AssetSetter aSetter = new AssetSetter(this);
+    public SuperObject obj[] = new SuperObject[10];
 
 //    public void initClasses(){
 //        player.loadTileData(tm.getCurrentTile());
@@ -51,6 +53,10 @@ public class GamePanel extends JPanel implements Runnable {
         this.setFocusable(true);
     }
 
+    public void setUpGame() {
+        aSetter.setObject();
+    }
+
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
@@ -60,42 +66,31 @@ public class GamePanel extends JPanel implements Runnable {
     @Override
     public void run() {
         double drawInterval = 1000000000 / FPS; // 0.017 seconds
-        // double delta = 0;
-        // long lastTime = System.nanoTime();
+        double delta = 0;
+        long lastTime = System.nanoTime();
         long currentTime;
-        double nextDrawTime = System.nanoTime() + drawInterval;
+        long timer = 0;
+        int drawCount = 0;
 
         while (gameThread != null) {
             currentTime = System.nanoTime();
 
-            // delta += (currentTime - lastTime) / drawInterval;
-            // lastTime = currentTime;
+            delta += (currentTime - lastTime) / drawInterval;
+            timer += (currentTime - lastTime);
+            lastTime = currentTime;
 
-            // if (delta >= 1) { update(); repaint(); delta--; }
+            if (delta >= 1) {
+                update();
+                repaint();
+                delta--;
+                drawCount++;
+            }
 
-            update();
-            repaint();
-
-            try {
-                double remainingTime = nextDrawTime - System.nanoTime();
-                remainingTime /= 1000000; // Convert nano to milli
-
-                if (remainingTime < 0) {
-                    remainingTime = 0;
-                }
-
-                Thread.sleep((long) remainingTime);
-
-                nextDrawTime += drawInterval;
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (timer >= 1000000000) {
+                drawCount = 0;
+                timer = 0;
             }
         }
-    }
-
-    public int getTileSize() {
-        return tileSize;
     }
 
     public void update() {
@@ -106,12 +101,24 @@ public class GamePanel extends JPanel implements Runnable {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D) g;
-        tm.draw(g2);
-        player.draw(g2);
 
+        // TILE
+        tm.draw(g2);
+
+        // OBJECT
+        for (int i = 0; i < obj.length; i++) {
+            if (obj[i] != null) {
+                obj[i].draw(g2, this);
+            }
+        }
+
+        player.draw(g2);
         g2.dispose();
+    }
+
+    public int getTileSize() {
+        return tileSize;
     }
 
     public int getScaledTileSize() {
