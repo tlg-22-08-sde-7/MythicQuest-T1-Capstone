@@ -3,8 +3,11 @@ package com.mythicquest.entity;
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class PlayerA extends Sprite {
     GamePanel gp;
@@ -31,9 +34,11 @@ public class PlayerA extends Sprite {
     }
 
     public void getImage() {
-        String playerImagePath = "resources/Sprites/pixil-frame-0.png";
-        ImageIcon player = new ImageIcon(playerImagePath);
-        setPlayerImage(player.getImage());
+        try {
+            setPlayerImage(ImageIO.read(getClass().getResourceAsStream("/Sprites/pixil-frame-0.png")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void update() {

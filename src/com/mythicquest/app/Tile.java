@@ -1,9 +1,10 @@
 package com.mythicquest.app;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Tile {
-    public Image image;
+    public BufferedImage image;
     public boolean collision = false;
     public boolean isAPortal = false;
     public String tileNumber;

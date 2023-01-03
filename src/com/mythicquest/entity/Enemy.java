@@ -1,4 +1,4 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
 class Enemy {
     private int health = 100;

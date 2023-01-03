@@ -1,13 +1,14 @@
 package com.mythicquest.entity;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Sprite {
 
     private int worldX;
     private int worldY;
     private int speed;
-    private Image playerImage;
+    private BufferedImage playerImage;
     private String direction;
 
     public Rectangle solidArea;
@@ -28,7 +29,7 @@ public class Sprite {
         this.speed = speed;
     }
 
-    public void setPlayerImage(Image playerImage) {
+    public void setPlayerImage(BufferedImage playerImage) {
         this.playerImage = playerImage;
     }
 

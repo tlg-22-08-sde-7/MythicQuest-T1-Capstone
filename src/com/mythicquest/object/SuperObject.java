@@ -18,17 +18,17 @@ public class SuperObject {
     // Shows the objects on the map
     // public void draw(Graphics2D g2, GamePanel gp)
     public void draw(Graphics2D g2, GamePanel gp) {
-//        int screenX = worldX - gp.player.getWorldX() + gp.player.screenX;
-//        int screenY = worldY - gp.player.getWorldX() + gp.player.screenY;
-        int screenX = gp.player.screenX;
-        int screenY = gp.player.screenY;
+        int screenX = worldX - gp.player.getWorldX() + gp.player.screenX;
+        int screenY = worldY - gp.player.getWorldX() + gp.player.screenY;
+//        int screenX = gp.player.screenX;
+//        int screenY = gp.player.screenY;
 
-//        if (worldX + gp.getScaledTileSize() > gp.player.getWorldX() - gp.player.screenX &&
-//                worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
-//                worldY + gp.getScaledTileSize() > gp.player.getWorldY() - gp.player.screenY &&
-//                worldY - gp.getScaledTileSize() < gp.player.getWorldY() + gp.player.screenY) {
-//        }
-        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        if (worldX + gp.getScaledTileSize() > gp.player.getWorldX() - gp.player.screenX &&
+                worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
+                worldY + gp.getScaledTileSize() > gp.player.getWorldY() - gp.player.screenY &&
+                worldY - gp.getScaledTileSize() < gp.player.getWorldY() + gp.player.screenY) {
+            g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        }
     }
 
 }
