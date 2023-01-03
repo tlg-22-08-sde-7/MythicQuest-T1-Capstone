@@ -66,7 +66,8 @@ public class GamePanel extends JPanel implements Runnable {
     @Override
     public void run() {
         double drawInterval = 1000000000 / FPS; // 0.017 seconds
-        double delta = 0;long lastTime = System.nanoTime();
+        double delta = 0;
+        long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
         int drawCount = 0;
@@ -92,10 +93,6 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
-    public int getTileSize() {
-        return tileSize;
-    }
-
     public void update() {
         player.update();
 
@@ -118,6 +115,10 @@ public class GamePanel extends JPanel implements Runnable {
 
         player.draw(g2);
         g2.dispose();
+    }
+
+    public int getTileSize() {
+        return tileSize;
     }
 
     public int getScaledTileSize() {

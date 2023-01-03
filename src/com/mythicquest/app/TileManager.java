@@ -30,18 +30,18 @@ public class TileManager {
 
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/wall5.png"));
-//            tile[1].collision = true;
+            tile[1].collision = true;
 
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/water.png"));
-//            tile[2].collision = true;
+            tile[2].collision = true;
 
             tile[3] = new Tile();
             tile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/earth.png"));
 
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tree.png"));
-//            tile[4].collision = true;
+            tile[4].collision = true;
 
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/road00.png"));
@@ -81,16 +81,16 @@ public class TileManager {
 
         while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
             int tileNum = mapTileNum[worldCol][worldRow];
-            int worldX = worldCol * gp.scaledTileSize; // Position on the map
-            int worldY = worldRow * gp.scaledTileSize;
+            int worldX = worldCol * gp.getScaledTileSize(); // Position on the map
+            int worldY = worldRow * gp.getScaledTileSize();
             int screenX = worldX - gp.player.getWorldX() + gp.player.screenX; // Where on the screen we draw it
             int screenY = worldY - gp.player.getWorldY() + gp.player.screenY;
 
             // Improves game performance
-            if (worldX + gp.scaledTileSize > gp.player.getWorldX() - gp.player.screenX &&
-                    worldX - gp.scaledTileSize < gp.player.getWorldX() + gp.player.screenX &&
-                    worldY + gp.scaledTileSize > gp.player.getWorldY()  - gp.player.screenY &&
-                    worldY - gp.scaledTileSize < gp.player.getWorldY()  + gp.player.screenY) {
+            if (worldX + gp.getScaledTileSize() > gp.player.getWorldX() - gp.player.screenX &&
+                    worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
+                    worldY + gp.getScaledTileSize() > gp.player.getWorldY()  - gp.player.screenY &&
+                    worldY - gp.getScaledTileSize() < gp.player.getWorldY()  + gp.player.screenY) {
                 g2.drawImage(tile[tileNum].image, screenX, screenY, gp.scaledTileSize, gp.scaledTileSize, null);
             }
             worldCol++;

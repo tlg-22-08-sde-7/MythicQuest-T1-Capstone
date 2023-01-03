@@ -14,7 +14,6 @@ public class PlayerA extends Sprite {
     KeyHandler keyH;
     public final int screenX;
     public final int screenY;
-    public Rectangle solidArea;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -30,7 +29,7 @@ public class PlayerA extends Sprite {
         setWorldX(gp.getScaledTileSize() * 23);
         setWorldY(gp.getScaledTileSize() * 21);
         setSpeed(4);
-        setDirection("up");
+        setDirection("down");
     }
 
     public void getImage() {
