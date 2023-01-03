@@ -1,11 +1,11 @@
 package com.mythicquest.engine;
 
 import com.apps.util.Console;
+import com.mythicquest.entity.Player;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Screens {

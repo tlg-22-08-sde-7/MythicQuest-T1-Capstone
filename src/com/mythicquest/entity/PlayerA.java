@@ -1,35 +1,43 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class PlayerA extends Sprite {
     GamePanel gp;
     KeyHandler keyH;
-    public Rectangle solidArea;
+    public final int screenX;
+    public final int screenY;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
-        setDefaultValues();
+        screenX = gp.screenWidth/2 - (gp.getScaledTileSize()/2);
+        screenY = gp.screenHeight/2 - (gp.getScaledTileSize()/2);
         solidArea = new Rectangle(8,16,32,32);
+        setDefaultValues();
         getImage();
     }
 
     public void setDefaultValues() {
-        setX(gp.getScaledTileSize() * 2);
-        setY(gp.getScaledTileSize());
+        setWorldX(gp.getScaledTileSize() * 23);
+        setWorldY(gp.getScaledTileSize() * 21);
         setSpeed(4);
-        setDirection("up");
+        setDirection("down");
     }
 
     public void getImage() {
-        String playerImagePath = "resources/Sprites/pixil-frame-0.png";
-        ImageIcon player = new ImageIcon(playerImagePath);
-        setPlayerImage(player.getImage());
+        try {
+            setPlayerImage(ImageIO.read(getClass().getResourceAsStream("/Sprites/pixil-frame-0.png")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void update() {
@@ -55,16 +63,16 @@ public class PlayerA extends Sprite {
             if (!collisionOn) {
                 switch (getDirection()) {
                     case "up":
-                        setY(getY() - getSpeed());
+                        setWorldY(getWorldY() - getSpeed());
                         break;
                     case "down":
-                        setY(getY() + getSpeed());
+                        setWorldY(getWorldY() + getSpeed());
                         break;
                     case "left":
-                        setX(getX() - getSpeed());
+                        setWorldX(getWorldX() - getSpeed());
                         break;
                     case "right":
-                        setX(getX() + getSpeed());
+                        setWorldX(getWorldX() + getSpeed());
                         break;
                 }
             }
@@ -72,6 +80,6 @@ public class PlayerA extends Sprite {
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getX(), getY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getPlayerImage(), screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 }

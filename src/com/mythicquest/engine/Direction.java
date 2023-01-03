@@ -1,5 +1,5 @@
 package com.mythicquest.engine;
 
-enum Direction {
+public enum Direction {
     NORTH, EAST, SOUTH, WEST
 }
