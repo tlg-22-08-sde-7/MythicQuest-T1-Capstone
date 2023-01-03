@@ -14,5 +14,6 @@ public class AssetSetter {
         gp.obj[0] = new Key();
         gp.obj[0].worldX = 4 * gp.getScaledTileSize();
         gp.obj[0].worldY = 8 * gp.getScaledTileSize();
+        gp.obj[0].mapNumber = 0;
     }
 }
