@@ -80,6 +80,6 @@ public class PlayerA extends Sprite {
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getPlayerImage(), screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 }
