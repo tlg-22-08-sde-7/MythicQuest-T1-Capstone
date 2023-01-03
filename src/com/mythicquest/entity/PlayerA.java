@@ -21,14 +21,14 @@ public class PlayerA extends Sprite {
         this.keyH = keyH;
         screenX = gp.screenWidth/2 - (gp.getScaledTileSize()/2);
         screenY = gp.screenHeight/2 - (gp.getScaledTileSize()/2);
-        setDefaultValues();
         solidArea = new Rectangle(8,16,32,32);
+        setDefaultValues();
         getImage();
     }
 
     public void setDefaultValues() {
-        setWorldX(gp.getScaledTileSize() * 2);
-        setWorldY(gp.getScaledTileSize());
+        setWorldX(gp.getScaledTileSize() * 23);
+        setWorldY(gp.getScaledTileSize() * 21);
         setSpeed(4);
         setDirection("up");
     }
