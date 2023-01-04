@@ -5,6 +5,7 @@ import com.mythicquest.object.SuperObject;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 
 public class Board {
     GamePanel gp;
@@ -23,10 +24,47 @@ public class Board {
         this.gp = gp;
 
         SuperObject heart = new Heart(gp);
-        fullHeart = heart.image;
-        threeQuarterHeart = heart.image1;
+        emptyHeart = heart.image;
+        quarterHeart = heart.image1;
         halfHeart = heart.image2;
-        quarterHeart = heart.image3;
-        emptyHeart = heart.image4;
+        threeQuarterHeart = heart.image3;
+        fullHeart = heart.image4;
+    }
+
+    public void draw(Graphics2D g2) {
+        this.g2 = g2;
+
+        g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g2.setColor(Color.white);
+
+//        if (gp.gameState == gp.playState) {
+//            drawPlayerLife();
+//        }
+    }
+
+    public void drawPlayerLife() {
+        int x = gp.getScaledTileSize() / 2;
+        int y = gp.getScaledTileSize() / 2;
+        int i = 0;
+
+        while (i < gp.player.getMaxLife() / 4) {
+            g2.drawImage(emptyHeart, x, y, null);
+            i++;
+            x += gp.getScaledTileSize();
+        }
+
+        x = gp.getScaledTileSize() / 2;
+        y = gp.getScaledTileSize() / 2;
+        i = 0;
+
+        while (i < gp.player.getLife()) {
+            g2.drawImage(halfHeart, x, y, null);
+            i++;
+            if (i < gp.player.getLife()) {
+                g2.drawImage(fullHeart, x, y, null);
+            }
+            i++;
+            x += gp.getScaledTileSize();
+        }
     }
 }
