@@ -24,5 +24,9 @@ public class AssetSetter {
         gp.obj[2] = new Chest();
         gp.obj[2].worldX = 10 * gp.getScaledTileSize();
         gp.obj[2].worldY = 8 * gp.getScaledTileSize();
+
+        gp.obj[3] = new Door();
+        gp.obj[3].worldX = 39 * gp.getScaledTileSize();
+        gp.obj[3].worldY = 27 * gp.getScaledTileSize();
     }
 }
