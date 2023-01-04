@@ -15,6 +15,7 @@ public class PlayerA extends Sprite {
     public final int screenX;
     public final int screenY;
     private int hasKey = 0;
+    private int dungeonKey = 0;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -97,11 +98,17 @@ public class PlayerA extends Sprite {
                     gp.obj[index] = null;
                     System.out.println("Key count:" + hasKey);
                     break;
-                case "Door":
+                case "Chest":
                     if (hasKey > 0) {
                         gp.obj[index] = null;
-                        hasKey--;
-                        System.out.println("Key count:" + hasKey);
+                        dungeonKey++;
+                        System.out.println("Obtained dungeon key");
+                    }
+                    break;
+                case "Door":
+                    if (dungeonKey > 0) {
+                        gp.obj[index] = null;
+                        dungeonKey--;
                     }
                     break;
             }
