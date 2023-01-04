@@ -36,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public Board board = new Board(this);
 
     public PlayerA player = new PlayerA(this, keyH);
     // private Player player = new Player(this, keyH);
@@ -111,11 +112,9 @@ public class GamePanel extends JPanel implements Runnable {
         }
 
         player.draw(g2);
-        g2.dispose();
-    }
 
-    public int getTileSize() {
-        return tileSize;
+        board.draw(g2);
+        g2.dispose();
     }
 
     public int getScaledTileSize() {
