@@ -1,5 +1,6 @@
 package com.mythicquest.entity;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,15 +13,18 @@ import com.mythicquest.engine.Location;
 import com.mythicquest.engine.Screens;
 
 import javax.swing.ImageIcon;
-import java.awt.Graphics2D;
 
 public class Player extends Sprite {
+    // Text
     private Location location;
     private ArrayList<String> inventory;
     private int healthLevel;
 
+    // GUI
     GamePanel gp;
     KeyHandler keyH;
+    private final int screenX = gp.screenWidth / 2 - (gp.getScaledTileSize() / 2);
+    private final int screenY = gp.screenHeight / 2 - (gp.getScaledTileSize() / 2);;
 
     // ctor
     public Player(Location currentLocation) {
@@ -32,6 +36,9 @@ public class Player extends Sprite {
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
+        solidArea = new Rectangle(8, 16, 32, 32);
+        getScreenX();
+        getScreenY();
         setDefaultValues();
         getImage();
     }
@@ -40,6 +47,9 @@ public class Player extends Sprite {
         setWorldX(100);
         setWorldY(100);
         setSpeed(4);
+
+        setMaxLife(16);
+        setLife(getMaxLife());
     }
 
     public void getImage() {
@@ -179,8 +189,14 @@ public class Player extends Sprite {
         this.location = location;
     }
 
+    public int getScreenX() {
+        return screenX;
+    }
 
-    //move player to new location
+    public int getScreenY() {
+        return screenY;
+    }
+// move player to new location
 //    public static void movePlayer(Player player, String noun) throws IOException {
 //        Location newLocation = null;
 //        if (noun.equals("north")) {

@@ -15,7 +15,8 @@ public class Sprite {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
 
-
+    private int maxLife;
+    private int life;
 
     public void setWorldX(int worldX) {
         this.worldX = worldX;
@@ -37,7 +38,6 @@ public class Sprite {
         this.direction = direction;
     }
 
-
     public int getWorldX() {
         return worldX;
     }
@@ -55,5 +55,21 @@ public class Sprite {
 
     public String getDirection() {
         return direction;
+    }
+
+    public int getMaxLife() {
+        return maxLife;
+    }
+
+    public void setMaxLife(int maxLife) {
+        this.maxLife = maxLife;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
     }
 }

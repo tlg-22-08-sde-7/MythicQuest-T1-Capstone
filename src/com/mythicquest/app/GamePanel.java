@@ -1,6 +1,7 @@
 package com.mythicquest.app;
 
 import com.mythicquest.CollisionChecker;
+import com.mythicquest.entity.Player;
 import com.mythicquest.entity.PlayerA;
 import com.mythicquest.object.SuperObject;
 
@@ -14,36 +15,36 @@ import java.awt.Graphics2D;
 public class GamePanel extends JPanel implements Runnable {
 
     // Screen settings
-    final int tileSize = 16;
-    final int scaler = 3;
+    private final int tileSize = 16;
+    private final int scaler = 3;
 
     // Window size
-    final int scaledTileSize = tileSize * scaler; // 48 * 48 tile
-    final int maxColumns = 16;
-    final int maxRows = 12;
+    private final int scaledTileSize = tileSize * scaler; // 48 * 48 tile
+    private final int maxColumns = 16;
+    private final int maxRows = 12;
     public final int screenWidth = scaledTileSize * maxColumns; // 768 pixels
     public final int screenHeight = scaledTileSize * maxRows; // 576 pixels
 
     // Frames per second (FPS)
     int FPS = 60;
 
-    //world settings
+    // World settings
     public final int maxWorldCol = 50;
     public final  int maxWorldRow = 50;
-//    public final int worldWidth = scaledTileSize * maxWorldCol;
-//    public final int worldHeight = scaledTileSize * maxWorldRow;
 
     public TileManager tm = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public Board board = new Board(this);
+
     public PlayerA player = new PlayerA(this, keyH);
+    // private Player player = new Player(this, keyH);
     public AssetSetter aSetter = new AssetSetter(this);
     public SuperObject obj[] = new SuperObject[10];
 
-//    public void initClasses(){
-//        player.loadTileData(tm.getCurrentTile());
-//    }
+    public int gameState;
+    public final int playState = 1;
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -55,13 +56,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setUpGame() {
         aSetter.setObject();
+        gameState = playState;
     }
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
-
 
     @Override
     public void run() {
@@ -70,7 +71,6 @@ public class GamePanel extends JPanel implements Runnable {
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
-        int drawCount = 0;
 
         while (gameThread != null) {
             currentTime = System.nanoTime();
@@ -83,11 +83,9 @@ public class GamePanel extends JPanel implements Runnable {
                 update();
                 repaint();
                 delta--;
-                drawCount++;
             }
 
             if (timer >= 1000000000) {
-                drawCount = 0;
                 timer = 0;
             }
         }
@@ -114,14 +112,13 @@ public class GamePanel extends JPanel implements Runnable {
         }
 
         player.draw(g2);
-        g2.dispose();
-    }
 
-    public int getTileSize() {
-        return tileSize;
+        board.draw(g2);
+        g2.dispose();
     }
 
     public int getScaledTileSize() {
         return scaledTileSize;
     }
+
 }

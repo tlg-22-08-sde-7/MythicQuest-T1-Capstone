@@ -92,7 +92,7 @@ public class TileManager {
                     worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
                     worldY + gp.getScaledTileSize() > gp.player.getWorldY()  - gp.player.screenY &&
                     worldY - gp.getScaledTileSize() < gp.player.getWorldY()  + gp.player.screenY) {
-                g2.drawImage(tile[tileNum].image, screenX, screenY, gp.scaledTileSize, gp.scaledTileSize, null);
+                g2.drawImage(tile[tileNum].image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
             }
             worldCol++;
 
