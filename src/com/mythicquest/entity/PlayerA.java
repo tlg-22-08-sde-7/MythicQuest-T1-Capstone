@@ -94,6 +94,13 @@ public class PlayerA extends Sprite {
                     gp.obj[index] = null;
                     System.out.println("Key count:" + hasKey);
                     break;
+                case "Door":
+                    if (hasKey > 0) {
+                        gp.obj[index] = null;
+                        hasKey--;
+                        System.out.println("Key count:" + hasKey);
+                    }
+                    break;
             }
         }
     }
