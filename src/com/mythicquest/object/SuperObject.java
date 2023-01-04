@@ -13,7 +13,6 @@ public class SuperObject {
     public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
     public int solidAreaDefaultX = 0;
     public int solidAreaDefaultY = 0;
-    public int mapNumber;
 
     // Shows the objects on the map
     // public void draw(Graphics2D g2, GamePanel gp)
