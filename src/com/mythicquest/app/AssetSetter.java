@@ -12,8 +12,7 @@ public class AssetSetter {
     public void setObject() {
         // Coordinates on world map
         gp.obj[0] = new Key();
-        gp.obj[0].worldX = 4 * gp.getScaledTileSize();
-        gp.obj[0].worldY = 8 * gp.getScaledTileSize();
-        gp.obj[0].mapNumber = 0;
+        gp.obj[0].worldX = 24 * gp.getScaledTileSize();
+        gp.obj[0].worldY = 20 * gp.getScaledTileSize();
     }
 }
