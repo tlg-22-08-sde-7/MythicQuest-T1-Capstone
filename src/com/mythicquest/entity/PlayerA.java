@@ -14,6 +14,7 @@ public class PlayerA extends Sprite {
     KeyHandler keyH;
     public final int screenX;
     public final int screenY;
+    private int hasKey = 0;
 
     public PlayerA(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -62,6 +63,10 @@ public class PlayerA extends Sprite {
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            // Check object collision
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
             //if collision is false, player can move
             if (!collisionOn) {
                 switch (getDirection()) {
@@ -82,7 +87,36 @@ public class PlayerA extends Sprite {
         }
     }
 
+    public void pickUpObject(int index) {
+        // Any number fine except for object array's index
+        if (index != 999) {
+            String objectName = gp.obj[index].name;
+            switch (objectName) {
+                case "Key":
+                    hasKey++;
+                    gp.obj[index] = null;
+                    System.out.println("Key count:" + hasKey);
+                    break;
+                case "Door":
+                    if (hasKey > 0) {
+                        gp.obj[index] = null;
+                        hasKey--;
+                        System.out.println("Key count:" + hasKey);
+                    }
+                    break;
+            }
+        }
+    }
+
     public void draw(Graphics2D g2) {
         g2.drawImage(getPlayerImage(), screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+    }
+
+    public int getHasKey() {
+        return hasKey;
+    }
+
+    public void setHasKey(int hasKey) {
+        this.hasKey = hasKey;
     }
 }
