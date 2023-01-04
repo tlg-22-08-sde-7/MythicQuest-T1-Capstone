@@ -40,6 +40,9 @@ public class Player extends Sprite {
         setWorldX(100);
         setWorldY(100);
         setSpeed(4);
+
+        setMaxLife(16);
+        setLife(getMaxLife());
     }
 
     public void getImage() {
