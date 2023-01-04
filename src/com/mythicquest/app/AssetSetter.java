@@ -1,5 +1,6 @@
 package com.mythicquest.app;
 
+import com.mythicquest.object.Chest;
 import com.mythicquest.object.Door;
 import com.mythicquest.object.Key;
 
@@ -17,7 +18,11 @@ public class AssetSetter {
         gp.obj[0].worldY = 20 * gp.getScaledTileSize();
 
         gp.obj[1] = new Door();
-        gp.obj[1].worldX = 24 * gp.getScaledTileSize();
-        gp.obj[1].worldY = 20 * gp.getScaledTileSize();
+        gp.obj[1].worldX = 10 * gp.getScaledTileSize();
+        gp.obj[1].worldY = 11 * gp.getScaledTileSize();
+
+        gp.obj[2] = new Chest();
+        gp.obj[2].worldX = 10 * gp.getScaledTileSize();
+        gp.obj[2].worldY = 8 * gp.getScaledTileSize();
     }
 }
