@@ -32,7 +32,7 @@ public class PlayerA extends Sprite {
         setSpeed(4);
         setDirection("down");
 
-        setMaxLife(16);
+        setMaxLife(8);
         setLife(getMaxLife());
     }
 
