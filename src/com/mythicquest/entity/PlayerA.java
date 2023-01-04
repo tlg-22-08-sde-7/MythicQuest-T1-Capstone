@@ -31,6 +31,9 @@ public class PlayerA extends Sprite {
         setWorldY(gp.getScaledTileSize() * 21);
         setSpeed(4);
         setDirection("down");
+
+        setMaxLife(8);
+        setLife(getMaxLife());
     }
 
     public void getImage() {
