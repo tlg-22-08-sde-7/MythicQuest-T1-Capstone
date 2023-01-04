@@ -20,8 +20,6 @@ public class SuperObject {
     public void draw(Graphics2D g2, GamePanel gp) {
         int screenX = worldX - gp.player.getWorldX() + gp.player.screenX;
         int screenY = worldY - gp.player.getWorldX() + gp.player.screenY;
-//        int screenX = gp.player.screenX;
-//        int screenY = gp.player.screenY;
 
         if (worldX + gp.getScaledTileSize() > gp.player.getWorldX() - gp.player.screenX &&
                 worldX - gp.getScaledTileSize() < gp.player.getWorldX() + gp.player.screenX &&
