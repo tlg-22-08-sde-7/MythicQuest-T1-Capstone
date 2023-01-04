@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.IOException;
 
-class Heart extends SuperObject {
+public class Heart extends SuperObject {
     GamePanel gp;
 
     public Heart(GamePanel gp) {
