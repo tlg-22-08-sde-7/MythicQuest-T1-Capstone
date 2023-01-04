@@ -37,9 +37,9 @@ public class Board {
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         g2.setColor(Color.white);
 
-//        if (gp.gameState == gp.playState) {
-//            drawPlayerLife();
-//        }
+        if (gp.gameState == gp.playState) {
+            drawPlayerLife();
+        }
     }
 
     public void drawPlayerLife() {
