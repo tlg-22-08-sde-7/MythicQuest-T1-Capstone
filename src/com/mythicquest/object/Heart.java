@@ -20,11 +20,11 @@ public class Heart extends SuperObject {
             image3 = ImageIO.read(getClass().getResourceAsStream("/Health/three-quarter-heart.png"));
             image4 = ImageIO.read(getClass().getResourceAsStream("/Health/full-heart.png"));
 
-//            image = uTool.scaleImage(image, gp.getScaledTileSize(), gp.getScaledTileSize());
-//            image1 = uTool.scaleImage(image1, gp.getScaledTileSize(), gp.getScaledTileSize());
-//            image2 = uTool.scaleImage(image2, gp.getScaledTileSize(), gp.getScaledTileSize());
-//            image3 = uTool.scaleImage(image3, gp.getScaledTileSize(), gp.getScaledTileSize());
-//            image4 = uTool.scaleImage(image4, gp.getScaledTileSize(), gp.getScaledTileSize());
+            image = uTool.scaleImage(image, gp.getScaledTileSize(), gp.getScaledTileSize());
+            image1 = uTool.scaleImage(image1, gp.getScaledTileSize(), gp.getScaledTileSize());
+            image2 = uTool.scaleImage(image2, gp.getScaledTileSize(), gp.getScaledTileSize());
+            image3 = uTool.scaleImage(image3, gp.getScaledTileSize(), gp.getScaledTileSize());
+            image4 = uTool.scaleImage(image4, gp.getScaledTileSize(), gp.getScaledTileSize());
         }
         catch (IOException e) {
             e.printStackTrace();

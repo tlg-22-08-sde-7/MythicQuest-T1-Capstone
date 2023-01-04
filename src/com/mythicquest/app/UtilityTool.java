@@ -3,7 +3,7 @@ package com.mythicquest.app;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-class UtilityTool {
+public class UtilityTool {
 
     public BufferedImage scaleImage(BufferedImage original, int width, int height) {
 
