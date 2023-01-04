@@ -2,6 +2,7 @@ package com.mythicquest;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.entity.PlayerA;
+import com.mythicquest.entity.Sprite;
 
 public class CollisionChecker {
     GamePanel gp;
@@ -87,9 +88,69 @@ public class CollisionChecker {
                 }
                 break;
         }
-
-
     }
 
+    public int checkObject(Sprite sprite, boolean player) {
+        int index = 999;
+        for (int i=0; i < gp.obj.length; i++) {
+            if (gp.obj[i] != null){
+                // Get sprite's solid area position
+                sprite.solidArea.x = sprite.getWorldX() + sprite.solidArea.x;
+                sprite.solidArea.y = sprite.getWorldY() + sprite.solidArea.y;
+
+                // Get object's solid area position
+                gp.obj[i].solidArea.x = gp.obj[i].worldX + gp.obj[i].solidArea.x;
+                gp.obj[i].solidArea.y = gp.obj[i].worldY + gp.obj[i].solidArea.y;
+
+                switch (sprite.getDirection()) {
+                    case "up":
+                        sprite.solidArea.y -= sprite.getSpeed();
+                        if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
+                            sprite.collisionOn = true;
+                        }
+                        if (player == true) {
+                            index = i;
+                        }
+                        break;
+                    case "down":
+                        sprite.solidArea.y += sprite.getSpeed();
+                        if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
+                            sprite.collisionOn = true;
+                        }
+                        if (player == true) {
+                            index = i;
+                        }
+                        break;
+                    case "left":
+                        sprite.solidArea.x -= sprite.getSpeed();
+                        if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
+                            if (gp.obj[i].collision == true) {
+                                sprite.collisionOn = true;
+                            }
+                            if (player == true) {
+                                index = i;
+                            }
+                        }
+                        break;
+                    case "right":
+                        sprite.solidArea.x += sprite.getSpeed();
+                        if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
+                            if (gp.obj[i].collision == true) {
+                                sprite.collisionOn = true;
+                            }
+                            if (player == true) {
+                                index = i;
+                            }
+                        }
+                        break;
+                }
+                sprite.solidArea.x = sprite.solidAreaDefaultX;
+                sprite.solidArea.y = sprite.solidAreaDefaultY;
+                gp.obj[i].solidArea.x = gp.obj[i].solidAreaDefaultX;
+                gp.obj[i].solidArea.y = gp.obj[i].solidAreaDefaultY;
+            }
+        }
+        return index;
+    }
 
 }

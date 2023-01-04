@@ -60,6 +60,10 @@ public class PlayerA extends Sprite {
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            // Check object collision
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
             //if collision is false, player can move
             if (!collisionOn) {
                 switch (getDirection()) {
@@ -83,7 +87,14 @@ public class PlayerA extends Sprite {
     public void pickUpObject(int index) {
         // Any number fine except for object array's index
         if (index != 999) {
-
+            String objectName = gp.obj[index].name;
+            switch (objectName) {
+                case "Key":
+                    hasKey++;
+                    gp.obj[index] = null;
+                    System.out.println("Key count:" + hasKey);
+                    break;
+            }
         }
     }
 
