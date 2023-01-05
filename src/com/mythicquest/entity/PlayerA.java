@@ -106,6 +106,8 @@ public class PlayerA extends Sprite {
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
 
+            gp.eventHandler.checkEvent();
+
             //if collision is false, player can move
             if (!collisionOn) {
                 switch (getDirection()) {
@@ -203,7 +205,6 @@ public class PlayerA extends Sprite {
                 break;
         }
 
-//        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
         g2.drawImage(image, screenX, screenY, null);
     }
 
