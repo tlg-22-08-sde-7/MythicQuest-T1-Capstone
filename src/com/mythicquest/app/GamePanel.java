@@ -29,8 +29,8 @@ public class GamePanel extends JPanel implements Runnable {
     int FPS = 60;
 
     // World settings
-    public final int maxWorldCol = 50;
-    public final  int maxWorldRow = 50;
+    public final int maxWorldCol = 60;
+    public final int maxWorldRow = 50;
 
     public TileManager tm = new TileManager(this);
     KeyHandler keyH = new KeyHandler();

@@ -16,7 +16,7 @@ public class AssetSetter {
     public void setObject() {
         // Coordinates on world map
         gp.obj[0] = new Key();
-        gp.obj[0].worldX = 23 * gp.getScaledTileSize();
+        gp.obj[0].worldX = 33 * gp.getScaledTileSize();
         gp.obj[0].worldY = 7 * gp.getScaledTileSize();
 
 //        gp.obj[1] = new Door();
@@ -24,11 +24,11 @@ public class AssetSetter {
 //        gp.obj[1].worldY = 11 * gp.getScaledTileSize();
 
         gp.obj[2] = new Chest();
-        gp.obj[2].worldX = 10 * gp.getScaledTileSize();
+        gp.obj[2].worldX = 20 * gp.getScaledTileSize();
         gp.obj[2].worldY = 8 * gp.getScaledTileSize();
 
         gp.obj[3] = new Door();
-        gp.obj[3].worldX = 39 * gp.getScaledTileSize();
+        gp.obj[3].worldX = 49 * gp.getScaledTileSize();
         gp.obj[3].worldY = 27 * gp.getScaledTileSize();
 
         gp.obj[4] = new com.mythicquest.object.SuperObject();
