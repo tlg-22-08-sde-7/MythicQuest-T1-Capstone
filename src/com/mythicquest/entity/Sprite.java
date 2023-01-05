@@ -8,8 +8,11 @@ public class Sprite {
     private int worldX;
     private int worldY;
     private int speed;
-    private BufferedImage playerImage;
+    private BufferedImage down1, down2, down3, up1, up2, up3;
     private String direction;
+
+    public int spriteCounter = 0;
+    public int spriteNum = 1;
 
     public Rectangle solidArea;
     public int solidAreaDefaultX, solidAreaDefaultY;
@@ -30,8 +33,52 @@ public class Sprite {
         this.speed = speed;
     }
 
-    public void setPlayerImage(BufferedImage playerImage) {
-        this.playerImage = playerImage;
+    public BufferedImage getDown1() {
+        return down1;
+    }
+
+    public void setDown1(BufferedImage down1) {
+        this.down1 = down1;
+    }
+
+    public BufferedImage getDown2() {
+        return down2;
+    }
+
+    public void setDown2(BufferedImage down2) {
+        this.down2 = down2;
+    }
+
+    public BufferedImage getDown3() {
+        return down3;
+    }
+
+    public void setDown3(BufferedImage down3) {
+        this.down3 = down3;
+    }
+
+    public BufferedImage getUp1() {
+        return up1;
+    }
+
+    public void setUp1(BufferedImage up1) {
+        this.up1 = up1;
+    }
+
+    public BufferedImage getUp2() {
+        return up2;
+    }
+
+    public void setUp2(BufferedImage up2) {
+        this.up2 = up2;
+    }
+
+    public BufferedImage getUp3() {
+        return up3;
+    }
+
+    public void setUp3(BufferedImage up3) {
+        this.up3 = up3;
     }
 
     public void setDirection(String direction) {
@@ -47,10 +94,6 @@ public class Sprite {
 
     public int getSpeed() {
         return speed;
-    }
-
-    public Image getPlayerImage() {
-        return playerImage;
     }
 
     public String getDirection() {
