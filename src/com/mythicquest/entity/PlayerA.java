@@ -41,6 +41,10 @@ public class PlayerA extends Sprite {
         setDown1(setup("kidFront1"));
         setDown2(setup("kidFront2"));
         setDown3(setup("kidFront3"));
+
+        setUp1(setup("kidRear1"));
+        setUp2(setup("kidRear2"));
+        setUp3(setup("kidRear3"));
     }
 
     public BufferedImage setup(String imageName) {
@@ -149,10 +153,21 @@ public class PlayerA extends Sprite {
                     image = getDown3();
                 }
                 break;
+            case "up":
+                if (spriteNum == 1) {
+                    image = getUp1();
+                }
+                if (spriteNum == 2) {
+                    image = getUp2();
+                }
+                if (spriteNum == 3) {
+                    image = getUp3();
+                }
+                break;
         }
 
-        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
-//        g2.drawImage(getPlayerImage(), screenX, screenY, null);
+//        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(image, screenX, screenY, null);
     }
 
     public int getHasKey() {
