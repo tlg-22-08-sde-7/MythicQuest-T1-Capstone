@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 // Class loads all locations from map.JSON, and manages them in a 2D Array
-//
+
 class Scenes {
 
     private Location[][] locations;

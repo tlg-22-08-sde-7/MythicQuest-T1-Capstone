@@ -54,8 +54,8 @@ public class TitleScreen {
             readPanel.setBounds(285, 330, 250, 80);
             readPanel.setOpaque(false);
             readBtn = new JButton("Read Instructions");
-            readBtn.setBackground(Color.black);
-            readBtn.setForeground(Color.white);
+            readBtn.setForeground(Color.black);           // TODO: continue testing
+            readBtn.setBackground(Color.gray);
             readBtn.setFont(btnFont);
             readBtn.addActionListener(new ActionListener() {
                 @Override
@@ -69,8 +69,8 @@ public class TitleScreen {
             startPanel.setBounds(282, 400, 250, 80);
             startPanel.setOpaque(false);
             startBtn = new JButton("Start Game");
-            startBtn.setBackground(Color.black);
-            startBtn.setForeground(Color.white);
+            startBtn.setForeground(Color.black); // testing
+            startBtn.setBackground(Color.gray);
             startBtn.setFont(btnFont);
             startBtn.addActionListener(new ActionListener() {
                 @Override

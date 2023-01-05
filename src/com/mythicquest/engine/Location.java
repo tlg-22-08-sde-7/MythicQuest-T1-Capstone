@@ -2,7 +2,7 @@ package com.mythicquest.engine;
 
 import java.util.ArrayList;
 
-class Location {
+public class Location {
 
     private String name;
     private ArrayList<String> items;

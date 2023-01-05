@@ -1,6 +1,7 @@
 package com.mythicquest.engine;
 
 import com.google.gson.*;
+import com.mythicquest.entity.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -69,7 +70,7 @@ public class TextParser {
         String lowerMove = Move.trim().toLowerCase(); // TODO: fix this if string is null... null
         // Pointer exception
 
-        if ("help".equals(lowerMove)) {
+          if ("help".equals(lowerMove)) {
             commandsAvailable();
         }
 
@@ -132,7 +133,7 @@ public class TextParser {
             case "q":
                 quitGame();
             case "go":
-                Player.movePlayer(player, noun);
+//                Player.movePlayer(player, noun);
                 break;
             case "get":
                 player.addItem(noun, player);

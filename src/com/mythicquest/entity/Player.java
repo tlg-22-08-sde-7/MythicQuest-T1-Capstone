@@ -1,18 +1,74 @@
-package com.mythicquest.engine;
+package com.mythicquest.entity;
 
-import java.io.IOException;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class Player {
+import com.mythicquest.app.GamePanel;
+import com.mythicquest.app.KeyHandler;
+//import com.mythicquest.entity.Enemy;
+import com.mythicquest.engine.Location;
+
+import javax.swing.ImageIcon;
+
+public class Player extends Sprite {
+    // Text
     private Location location;
     private ArrayList<String> inventory;
     private int healthLevel;
+
+    // GUI
+    GamePanel gp;
+    KeyHandler keyH;
+    private final int screenX = gp.screenWidth / 2 - (gp.getScaledTileSize() / 2);
+    private final int screenY = gp.screenHeight / 2 - (gp.getScaledTileSize() / 2);;
 
     // ctor
     public Player(Location currentLocation) {
         this.location = currentLocation;
         this.inventory = new ArrayList<>(); // Initialize ArrayList
         this.healthLevel = 100;
+    }
+
+    public Player(GamePanel gp, KeyHandler keyH) {
+        this.gp = gp;
+        this.keyH = keyH;
+        solidArea = new Rectangle(8, 16, 32, 32);
+        getScreenX();
+        getScreenY();
+        setDefaultValues();
+        getImage();
+    }
+
+    public void setDefaultValues() {
+        setWorldX(100);
+        setWorldY(100);
+        setSpeed(4);
+
+        setMaxLife(16);
+        setLife(getMaxLife());
+    }
+
+    public void getImage() {
+        String playerImagePath = "resources/Sprites/pixil-frame-0.png";
+        ImageIcon player = new ImageIcon(playerImagePath);
+        setDown1((BufferedImage) player.getImage());
+    }
+
+    public void update() {
+        if (keyH.up) {
+            setWorldY(getWorldY() - getSpeed());
+        } else if (keyH.down) {
+            setWorldY(getWorldY() + getSpeed());
+        } else if (keyH.left) {
+            setWorldX(getWorldX() - getSpeed());
+        } else if (keyH.right) {
+            setWorldX(getWorldX() + getSpeed());
+        }
+    }
+
+    public void draw(Graphics2D g2) {
+        g2.drawImage(getDown1(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 
     // Fight enemies
@@ -130,48 +186,54 @@ public class Player {
         this.location = location;
     }
 
-
-    //move player to new location
-    static void movePlayer(Player player, String noun) throws IOException {
-        Location newLocation = null;
-        if (noun.equals("north")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
-            if (newLocation == null) {
-                System.out.println("You can't go North.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-            }
-        } else if (noun.equals("east")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
-            if (newLocation == null) {
-                System.out.println("You can't go East.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-                if ("cave".equals(newLocation.getName())) {
-                    Enemy boss = new Enemy();
-                    Screens.endingOutcome(player.fight(boss));
-                    System.exit(0);
-                }
-            }
-        } else if (noun.equals("south")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
-            if (newLocation == null) {
-                System.out.println("You can't go South.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-                if ("cave".equals(newLocation.getName())) {
-                    Enemy boss = new Enemy();
-                    Screens.endingOutcome(player.fight(boss));
-                    System.exit(0);
-                }
-            }
-        } else if (noun.equals("west")) {
-            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
-            if (newLocation == null) {
-                System.out.println("You can't go West.  Please choose another direction");
-            } else {
-                player.setLocation(newLocation);
-            }
-        } else System.out.println("You have LOST your way !");
+    public int getScreenX() {
+        return screenX;
     }
+
+    public int getScreenY() {
+        return screenY;
+    }
+// move player to new location
+//    public static void movePlayer(Player player, String noun) throws IOException {
+//        Location newLocation = null;
+//        if (noun.equals("north")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.NORTH);
+//            if (newLocation == null) {
+//                System.out.println("You can't go North.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//            }
+//        } else if (noun.equals("east")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.EAST);
+//            if (newLocation == null) {
+//                System.out.println("You can't go East.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//                if ("cave".equals(newLocation.getName())) {
+//                    Enemy boss = new Enemy();
+//                    Screens.endingOutcome(player.fight(boss));
+//                    System.exit(0);
+//                }
+//            }
+//        } else if (noun.equals("south")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.SOUTH);
+//            if (newLocation == null) {
+//                System.out.println("You can't go South.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//                if ("cave".equals(newLocation.getName())) {
+//                    Enemy boss = new Enemy();
+//                    Screens.endingOutcome(player.fight(boss));
+//                    System.exit(0);
+//                }
+//            }
+//        } else if (noun.equals("west")) {
+//            newLocation = Screens.scenes.goToLocation(player.getLocation(), Direction.WEST);
+//            if (newLocation == null) {
+//                System.out.println("You can't go West.  Please choose another direction");
+//            } else {
+//                player.setLocation(newLocation);
+//            }
+//        } else System.out.println("You have LOST your way !");
+//    }
 }
