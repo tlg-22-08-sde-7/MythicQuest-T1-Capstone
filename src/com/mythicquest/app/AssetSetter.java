@@ -1,5 +1,7 @@
 package com.mythicquest.app;
 
+//import com.mythicquest.entity.Minion;      // TODO uncomment this line when troubleshooting
+// Minion class
 import com.mythicquest.object.Chest;
 import com.mythicquest.object.Door;
 import com.mythicquest.object.Key;
@@ -28,5 +30,10 @@ public class AssetSetter {
         gp.obj[3] = new Door();
         gp.obj[3].worldX = 39 * gp.getScaledTileSize();
         gp.obj[3].worldY = 27 * gp.getScaledTileSize();
+
+        gp.obj[4] = new com.mythicquest.object.SuperObject();
+        gp.obj[4].worldX = 11 * gp.getScaledTileSize();
+        gp.obj[4].worldY = 30 * gp.getScaledTileSize();
+
     }
 }
