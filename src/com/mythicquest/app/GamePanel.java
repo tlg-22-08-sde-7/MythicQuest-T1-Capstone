@@ -1,7 +1,6 @@
 package com.mythicquest.app;
 
 import com.mythicquest.CollisionChecker;
-import com.mythicquest.entity.Player;
 import com.mythicquest.entity.PlayerA;
 import com.mythicquest.object.SuperObject;
 
@@ -39,7 +38,6 @@ public class GamePanel extends JPanel implements Runnable {
     public Board board = new Board(this);
 
     public PlayerA player = new PlayerA(this, keyH);
-    // private Player player = new Player(this, keyH);
     public AssetSetter aSetter = new AssetSetter(this);
     public SuperObject obj[] = new SuperObject[10];
 
