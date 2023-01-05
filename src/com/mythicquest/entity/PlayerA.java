@@ -4,9 +4,8 @@ import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import java.awt.*;
-import java.awt.image.BufferedImage;
+import  java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.io.IOException;
 
 public class PlayerA extends Sprite {
@@ -38,7 +37,7 @@ public class PlayerA extends Sprite {
 
     public void getImage() {
         try {
-            setPlayerImage(ImageIO.read(getClass().getResourceAsStream("/Sprites/pixil-frame-0.png")));
+            setPlayerImage(ImageIO.read(getClass().getResourceAsStream("/Sprites/kidFront2.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
