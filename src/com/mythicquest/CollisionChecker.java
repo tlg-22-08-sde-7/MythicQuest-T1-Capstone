@@ -93,7 +93,7 @@ public class CollisionChecker {
     public int checkObject(Sprite sprite, boolean player) {
         int index = 999;
         for (int i=0; i < gp.obj.length; i++) {
-            if (gp.obj[i] != null){
+            if (gp.obj[i] != null) {
                 // Get sprite's solid area position
                 sprite.solidArea.x = sprite.getWorldX() + sprite.solidArea.x;
                 sprite.solidArea.y = sprite.getWorldY() + sprite.solidArea.y;
@@ -106,19 +106,23 @@ public class CollisionChecker {
                     case "up":
                         sprite.solidArea.y -= sprite.getSpeed();
                         if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
-                            sprite.collisionOn = true;
-                        }
-                        if (player == true) {
-                            index = i;
+                            if (gp.obj[i].collision == true ) {
+                                sprite.collisionOn = true;
+                            }
+                            if (player == true) {
+                                index = i;
+                            }
                         }
                         break;
                     case "down":
                         sprite.solidArea.y += sprite.getSpeed();
                         if (sprite.solidArea.intersects(gp.obj[i].solidArea)) {
-                            sprite.collisionOn = true;
-                        }
-                        if (player == true) {
-                            index = i;
+                            if (gp.obj[i].collision == true ) {
+                                sprite.collisionOn = true;
+                            }
+                            if (player == true) {
+                                index = i;
+                            }
                         }
                         break;
                     case "left":
