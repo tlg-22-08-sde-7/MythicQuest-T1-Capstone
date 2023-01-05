@@ -45,6 +45,14 @@ public class PlayerA extends Sprite {
         setUp1(setup("kidRear1"));
         setUp2(setup("kidRear2"));
         setUp3(setup("kidRear3"));
+
+        setLeft1(setup("kidLeft1"));
+        setLeft2(setup("kidLeft2"));
+        setLeft3(setup("kidLeft3"));
+
+        setRight1(setup("kidRight1"));
+        setRight2(setup("kidRight2"));
+        setRight3(setup("kidRight3"));
     }
 
     public BufferedImage setup(String imageName) {
@@ -162,6 +170,28 @@ public class PlayerA extends Sprite {
                 }
                 if (spriteNum == 3) {
                     image = getUp3();
+                }
+                break;
+            case "left":
+                if (spriteNum == 1) {
+                    image = getLeft1();
+                }
+                if (spriteNum == 2) {
+                    image = getLeft2();
+                }
+                if (spriteNum == 3) {
+                    image = getLeft3();
+                }
+                break;
+            case "right":
+                if (spriteNum == 1) {
+                    image = getRight1();
+                }
+                if (spriteNum == 2) {
+                    image = getRight2();
+                }
+                if (spriteNum == 3) {
+                    image = getRight3();
                 }
                 break;
         }

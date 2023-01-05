@@ -8,7 +8,7 @@ public class Sprite {
     private int worldX;
     private int worldY;
     private int speed;
-    private BufferedImage down1, down2, down3, up1, up2, up3;
+    private BufferedImage down1, down2, down3, up1, up2, up3, left1, left2, left3, right1, right2, right3;
     private String direction;
 
     public int spriteCounter = 0;
@@ -79,6 +79,54 @@ public class Sprite {
 
     public void setUp3(BufferedImage up3) {
         this.up3 = up3;
+    }
+
+    public BufferedImage getLeft1() {
+        return left1;
+    }
+
+    public void setLeft1(BufferedImage left1) {
+        this.left1 = left1;
+    }
+
+    public BufferedImage getLeft2() {
+        return left2;
+    }
+
+    public void setLeft2(BufferedImage left2) {
+        this.left2 = left2;
+    }
+
+    public BufferedImage getLeft3() {
+        return left3;
+    }
+
+    public void setLeft3(BufferedImage left3) {
+        this.left3 = left3;
+    }
+
+    public BufferedImage getRight1() {
+        return right1;
+    }
+
+    public void setRight1(BufferedImage right1) {
+        this.right1 = right1;
+    }
+
+    public BufferedImage getRight2() {
+        return right2;
+    }
+
+    public void setRight2(BufferedImage right2) {
+        this.right2 = right2;
+    }
+
+    public BufferedImage getRight3() {
+        return right3;
+    }
+
+    public void setRight3(BufferedImage right3) {
+        this.right3 = right3;
     }
 
     public void setDirection(String direction) {
