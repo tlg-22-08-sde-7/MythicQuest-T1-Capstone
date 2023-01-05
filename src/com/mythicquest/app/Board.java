@@ -47,7 +47,7 @@ public class Board {
         int y = gp.getScaledTileSize() / 2;
         int i = 0;
 
-        while (i < gp.player.getMaxLife() / 4) {
+        while (i < gp.player.getMaxLife() / 2) {
             g2.drawImage(emptyHeart, x, y, null);
             i++;
             x += gp.getScaledTileSize();

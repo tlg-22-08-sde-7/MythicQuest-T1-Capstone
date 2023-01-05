@@ -29,14 +29,12 @@ public class PlayerA extends Sprite {
     }
 
     public void setDefaultValues() {
-//        setWorldX(gp.getScaledTileSize() * 23);
-//        setWorldY(gp.getScaledTileSize() * 21);
         setWorldX(gp.getScaledTileSize() * 10);
         setWorldY(gp.getScaledTileSize() * 6);
         setSpeed(4);
         setDirection("down");
 
-        setMaxLife(8);
+        setMaxLife(6);
         setLife(getMaxLife());
     }
 

@@ -20,7 +20,7 @@ public class EventHandler {
     }
 
     public void checkEvent() {
-        if (hit(23, 25, "down")) {
+        if (hit(11, 6, "right")) {
             damage();
         }
     }
