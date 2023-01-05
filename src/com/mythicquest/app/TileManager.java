@@ -34,7 +34,7 @@ public class TileManager {
             tile[1].collision = true;
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/water.png"));
+            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/water-mid02.png"));
             tile[2].collision = true;
 
             tile[3] = new Tile();
@@ -46,6 +46,33 @@ public class TileManager {
 
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/dirtMiddle.png"));
+
+            tile[6] = new Tile();
+            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/water-right.png"));
+            tile[6].collision = true;
+
+            tile[7] = new Tile();
+            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/water-left.png"));
+            tile[7].collision = true;
+
+            // BRIDGE
+            tile[8] = new Tile();
+            tile[8].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-left.png"));
+
+            tile[9] = new Tile();
+            tile[9].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-mid.png"));
+
+            tile[10] = new Tile();
+            tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-right.png"));
+
+            tile[11] = new Tile();
+            tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-top.png"));
+
+            tile[12] = new Tile();
+            tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-horizontal.png"));
+
+            tile[13] = new Tile();
+            tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/SPRITESHEET/bridge-bottom.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
