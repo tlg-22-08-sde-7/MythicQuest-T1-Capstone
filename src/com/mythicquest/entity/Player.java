@@ -2,15 +2,12 @@ package com.mythicquest.entity;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
 //import com.mythicquest.entity.Enemy;
-import com.mythicquest.engine.Direction;
 import com.mythicquest.engine.Location;
-import com.mythicquest.engine.Screens;
 
 import javax.swing.ImageIcon;
 
@@ -55,7 +52,7 @@ public class Player extends Sprite {
     public void getImage() {
         String playerImagePath = "resources/Sprites/pixil-frame-0.png";
         ImageIcon player = new ImageIcon(playerImagePath);
-        setPlayerImage((BufferedImage) player.getImage());
+        setDown1((BufferedImage) player.getImage());
     }
 
     public void update() {
@@ -71,7 +68,7 @@ public class Player extends Sprite {
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(getDown1(), getWorldX(), getWorldY(), gp.getScaledTileSize(), gp.getScaledTileSize(), null);
     }
 
     // Fight enemies

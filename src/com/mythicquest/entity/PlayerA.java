@@ -2,10 +2,11 @@ package com.mythicquest.entity;
 
 import com.mythicquest.app.GamePanel;
 import com.mythicquest.app.KeyHandler;
+import com.mythicquest.app.UtilityTool;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import java.awt.*;
+import  java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -38,11 +39,35 @@ public class PlayerA extends Sprite {
     }
 
     public void getImage() {
+        setDown1(setup("kidFront1"));
+        setDown2(setup("kidFront2"));
+        setDown3(setup("kidFront3"));
+
+        setUp1(setup("kidRear1"));
+        setUp2(setup("kidRear2"));
+        setUp3(setup("kidRear3"));
+
+        setLeft1(setup("kidLeft1"));
+        setLeft2(setup("kidLeft2"));
+        setLeft3(setup("kidLeft3"));
+
+        setRight1(setup("kidRight1"));
+        setRight2(setup("kidRight2"));
+        setRight3(setup("kidRight3"));
+    }
+
+    public BufferedImage setup(String imageName) {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage scaledImage = null;
+
         try {
-            setPlayerImage(ImageIO.read(getClass().getResourceAsStream("/Sprites/pixil-frame-0.png")));
-        } catch (IOException e) {
+            scaledImage = ImageIO.read(getClass().getResourceAsStream("/Sprites/" + imageName + ".png"));
+            scaledImage = uTool.scaleImage(scaledImage, gp.getScaledTileSize(), gp.getScaledTileSize());
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
+        return scaledImage;
     }
 
     public void update() {
@@ -59,6 +84,19 @@ public class PlayerA extends Sprite {
             } else if (keyH.right) {
                 setDirection("right");
                 //  setWorldX(getWolrdX() + getSpeed());
+            }
+            spriteCounter++;
+            if (spriteCounter > 12) {
+                if (spriteNum == 1) {
+                    spriteNum = 2;
+                }
+                else if (spriteNum == 2) {
+                    spriteNum = 3;
+                }
+                else {
+                    spriteNum = 1;
+                }
+                spriteCounter = 0;
             }
             //check tile collision
             collisionOn = false;
@@ -116,7 +154,57 @@ public class PlayerA extends Sprite {
     }
 
     public void draw(Graphics2D g2) {
-        g2.drawImage(getPlayerImage(), screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        BufferedImage image = null;
+
+        switch (getDirection()) {
+            case "down":
+                if (spriteNum == 1) {
+                    image = getDown1();
+                }
+                if (spriteNum == 2) {
+                    image = getDown2();
+                }
+                if (spriteNum == 3) {
+                    image = getDown3();
+                }
+                break;
+            case "up":
+                if (spriteNum == 1) {
+                    image = getUp1();
+                }
+                if (spriteNum == 2) {
+                    image = getUp2();
+                }
+                if (spriteNum == 3) {
+                    image = getUp3();
+                }
+                break;
+            case "left":
+                if (spriteNum == 1) {
+                    image = getLeft1();
+                }
+                if (spriteNum == 2) {
+                    image = getLeft2();
+                }
+                if (spriteNum == 3) {
+                    image = getLeft3();
+                }
+                break;
+            case "right":
+                if (spriteNum == 1) {
+                    image = getRight1();
+                }
+                if (spriteNum == 2) {
+                    image = getRight2();
+                }
+                if (spriteNum == 3) {
+                    image = getRight3();
+                }
+                break;
+        }
+
+//        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
+        g2.drawImage(image, screenX, screenY, null);
     }
 
     public int getHasKey() {
