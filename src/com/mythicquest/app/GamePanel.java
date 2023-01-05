@@ -2,7 +2,6 @@ package com.mythicquest.app;
 
 import com.mythicquest.CollisionChecker;
 import com.mythicquest.entity.Minion;
-import com.mythicquest.entity.Player;
 import com.mythicquest.entity.PlayerA;
 import com.mythicquest.object.SuperObject;
 
@@ -37,11 +36,12 @@ public class GamePanel extends JPanel implements Runnable {
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
-    public Board board = new Board(this);
+    public Board board = new Board(this); // HUD
+    public EventHandler eventHandler = new EventHandler(this);
 
     public PlayerA player = new PlayerA(this, keyH);
-    // private Player player = new Player(this, keyH);
     public Minion enemy = new Minion(this);
+
     public AssetSetter aSetter = new AssetSetter(this);
     public SuperObject obj[] = new SuperObject[10];
 

@@ -29,14 +29,12 @@ public class PlayerA extends Sprite {
     }
 
     public void setDefaultValues() {
-//        setWorldX(gp.getScaledTileSize() * 23);
-//        setWorldY(gp.getScaledTileSize() * 21);
         setWorldX(gp.getScaledTileSize() * 10);
         setWorldY(gp.getScaledTileSize() * 6);
         setSpeed(4);
         setDirection("down");
 
-        setMaxLife(8);
+        setMaxLife(6);
         setLife(getMaxLife());
     }
 
@@ -107,6 +105,8 @@ public class PlayerA extends Sprite {
             // Check object collision
             int objIndex = gp.cChecker.checkObject(this, true);
             pickUpObject(objIndex);
+
+            gp.eventHandler.checkEvent();
 
             //if collision is false, player can move
             if (!collisionOn) {
@@ -205,7 +205,6 @@ public class PlayerA extends Sprite {
                 break;
         }
 
-//        g2.drawImage(image, screenX, screenY, gp.getScaledTileSize(), gp.getScaledTileSize(), null);
         g2.drawImage(image, screenX, screenY, null);
     }
 

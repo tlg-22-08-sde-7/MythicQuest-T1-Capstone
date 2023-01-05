@@ -34,8 +34,8 @@ public class Minion extends Sprite {
     }
 
     public void setDefaultValues() {
-        setWorldX(gp.getScaledTileSize() * 23);
-        setWorldY(gp.getScaledTileSize() * 21);
+        setWorldX(gp.getScaledTileSize() * 50);
+        setWorldY(gp.getScaledTileSize() * 30);
         setSpeed(4);
         setDirection("down");
     }
