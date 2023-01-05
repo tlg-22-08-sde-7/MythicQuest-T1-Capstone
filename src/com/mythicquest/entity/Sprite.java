@@ -1,5 +1,7 @@
 package com.mythicquest.entity;
 
+import com.mythicquest.app.GamePanel;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -20,6 +22,11 @@ public class Sprite {
 
     private int maxLife;
     private int life;
+
+//    public Sprite(GamePanel gp) {          // TODO: check this constructor
+//        solidArea = new Rectangle();
+//        direction = "down";
+//    }
 
     public void setWorldX(int worldX) {
         this.worldX = worldX;
